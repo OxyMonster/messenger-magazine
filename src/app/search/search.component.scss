@@ -1,0 +1,29 @@
+@import 'src/assets/variables'; 
+
+.search {
+    &__box {
+        a {
+            font-size: .675rem;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 0;
+            white-space: nowrap;
+            text-decoration: none;
+            color: $dark-grey;
+           
+        }
+        span {
+            font-size: .875rem;
+            white-space: nowrap;
+            color: $dark-grey;
+
+        }
+
+        i {
+            cursor: pointer;
+            font-size: .875rem;
+        }
+
+    }
+    border-bottom: 1px solid $grey;
+}

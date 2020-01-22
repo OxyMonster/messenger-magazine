@@ -1,0 +1,21 @@
+@import 'src/assets/variables'; 
+
+.navigation {
+    border-bottom: 2px solid $grey;
+
+    a {
+        font-weight: bold;
+        color: $black;
+        font-size: .875rem;
+        text-decoration: none;
+        padding-bottom: .78rem;
+
+        &:hover {
+            border-bottom: 2px solid $black;
+        }
+    }
+}
+
+.active {
+    border-bottom: 2px solid $black;
+}

@@ -1,0 +1,21 @@
+<div class="search row justify-content-between pb-2">
+    <div class="search__box col-md-4 d-flex">
+        <div class="col">
+            <a [routerLink]="[ '/about-us' ]">ABOUT US</a>
+        </div>
+        <div class="col">
+            <a [routerLink]="[ '/advertisement' ]">ADVERTISE</a>
+        </div>
+        <div class="col">
+            <a [routerLink]="[ '/contact' ]">CONTACT US</a>
+        </div>
+    </div>   
+
+    <div class="search__box col-md-4 d-flex justify-content-center">
+        <span> {{ currentDate }} </span>
+    </div>
+
+    <div class="search__box col-md-4 d-flex justify-content-end">
+        <i class="fas fa-search"></i>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+@import 'src/assets/variables'; 
+
+.header {
+    &__headline {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        p {
+            font-weight: bold;
+            color: $dark-grey;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        span {
+            font-size: .775rem;
+            color: $dark-grey;
+        };
+    }
+
+    &__image {
+        height: 10rem;
+        // width: 10rem;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        h4 {
+            font-family: 'Lincoln';
+            font-size: 6rem;
+        }
+        .red {
+            color: $red;
+        }
+    }
+
+    &__follow {
+        p {
+            font-weight: bold;
+            color: $dark-grey;
+            font-size: 1rem;
+            margin: 0;
+        }
+    }
+
+    border-bottom: 3px solid black;
+}
