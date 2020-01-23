@@ -34,6 +34,10 @@
             font-size: .875rem;
         }
 
+        @media (max-width: 768px ) {
+            margin-top: 1rem;
+        }
+
     }
     border-bottom: 1px solid $grey;
 }

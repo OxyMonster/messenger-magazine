@@ -29,14 +29,28 @@
 
         h4 {
             font-family: 'Lincoln';
-            font-size: 6rem;
+            font-size: 5.5rem;
+
+            // @media (max-width: 585px ) {
+            //     font-size: 5rem;
+            // }
+            // @media (max-width: 3205px ) {
+            //     font-size: 3.3rem;
+            // }
         }
         .red {
             color: $red;
+            font-size: 5.5rem;
+          
+
         }
     }
 
     &__follow {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
         p {
             font-weight: bold;
             color: $dark-grey;
@@ -55,6 +69,7 @@
             padding: .4rem;
             text-decoration: none;
             border: 1px solid transparent;
+          
 
 
             &:hover {
