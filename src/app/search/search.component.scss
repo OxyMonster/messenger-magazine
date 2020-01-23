@@ -16,7 +16,17 @@
             font-size: .875rem;
             white-space: nowrap;
             color: $dark-grey;
+            font-weight: bold;
 
+        }
+
+        input {
+            height: 1.3rem;
+
+            &:focus {
+                border-color: rgba(192, 13, 22, 0.25);
+                box-shadow: 0 0 0 0.2rem rgba(192, 13, 22, 0.25);
+            }
         }
 
         i {

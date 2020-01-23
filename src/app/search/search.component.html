@@ -11,11 +11,14 @@
         </div>
     </div>   
 
-    <div class="search__box col-md-4 d-flex justify-content-center">
+    <div class="search__box col-md-4 d-flex justify-content-center align-items-center">
         <span> {{ currentDate }} </span>
     </div>
 
-    <div class="search__box col-md-4 d-flex justify-content-end">
-        <i class="fas fa-search"></i>
+    <div class="search__box col-md-4 d-flex justify-content-end align-items-center">
+        <div *ngIf="isInputActive" class="">
+            <input type="text" class="form-control">
+        </div>
+        <i class="fas fa-search ml-2" (click)="toggleInput()"></i>
     </div>
 </div>

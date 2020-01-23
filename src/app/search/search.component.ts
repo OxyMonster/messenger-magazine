@@ -16,12 +16,19 @@ export class SearchComponent implements OnInit {
   "July", "August", "September", "October", "November", "December"
   ];
 
+  isInputActive: boolean = false; 
+
   currentDate = this.monthNames[this.date.getMonth()] + "," + this.day + " " + this.year;
 
   // * * *  / * * * 
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  toggleInput() {
+    return this,this.isInputActive === false ? this.isInputActive = true : this.isInputActive = false;
   }
  
 

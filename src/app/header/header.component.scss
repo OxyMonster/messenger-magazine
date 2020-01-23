@@ -6,20 +6,21 @@
         flex-direction: column;
         justify-content: center;
         p {
-            font-weight: bold;
+            font-weight: bolder;
             color: $dark-grey;
             font-size: 1rem;
             margin: 0;
         }
-
+        
         span {
             font-size: .775rem;
             color: $dark-grey;
+            font-weight: bold;
         };
     }
 
     &__image {
-        height: 10rem;
+        height: 9rem;
         // width: 10rem;
         img {
             width: 100%;
@@ -39,8 +40,37 @@
         p {
             font-weight: bold;
             color: $dark-grey;
-            font-size: 1rem;
+            font-size: .875rem;
             margin: 0;
+            // border: 1px solid transparent;
+            padding: .4rem;
+
+        }  
+
+        .social {
+            color: $black;
+            font-size: .775rem;
+            // padding-right: .4rem;
+            font-weight: bold;
+            padding: .4rem;
+            text-decoration: none;
+            border: 1px solid transparent;
+
+
+            &:hover {
+                transition: .3s;  
+                border: 1px solid $black;
+            }
+        }
+
+        span {
+            color: $black;
+            font-size: .775rem;
+            padding-right: .4rem;
+            font-weight: bold;
+            cursor: pointer;
+            padding: .4rem;
+
         }
     }
 
