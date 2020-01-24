@@ -14,8 +14,8 @@
    </div>
 
    <!-- * * * Router Content * * *  -->
-   <div class="col-md-12 mt-3 p-0">
-     <router-outlet></router-outlet>
+   <div class="col-md-12 mt-3 p-0 pb-5" [@routeAnimations]="prepareRoute(outlet)">
+     <router-outlet #outlet="outlet" ></router-outlet>
    </div>
  </div>
 </div>

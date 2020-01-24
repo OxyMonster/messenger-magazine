@@ -19,7 +19,8 @@ import { MainNewsComponent } from './home/main-news/main-news.component';
 import { PopularNewsComponent } from './home/popular-news/popular-news.component';
 import { AdsComponent } from './home/ads/ads.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+ 
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { FooterComponent } from './footer/footer.component';
     SearchComponent,
     HeaderComponent,
     SliderComponent,
-    NavigationComponent,
+    NavigationComponent,    
     HomeComponent,
     NewsComponent,
     AboutUsComponent,
@@ -43,7 +44,8 @@ import { FooterComponent } from './footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

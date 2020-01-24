@@ -11,12 +11,12 @@ import { SubscriptionComponent } from './subscription/subscription.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'news', component: NewsComponent },
-  { path: 'about-us', component: AboutUsComponent },
-  { path: 'subscription', component: SubscriptionComponent },
-  { path: 'advertisement', component: AdvertisementComponent },
-  { path: 'contact', component: ContactComponent },
+  { path: 'home', component: HomeComponent, data: { animation: 'isLeft' }  },
+  { path: 'news', component: NewsComponent, data: { animation: 'isRight' } },
+  { path: 'about-us', component: AboutUsComponent, data: { animation: 'isLeft' } },
+  { path: 'subscription', component: SubscriptionComponent, data: { animation: 'isRight' } },
+  { path: 'advertisement', component: AdvertisementComponent, data: { animation: 'isLeft' } },
+  { path: 'contact', component: ContactComponent, data: { animation: 'isRight' }  },
 ];
 
 @NgModule({

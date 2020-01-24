@@ -1,0 +1,92 @@
+@import 'src/assets/variables'; 
+
+.about-us {
+    &__content {
+        background-color: $grey;
+        border-radius: .5rem;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, .7);
+        border: 2px solid $black;
+        border-radius: .5rem;
+
+        &__title {
+            h1 {
+                text-align: center;
+                font-family: 'Lora', serif;
+                border-bottom: 2px solid $black;
+                padding-bottom: .5rem;
+            }
+        }
+
+        &__staff {
+            &__title {
+                h4 {
+                    text-align: center;
+                    font-family: 'Lora', serif;
+                    font-size: 2rem;
+                }
+            }
+
+            &__img {
+                &__content {
+                    width: 100%;
+                    height: 20rem;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+
+            &__description {
+                p {
+                    // color: $red;
+                    text-align: center;
+                    font-weight: bold;
+                    
+                }
+
+                &__title {
+                    h4 {
+                        font-family: 'Lora', serif;
+                        text-align: center;
+                        font-weight: bold;
+
+                    }
+                }
+            }
+
+            &__staff {
+              
+                // box-shadow: 0px 8px 15px rgba(0, 0, 0, .7);
+
+
+                h4 {
+                    font-size: 1rem;
+                    font-weight: bold;
+                    font-family: 'Lora', serif;
+                    color: $red;
+                    display: inline;
+
+                }
+
+                 p {
+                     color: $black;
+                     font-size: .875rem;
+                    //  font-weight: bold;
+
+                 }
+            }
+        }
+    
+    }
+}
+
+.staff-border {
+    // border: 2px solid $black;
+    padding: 2rem;
+    border-radius: .5rem;
+    background-color: #e8e8e8d2;
+    box-shadow: $shadow;
+
+}
