@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-search',
@@ -28,6 +29,7 @@ export class SearchComponent implements OnInit {
   }
 
   toggleInput() {
+    
     return this,this.isInputActive === false ? this.isInputActive = true : this.isInputActive = false;
   }
  

@@ -9,9 +9,11 @@
 
         &__main {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
+            div {
+
+                border-top: 2px solid $grey;
+            }
+
         }
 
     }

@@ -15,6 +15,10 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { AdvertisementComponent } from './advertisement/advertisement.component';
 import { ContactComponent } from './contact/contact.component';
+import { MainNewsComponent } from './home/main-news/main-news.component';
+import { PopularNewsComponent } from './home/popular-news/popular-news.component';
+import { AdsComponent } from './home/ads/ads.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -29,7 +33,11 @@ import { ContactComponent } from './contact/contact.component';
     AboutUsComponent,
     SubscriptionComponent,
     AdvertisementComponent,
-    ContactComponent
+    ContactComponent,
+    MainNewsComponent,
+    PopularNewsComponent,
+    AdsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

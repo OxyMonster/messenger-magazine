@@ -8,14 +8,16 @@
         p {
             font-weight: bolder;
             color: $dark-grey;
-            font-size: 1rem;
+            font-size: 1.2rem;
             margin: 0;
+            font-family: 'Lora', serif;
+
         }
         
         span {
-            font-size: .775rem;
+            font-size: .875rem;
             color: $dark-grey;
-            font-weight: bold;
+            // font-weight: bold;
         };
     }
 
@@ -58,6 +60,7 @@
             margin: 0;
             // border: 1px solid transparent;
             padding: .4rem;
+            
 
         }  
 
