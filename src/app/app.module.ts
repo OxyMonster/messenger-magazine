@@ -20,6 +20,7 @@ import { PopularNewsComponent } from './home/popular-news/popular-news.component
 import { AdsComponent } from './home/ads/ads.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeadlinesComponent } from './headlines/headlines.component';
  
 
 @NgModule({
@@ -38,7 +39,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MainNewsComponent,
     PopularNewsComponent,
     AdsComponent,
-    FooterComponent
+    FooterComponent,
+    HeadlinesComponent
   ],
   imports: [
     BrowserModule,
