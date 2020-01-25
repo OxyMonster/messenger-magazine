@@ -10,12 +10,12 @@ import { HeadlinesComponent } from './headlines/headlines.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent, data: { animation: 'isLeft' }  },
-  { path: 'news', component: NewsComponent, data: { animation: 'isRight' } },
-  { path: 'headlines', component: HeadlinesComponent, data: { animation: 'isLeft' } },
-  { path: 'about-us', component: AboutUsComponent, data: { animation: 'isRight' } },
-  { path: 'advertisement', component: AdvertisementComponent, data: { animation: 'isRight' } },
-  { path: 'contact', component: ContactComponent, data: { animation: 'isLeft' }  },
+  { path: 'home', component: HomeComponent, data: { animation: '1' }  },
+  { path: 'news', component: NewsComponent, data: { animation: '2' } },
+  { path: 'headlines', component: HeadlinesComponent,  data: { animation: '3' } },
+  { path: 'about-us', component: AboutUsComponent, data: { animation: '4' }  },
+  { path: 'advertisement', component: AdvertisementComponent, data: { animation: '5' } },
+  { path: 'contact', component: ContactComponent, data: { animation: '6' } },
 ];
 
 @NgModule({

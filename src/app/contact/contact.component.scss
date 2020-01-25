@@ -26,4 +26,45 @@
             }
         }
     }
+
+    &__description  {
+        &__title {
+            p {
+                font-size: 1rem;
+                font-weight: 500;
+                // color: $dark-grey;
+                padding-bottom: 1.5rem;
+                border-bottom: 1px solid $dark-grey;
+
+            }
+        }
+        &__contact {
+            margin-top: 2rem;
+            &__email {
+                
+                text-align: center;
+                margin-top: 1rem;
+                i {
+                    font-size: 1.3rem;
+                    color: $red;
+                    margin-right: .6rem;
+                    text-align: center;
+                    margin-top: .2rem;
+
+                }
+                p {
+                    color: $red;
+                    font-weight: bolder;
+                    margin-right: .5rem;
+                    font-size: 1rem;
+                }
+                span {
+                    font-size: .875rem;
+                    text-align: left;
+                    line-height: 1.5rem;
+                    // font-weight: bolder;
+                }
+            }
+        }
+    }
 }

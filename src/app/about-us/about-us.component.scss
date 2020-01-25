@@ -23,6 +23,9 @@
                     text-align: center;
                     font-family: 'Lora', serif;
                     font-size: 2rem;
+                    display: inline;
+                    border-bottom: 2px solid $black;
+                    padding-bottom: .5rem;
                 }
             }
 
@@ -63,16 +66,18 @@
 
                 h4 {
                     font-size: 1rem;
-                    font-weight: bold;
-                    font-family: 'Lora', serif;
+                    font-weight: 400;
                     color: $red;
                     display: inline;
+                    // color: #d00710;
 
                 }
 
                  p {
                      color: $black;
-                     font-size: .875rem;
+                     font-size: .975rem;
+                     font-family: 'Lora', serif;
+
                     //  font-weight: bold;
 
                  }
@@ -85,7 +90,7 @@
 .staff-border {
     // border: 2px solid $black;
     padding: 2rem;
-    border-radius: .5rem;
+    border-radius: 2rem;
     background-color: #e8e8e8d2;
     box-shadow: $shadow;
 
