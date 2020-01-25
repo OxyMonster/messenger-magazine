@@ -17,6 +17,7 @@
 
     &__description {
         background-color: $grey;
+        border-radius: .5rem;
         h4 {
             font-size: 1.3rem;
             font-family: 'Lora', serif;
@@ -29,6 +30,7 @@
         p {
             font-size: .875rem;
             color: $dark-grey;
+            width: 100%;
         }
     }
 }

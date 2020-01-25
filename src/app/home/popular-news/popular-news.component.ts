@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-popular-news',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PopularNewsComponent implements OnInit {
 
-  constructor() { }
+  isHeadlinesPage: boolean = false; 
+
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    this.router.url === '/headlines' ? this.isHeadlinesPage = true : this.isHeadlinesPage = false; 
   }
 
 }

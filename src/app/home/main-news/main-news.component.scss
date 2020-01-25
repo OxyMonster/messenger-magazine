@@ -1,6 +1,7 @@
 @import "src/assets/variables"; 
 
 .main {
+    border-bottom: 1px solid $dark-grey;
     &__title {
         h4 {
             font-family: 'Lora', serif;
