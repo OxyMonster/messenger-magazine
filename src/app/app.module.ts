@@ -12,7 +12,6 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { NewsComponent } from './news/news.component';
 import { AboutUsComponent } from './about-us/about-us.component';
-import { SubscriptionComponent } from './subscription/subscription.component';
 import { AdvertisementComponent } from './advertisement/advertisement.component';
 import { ContactComponent } from './contact/contact.component';
 import { MainNewsComponent } from './home/main-news/main-news.component';
@@ -32,8 +31,7 @@ import { HeadlinesComponent } from './headlines/headlines.component';
     NavigationComponent,    
     HomeComponent,
     NewsComponent,
-    AboutUsComponent,
-    SubscriptionComponent,
+    AboutUsComponent, 
     AdvertisementComponent,
     ContactComponent,
     MainNewsComponent,
