@@ -1,0 +1,19 @@
+<div class="add-headlines">
+    <form action="" [formGroup]="headlinesForm"  (ngSubmit)="onSubmit(headlinesForm)">
+        <div class="col-12">
+            <input type="text" class="formcontrol" formControlName="title">
+        </div>
+        <div class="col-12">
+            <input type="text" class="formcontrol" formControlName="description">
+        </div>
+        <div class="col-12">
+            <input type="text" class="formcontrol" formControlName="date">
+        </div>
+        <div class="col-12">
+            <input type="file" name="" id="">
+        </div>
+        <div class="col-12 button-submit">
+            <button type="submit">Add Headlines</button>
+        </div>
+    </form>
+</div>

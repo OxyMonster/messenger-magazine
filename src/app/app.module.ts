@@ -20,6 +20,8 @@ import { AdsComponent } from './home/ads/ads.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeadlinesComponent } from './headlines/headlines.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { AdminPanelModule } from './admin-panel/admin-panel.module';
  
 
 @NgModule({
@@ -38,9 +40,11 @@ import { HeadlinesComponent } from './headlines/headlines.component';
     PopularNewsComponent,
     AdsComponent,
     FooterComponent,
-    HeadlinesComponent
+    HeadlinesComponent,
+    AdminPanelComponent,
   ],
   imports: [
+    AdminPanelModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule,

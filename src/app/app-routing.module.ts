@@ -16,6 +16,8 @@ const routes: Routes = [
   { path: 'about-us', component: AboutUsComponent, data: { animation: '4' }  },
   { path: 'advertisement', component: AdvertisementComponent, data: { animation: '5' } },
   { path: 'contact', component: ContactComponent, data: { animation: '6' } },
+  { path: '**', redirectTo: '/404'}
+
 ];
 
 @NgModule({
