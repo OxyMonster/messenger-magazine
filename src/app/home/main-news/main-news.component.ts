@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { HomeService } from '../home.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class MainNewsComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    this.getAllNews();
+    this.getAllNews(); 
   }
 
   getAllNews() {
@@ -23,10 +23,8 @@ export class MainNewsComponent implements OnInit, OnDestroy {
                .getNews()
                .subscribe(data => {
                  
-                 console.log(data);
                  this.allNews = data['newsData'];
                  console.log(this.allNews);
-                 
 
                }, err => {
                  console.log(err);
@@ -35,7 +33,9 @@ export class MainNewsComponent implements OnInit, OnDestroy {
   }; 
 
 
+
   ngOnDestroy(): void {
+    
     this.getAllNews().unsubscribe(); 
   }
 

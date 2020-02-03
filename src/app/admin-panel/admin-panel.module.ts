@@ -9,9 +9,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminPanelComponent } from './admin-panel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminNavigationComponent } from './admin-navigation/admin-navigation.component';
 
-
+  
 const routes: Routes = [
+
      { path: 'admin', component: AdminPanelComponent, children: [
      { path: 'add-news', component: AddNewsComponent },
      { path: 'add-headlines', component: AddHeadlinesComponent },
@@ -20,23 +22,32 @@ const routes: Routes = [
    ] }
 ]
 
-
-@NgModule({
-  declarations: [
-    AddNewsComponent, 
+const COMPONENTS = [
+  AddNewsComponent, 
     AddHeadlinesComponent, 
     AllNewsComponent, 
     AllHeadlinesComponent, 
     AllNewsComponent, 
-    AllHeadlinesComponent],
+    AllHeadlinesComponent, 
+    AdminNavigationComponent,
+]
+
+
+@NgModule({
+  declarations: 
+    COMPONENTS
+  ,
   imports: [
-    RouterModule.forRoot(routes),
+    RouterModule.forChild(routes),
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
   ], 
-  exports: [RouterModule]
+  exports: [
+    COMPONENTS,
+    RouterModule,
+  ]
 })
 
 

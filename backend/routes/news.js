@@ -28,6 +28,34 @@ router.post('/news', (req, res) => {
 
 }); 
 
+router.get('/news', (req, res) => {
+    
+    newsModel.find()
+             .then(data => {
+                res.status(200).json( { 'newsData': data } ); 
+            })
+             .catch(err => {
+                res.status(404).json(err); 
+            }); 
+}); 
+
+router.delete('/news/:id', (req, res) => {
+    console.log(req.params.id);
+    const id = req.params.id; 
+
+    newsModel.findByIdAndRemove(id)
+             .then(data => {
+                 console.log(data);
+                 res.status(200).json(data)
+             }, err => {
+                 console.log(err);
+                 res.status(400).json(err); 
+             }); 
+    
+}); 
+
+
+
 
 
  

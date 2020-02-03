@@ -1,5 +1,14 @@
 <ng-container *ngIf="isAdminActive; else showApp">
-  <app-admin-panel ></app-admin-panel>
+  <div class="container-fluid h-100">
+    <div class="row h-100">
+      <div class="admin-navingation col-md-3">
+        <app-admin-navigation></app-admin-navigation>
+    </div>
+    <div class="content col-md-9 mt-5">
+        <app-admin-panel ></app-admin-panel>
+    </div>
+    </div>
+  </div>
 </ng-container>
 
 <ng-template #showApp>
@@ -19,7 +28,7 @@
      </div>
   
      <!-- * * * Router Content * * *  -->
-     <div class="col-md-12 mt-3 p-0 pb-5" [@routeAnimations]="prepareRoute(outlet)">
+     <div class="col-12 mt-3 p-0 pb-5" [@routeAnimations]="prepareRoute(outlet)">
        <router-outlet #outlet="outlet" ></router-outlet>
      </div>
    </div>

@@ -27,8 +27,8 @@ export class AppComponent {
 
     this.router.events.subscribe((url:any) => {
       
-      url.url === '/admin' || this.router.url === '/admin' ? this.isAdminActive = true : this.isAdminActive = false;
-      console.log(this.isAdminActive);
+
+      this.router.url.includes('/admin') ? this.isAdminActive = true : this.isAdminActive = false;
       
     });
     

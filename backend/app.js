@@ -15,7 +15,7 @@ app.use(bodyParser());
 
 
 
-app.use(homeRoute);
+// app.use(homeRoute);
 app.use(newsRoute); 
 app.use(headlinesRoute); 
 

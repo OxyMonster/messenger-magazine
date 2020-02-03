@@ -12,9 +12,16 @@ constructor(
 
 
 getNews() {
-  const url = 'http://localhost:3000/home'; 
+  const url = 'http://localhost:3000/news'; 
 
   return this.http.get(url); 
+}; 
+
+getAllHeadlines() {
+  const url = 'http://localhost:3000/headlines';
+  
+  return this.http.get(url); 
+
 }
 
 }
