@@ -5,7 +5,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');  
 
 // * * * Routes * * *
-const homeRoute = require('./routes/home');
+const uploadRoutes = require('./routes/file-uploads');
 const newsRoute = require('./routes/news');
 const headlinesRoute = require('./routes/headlines');
 
@@ -15,7 +15,7 @@ app.use(bodyParser());
 
 
 
-// app.use(homeRoute);
+app.use(uploadRoutes);
 app.use(newsRoute); 
 app.use(headlinesRoute); 
 

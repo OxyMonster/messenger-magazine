@@ -4,7 +4,7 @@ const headlinesSchema = new mongoose.Schema({
     title: String, 
     description: String,
     date: String,
-    // file: ''
+    file: Object
 }); 
 
 const Headlines = mongoose.model('Headlines',headlinesSchema ); 

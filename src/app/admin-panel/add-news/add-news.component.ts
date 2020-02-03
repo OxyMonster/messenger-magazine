@@ -9,30 +9,56 @@ import { AdminPanelService } from '../admin-panel.service';
 })
 export class AddNewsComponent implements OnInit {
 
-  newsForm: FormGroup
+  newsForm: FormGroup; 
+  fileToUpload: File; 
+
 
   constructor(
     private fb: FormBuilder, 
     private adminService: AdminPanelService
 
   ) {
-    this.newsForm = this.fb.group({
+    this.newsForm = this.fb.group({ 
       title: '',
       description: '',
       date: '',
-      file: null
+      file: null 
     })
    }
 
   ngOnInit() {
-  }
-
-
-  onSubmit(newsForm) {
     
-    console.log(newsForm.value);
+  }
+ 
+
+  onFileUpload(files: File) {
+
+    this.fileToUpload = files[0];
+    
+    const formData = new FormData(); 
+    formData.append('file', this.fileToUpload); 
+
+    this.newsForm.value.file = formData; 
+    
+  
+    
+  };
+
+
+
+  onSubmit() {
+
+    const fd = new FormData(); 
+    fd.append('file', this.fileToUpload); 
+    fd.append('title', this.newsForm.get('title').value);
+    fd.append('description', this.newsForm.get('description').value);
+    fd.append('date', this.newsForm.get('date').value); 
+
+
+
+    
     this.adminService
-        .addNews(newsForm.value) 
+        .addNews(fd) 
         .subscribe(data => {
           console.log(data);
           

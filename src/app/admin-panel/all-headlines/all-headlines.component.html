@@ -4,7 +4,7 @@
     </div>
     <div class="main__details col-12 mt-3" *ngIf="item.isActive">
         <p> {{ "ID: " + item._id }} </p>
-        <p> {{ "Tile: " + item.title }} </p>
+        <p> {{ "Title: " + item.title }} </p>
         <p> {{ "Description: " + item.description }} </p>
         <button class="btn btn-danger" (click)="deleteHeadlines( i, item._id )">Remove</button>
     </div>

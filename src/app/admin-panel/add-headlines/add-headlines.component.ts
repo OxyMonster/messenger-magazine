@@ -10,6 +10,8 @@ import { AdminPanelService } from '../admin-panel.service';
 export class AddHeadlinesComponent implements OnInit {
 
   headlinesForm: FormGroup; 
+  fileToUpload: File = null;
+
 
   constructor(
     private fb: FormBuilder,
@@ -27,10 +29,27 @@ export class AddHeadlinesComponent implements OnInit {
   ngOnInit() {
   }
 
+  onFileUpload(files: File) {
+    this.fileToUpload = files[0]; 
+    console.log(this.fileToUpload);
+    
+    
+  }
 
-  onSubmit(headlinesForm) {
+
+  onSubmit() {
+    
+    const fd = new FormData(); 
+    fd.append('file', this.fileToUpload); 
+    fd.append('title', this.headlinesForm.get('title').value);
+    fd.append('description', this.headlinesForm.get('description').value);
+    fd.append('date', this.headlinesForm.get('date').value); 
+
+
+
+
     this.adminService
-        .addHeadlines(headlinesForm.value)
+        .addHeadlines(fd)
         .subscribe(data => {
           console.log(data);
           

@@ -4,7 +4,7 @@ const newsSchema = new mongoose.Schema({
     title: String, 
     description: String,
     date: String,
-    // file: ''
+    file: Object
 }); 
 
 const News = mongoose.model('News',newsSchema ); 

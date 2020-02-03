@@ -1,8 +1,4 @@
-<div class="main p-2 row">
-    <div class="loading" *ngIf="allNews.lenght <= 0; else showHeadlies">
-        <h1>Wait . . .</h1>
-    </div>
-    <ng-template #showHeadlies>
+<div class="main p-2 row" *ngIf="allNews.length > 0 ">
         <div class="" *ngFor="let item of allNews">
             <div class="main__title col-12">
                 <h4> {{ item.title }} </h4>
@@ -20,7 +16,7 @@
             </div>
             <div class="main__image mt-3 d-flex justify-content-center">
                 <div class="main__image__content">
-                    <img src="assets/image/2.png" alt="">
+                    <img [src]="'http://localhost:3000/' + item.file.path" alt="">
                 </div>
             </div>
         
@@ -35,6 +31,4 @@
             </div>
     
         </div>
-    </ng-template>
-    
 </div>

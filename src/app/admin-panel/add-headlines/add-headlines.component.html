@@ -1,5 +1,5 @@
 <div class="add-headlines">
-    <form action="" [formGroup]="headlinesForm"  (ngSubmit)="onSubmit(headlinesForm)">
+    <form action="" [formGroup]="headlinesForm"  (ngSubmit)="onSubmit()">
         <div class="col-12">
             <input type="text" class="formcontrol" placeholder="title" formControlName="title">
         </div>
@@ -10,7 +10,8 @@
             <input type="text" class="formcontrol" placeholder="date" formControlName="date">
         </div>
         <div class="col-12">
-            <input type="file" name="" id="">
+            <input type="file" 
+                   (change)="onFileUpload($event.target.files)">
         </div>
         <div class="col-12 button-submit">
             <button type="submit">Add Headlines</button>

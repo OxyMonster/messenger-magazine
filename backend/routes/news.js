@@ -1,17 +1,33 @@
 const express = require('express'); 
 const router = express.Router(); 
+const multer = require('multer'); 
+
 const newsModel = require('../models/news-model'); 
 
 
-router.post('/news', (req, res) => {
-    
+let storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, 'uploads'); 
+    },
+    filename: function(req, file, cb ) {
+        cb(null, Date.now() + file.originalname)
+    }
+}); 
+
+
+let upload  = multer({storage: storage}); 
+
+
+router.post('/news', upload.single('file'), (req, res) => {
+
     const news = new newsModel({
         title: req.body.title,
         description: req.body.description,
         date: req.body.date,
-        file: req.body.file
+        file: req.file
     }); 
-    
+    console.log(req.file);
+        
    
     news.save()
              .then(data => {

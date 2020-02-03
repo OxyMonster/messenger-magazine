@@ -1,16 +1,33 @@
 const express = require('express'); 
 const router = express.Router(); 
 const headlinesModel = require('../models/headlines-model'); 
+const multer = require('multer'); 
 
 
 
-router.post('/headlines', (req, res) => {
+let storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, 'uploads'); 
+    },
+    filename: function(req, file, cb ) {
+        cb(null, Date.now() + file.originalname)    
+    }
+}); 
+
+let upload  = multer({storage: storage});        
+
+
+
+router.post('/headlines', upload.single('file'), (req, res) => {
     const headlines = new headlinesModel({
         title: req.body.title,
         description: req.body.description,
         date: req.body.date,
-        file: req.body.file, 
+        file: req.file, 
     }); 
+
+    console.log(req.file);
+    
 
     headlines.save()
              .then(data => {
@@ -40,13 +57,13 @@ router.delete('/headlines/:id', (req, res) => {
     const id = req.params.id; 
 
     headlinesModel.findByIdAndRemove(id)
-             .then(data => {
-                 console.log(data);
-                 res.status(200).json('Deleted')
-             }, err => {
-                 console.log(err);
-                 res.status(400).json(err); 
-             }); 
+                  .then(data => {
+                        console.log(data);
+                        res.status(200).json('Deleted')
+                    }, err => {
+                        console.log(err);
+                        res.status(400).json(err); 
+                    }); 
     
 }); 
   
