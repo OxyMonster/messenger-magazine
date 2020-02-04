@@ -31,7 +31,7 @@ export class HeadlinesComponent implements OnInit {
                .getAllHeadlines()
                .subscribe(data => {
             
-                 this.allHeadlines = data['headlinesData']; 
+                 this.allHeadlines = data['headlinesData'].reverse(); 
                  console.log(this.allHeadlines);
                  
                }, err => {

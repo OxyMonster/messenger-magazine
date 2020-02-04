@@ -1,20 +1,20 @@
 <div class="add-headlines" *ngIf="!isFormSubmitted; else showSubmitted">
     <form action="" [formGroup]="headlinesForm"  (ngSubmit)="onSubmit()">
-        <div class="col-12">
-            <input type="text" class="formcontrol" placeholder="title" formControlName="title">
+        <div class="col-12 mt-3">
+            <input type="text" class="input-group-text" placeholder="title" formControlName="title">
         </div>
-        <div class="col-12">
-            <input type="text" class="formcontrol" placeholder="description" formControlName="description">
+        <div class="col-12 mt-3">
+            <input type="text" class="input-group-text" placeholder="description" formControlName="description">
         </div>
-        <div class="col-12">  
-            <input type="text" class="formcontrol" placeholder="date" formControlName="date">
+        <div class="col-12 mt-3">  
+            <input type="text" class="input-group-text" placeholder="date" formControlName="date">
         </div>
-        <div class="col-12">
+        <div class="col-12 mt-3">
             <input type="file" 
                    (change)="onFileUpload($event.target.files)">
         </div>
-        <div class="col-12 button-submit">
-            <button type="submit">Add Headlines</button>
+        <div class="col-12 mt-4 button-submit">
+            <button type="submit" class="btn btn-dark btn-lg">Add Headlines</button>
         </div>
     </form>
 </div>

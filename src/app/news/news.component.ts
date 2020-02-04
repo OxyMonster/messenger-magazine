@@ -25,7 +25,7 @@ export class NewsComponent implements OnInit {
                .getNews()
                .subscribe(data => {
                  
-                 this.allNews = data['newsData'];
+                 this.allNews = data['newsData'].reverse();
                  console.log(this.allNews);
                  this.result.emit(this.allNews.length); 
 

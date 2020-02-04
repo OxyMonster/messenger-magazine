@@ -1,17 +1,18 @@
 <div class="add-news" *ngIf="!isFormSubmited; else showFormSubmitted">
     <form action="" [formGroup]="newsForm"  (ngSubmit)="onSubmit()">
         <div class="col-12 mt-3">
-            <input type="text" class="formcontrol" placeholder="title" formControlName="title">
+            <input type="text" class="input-group-text" placeholder="title" formControlName="title">
         </div>
         <div class="col-12 mt-3">
-            <input type="text" class="formcontrol" placeholder="description" formControlName="description">
+            <input type="text" class="input-group-text" placeholder="description" formControlName="description">
         </div>
         <div class="col-12 mt-3">  
             <input type="text" class="input-group-text" placeholder="date" formControlName="date">
         </div>
         <div class="col-12 mt-3">
             <input type="file" 
-                   (change) = 'onFileUpload($event.target.files)'>
+                   (change) = 'onFileUpload($event.target.files)'
+                   style="outline: none;">
         </div>  
         <div class="col-12 button-submit mt-4">
             <button type="submit" class="btn btn-dark btn-lg">Add news</button>
