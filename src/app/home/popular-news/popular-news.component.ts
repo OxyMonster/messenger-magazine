@@ -43,7 +43,7 @@ export class PopularNewsComponent implements OnInit {
 
   ngOnDestroy(): void {
     
-    this.getAllHeadlines().unsubscribe(); 
+    // this.getAllHeadlines().unsubscribe(); 
     
   }
 

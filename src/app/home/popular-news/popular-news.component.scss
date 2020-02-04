@@ -5,10 +5,11 @@
         text-align: center;
 
         h4 {    
-            color: $black;
-            font-weight: bold;
-            font-size: 1rem;
-            font-family: 'Lora', serif;
+            font-family: "Lora", serif;
+            font-weight: bolder;
+            font-size: 2rem;
+            border-bottom: 2px solid black;
+            padding-bottom: .7rem;
 
         }
         span {

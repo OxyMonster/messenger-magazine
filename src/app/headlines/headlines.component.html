@@ -1,10 +1,23 @@
 <!-- <div class="row"> -->
-    <div class="headlines row">
-        <div class="headlines__title col-12 mt-4">
-            <h1>Headlines</h1> 
-        </div>
+    <div class="headlines" *ngIf="allHeadlines.length > 0">
         <div class="headlines__content col-md-12">
-            <app-popular-news></app-popular-news>
+            <div class="popular row p-3 mb-5" >
+                <div class="mt-3"*ngFor="let item of allHeadlines">
+                    <div class="popular__title col-12">
+                        <h4> {{ item.title }} </h4>
+                        <span> {{ item.date }} </span>
+                    </div>
+                    <div class="popular__img col-12 mt-3 d-flex justify-content-center">
+                        <div class="popular__img__content">
+                            <img [src]="'http://localhost:3000/' + item.file.path" alt="">
+                        </div>
+                    </div>
+                    <div class="popular__description mt-4 col-12">
+                        <h4>{{ item.title }}</h4>
+                        <span> {{ item.description }} </span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 <!-- </div> -->

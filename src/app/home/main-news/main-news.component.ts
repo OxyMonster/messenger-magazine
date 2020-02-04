@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, Output, EventEmitter } from '@angular/core';
 import { HomeService } from '../home.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { HomeService } from '../home.service';
 })
 export class MainNewsComponent implements OnInit, OnDestroy {
 
+  @Output() result = new EventEmitter<any>();
   allNews: [] = []; 
 
   constructor(
@@ -25,6 +26,7 @@ export class MainNewsComponent implements OnInit, OnDestroy {
                  
                  this.allNews = data['newsData'];
                  console.log(this.allNews);
+                 this.result.emit(this.allNews.length); 
 
                }, err => {
                  console.log(err);
@@ -32,11 +34,15 @@ export class MainNewsComponent implements OnInit, OnDestroy {
                })
   }; 
 
+  getNews(e)   {
+    console.log(e);
+    
+  }
 
 
   ngOnDestroy(): void {
     
-    this.getAllNews().unsubscribe(); 
+    // this.getAllNews().unsubscribe(); 
   }
 
 }

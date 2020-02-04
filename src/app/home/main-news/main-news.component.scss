@@ -2,11 +2,23 @@
 
 .main {
     border-bottom: 1px solid $dark-grey;
+
     &__title {
         h4 {
             font-family: 'Lora', serif;
             font-weight: bolder;
             font-size: 2rem;
+            border-bottom: 2px solid black;
+        }
+
+        h3 {
+            font-family: 'Lora', serif;
+            font-weight: bolder;
+            text-align: center;
+            border-bottom: 2px solid $black;
+            padding-bottom: .2rem;
+            letter-spacing: .3rem;
+
         }
     }
     &__social {

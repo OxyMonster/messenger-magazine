@@ -1,4 +1,4 @@
-<div class="add-headlines">
+<div class="add-headlines" *ngIf="!isFormSubmitted; else showSubmitted">
     <form action="" [formGroup]="headlinesForm"  (ngSubmit)="onSubmit()">
         <div class="col-12">
             <input type="text" class="formcontrol" placeholder="title" formControlName="title">
@@ -6,7 +6,7 @@
         <div class="col-12">
             <input type="text" class="formcontrol" placeholder="description" formControlName="description">
         </div>
-        <div class="col-12">
+        <div class="col-12">  
             <input type="text" class="formcontrol" placeholder="date" formControlName="date">
         </div>
         <div class="col-12">
@@ -18,3 +18,10 @@
         </div>
     </form>
 </div>
+
+<ng-template #showSubmitted>
+    <div class="submited">
+        <h1>Submited</h1>
+        <button (click)="submitFormAgain()" class="btn btn-primary">Add another Headline</button>
+    </div>
+</ng-template>

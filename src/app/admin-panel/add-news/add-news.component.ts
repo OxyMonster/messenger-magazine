@@ -11,6 +11,7 @@ export class AddNewsComponent implements OnInit {
 
   newsForm: FormGroup; 
   fileToUpload: File; 
+  isFormSubmited: boolean = false; 
 
 
   constructor(
@@ -60,13 +61,21 @@ export class AddNewsComponent implements OnInit {
     this.adminService
         .addNews(fd) 
         .subscribe(data => {
+          
           console.log(data);
+          this.isFormSubmited = true; 
+          this.newsForm.reset(); 
           
         }, err => {
           console.log(err);
         }); 
         
     
-  }
+  }; 
+
+  submitFormAgain() {
+    return this.isFormSubmited = false; 
+    
+  } 
 
 }

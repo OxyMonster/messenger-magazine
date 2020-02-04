@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { HomeService } from '../home/home.service';
 
 @Component({
   selector: 'app-news',
@@ -7,9 +8,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsComponent implements OnInit {
 
-  constructor() { }
+ 
+  @Output() result = new EventEmitter<any>();
+  allNews: [] = []; 
+
+  constructor(
+    private homeService: HomeService
+  ) { }
 
   ngOnInit() {
+    this.getAllNews(); 
   }
 
+  getAllNews() {
+    return this.homeService
+               .getNews()
+               .subscribe(data => {
+                 
+                 this.allNews = data['newsData'];
+                 console.log(this.allNews);
+                 this.result.emit(this.allNews.length); 
+
+               }, err => {
+                 console.log(err);
+                 
+               })
+  }; 
+
+  getNews(e)   {
+    console.log(e);
+    
+  }
+
+
+  ngOnDestroy(): void {
+    
+    // this.getAllNews().unsubscribe(); 
+  }
 }

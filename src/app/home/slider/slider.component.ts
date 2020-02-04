@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
+import { HomeService } from '../home.service';
 
 @Component({
   selector: 'app-slider',
@@ -8,13 +9,18 @@ import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/n
 })
 export class SliderComponent implements OnInit {
 
-  constructor() { }
+
+  allHeadlineImages: any[] = []; 
+
+  constructor(
+    private homeService: HomeService
+  ) { }
 
   ngOnInit() {
-
+    this.getHeadlines(); 
   }
 
-  images = [62, 83, 466, 965, 982, 1043, 738].map((n) => `https://picsum.photos/id/${n}/900/500`);
+  images: any[] = [];
 
   paused = false;
   unpauseOnArrow = false;
@@ -40,6 +46,24 @@ export class SliderComponent implements OnInit {
     if (this.pauseOnIndicator && !slideEvent.paused && slideEvent.source === NgbSlideEventSource.INDICATOR) {
       this.togglePaused();
     }
+  }
+
+
+  getHeadlines() {
+    return this.homeService
+               .getAllHeadlines()
+               .subscribe(data => {
+                this.allHeadlineImages = data['headlinesData'].map(item => {
+                   return item.file
+                 }); 
+
+                //  console.log(this.allHeadlineImages);
+                 this.images = this.allHeadlineImages.map( item => { return item.path } )
+                 
+               }, err => {
+                 console.log(err);
+                 
+               })
   }
 
 }

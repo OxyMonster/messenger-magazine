@@ -1,18 +1,17 @@
-<div class="popular row p-3" *ngFor="let item of allHeadlines">
-    <div class="popular__title col-12">
-        <h4>In the headlines</h4>
-        <span>01.01.2020</span>
-    </div>
-    <div class="popular__img col-12 mt-3 d-flex justify-content-center">
-        <div class="popular__img__content">
-            <img [src]="'http://localhost:3000/' + item.file.path" alt="">
+<div class="popular row p-3 mb-5" >
+    <div class="mt-3"*ngFor="let item of allHeadlines">
+        <div class="popular__title col-12">
+            <h4> {{ item.title }} </h4>
+            <span> {{ item.date }} </span>
         </div>
-    </div>
-    <div class="popular__description mt-4 col-12">
-        <h4>{{ item.title }}</h4>
-        <span>Lorem ipsum dolor sit amet consectetur, 
-            adipisicing elit. Laudantium sapiente pariatur 
-            est maiores sed, eius a dolorem assumenda, facere nulla aspernatur incidunt debitis
-            soluta repellendus rem cumque doloremque consectetur ab.</span>
+        <div class="popular__img col-12 mt-3 d-flex justify-content-center">
+            <div class="popular__img__content">
+                <img [src]="'http://localhost:3000/' + item.file.path" alt="">
+            </div>
+        </div>
+        <div class="popular__description mt-4 col-12">
+            <h4>{{ item.title }}</h4>
+            <span> {{ item.description }} </span>
+        </div>
     </div>
 </div>

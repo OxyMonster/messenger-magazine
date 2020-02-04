@@ -25,7 +25,7 @@ export class AllNewsComponent implements OnInit, OnDestroy {
                .getNews()
                .subscribe(data => {
                 
-                 data['newsData'].map(item => item.isActive = false ); 
+                 data['newsData'].map( item => item.isActive = false ); 
                  this.allNews = data['newsData'];
                  console.log(this.allNews);
                   
@@ -33,12 +33,12 @@ export class AllNewsComponent implements OnInit, OnDestroy {
                }, err => {
                  console.log(err);
                  
-               })
+               }); 
   }; 
 
   toggleNews(index: number) {
     
-    const item = this.allNews[index]
+    const item = this.allNews[index]; 
     item.isActive === false ? item.isActive = true : item.isActive = false; 
    
     
@@ -48,6 +48,7 @@ export class AllNewsComponent implements OnInit, OnDestroy {
     return this.adminService
                .deleteNews(newsID)
                .subscribe(data => {
+                 
                  console.log(data);
                  this.allNews.splice(index, 1); 
                  

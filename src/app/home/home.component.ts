@@ -6,7 +6,7 @@ import { HomeService } from './home.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements OnInit {
 
   allNews: [] = []; 
   allHeadlines: [] = []; 
@@ -18,8 +18,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit() {
 
     this.getAllNews(); 
-    this.getAllHeadlines(); 
-
+    // this.getAllHeadlines(); 
+ 
   }
 
 
@@ -39,21 +39,19 @@ export class HomeComponent implements OnInit, OnDestroy {
   }; 
 
 
-  getAllHeadlines() {
-    return this.homeService
-               .getAllHeadlines()
-               .subscribe(data => {
+  // getAllHeadlines() {
+  //   return this.homeService
+  //              .getAllHeadlines()
+  //              .subscribe(data => {
             
-                 this.allHeadlines = data['headlinesData']; 
-                 console.log(this.allHeadlines);
+  //                this.allHeadlines = data['headlinesData']; 
+  //                console.log(this.allHeadlines);
                  
-               }, err => {
-                 console.log(err);
+  //              }, err => {
+  //                console.log(err);
                  
-               })
-  }; 
-
-
+  //              })
+  // }; 
 
 
 

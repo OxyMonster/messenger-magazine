@@ -13,25 +13,25 @@
 
 <ng-template #showApp>
   <div class="container" *ngIf="!isAdminActive">
-   <div class="row">
-     <!-- * * * Search * *  -->
-     <div class="col-md-12 mt-3">
-       <app-search></app-search>
-     </div>
-     <!-- * * * Main Header with Logo * *  -->
-     <div class="col-md-12 mt-3">
-       <app-header></app-header>
-     </div>
-      <!-- * * * Navigation * *  -->
-     <div class="col-md-12">
-       <app-navigation></app-navigation>
-     </div>
-  
-     <!-- * * * Router Content * * *  -->
-     <div class="col-12 mt-3 p-0 pb-5" [@routeAnimations]="prepareRoute(outlet)">
-       <router-outlet #outlet="outlet" ></router-outlet>
-     </div>
-   </div>
+    <div class="row">
+      <!-- * * * Search * *  -->
+      <div class="col-md-12 mt-3">
+        <app-search></app-search>
+      </div>
+      <!-- * * * Main Header with Logo * *  -->
+      <div class="col-md-12 mt-3">
+        <app-header></app-header>
+      </div>
+        <!-- * * * Navigation * *  -->
+      <div class="col-md-12">
+        <app-navigation></app-navigation>
+      </div>
+    
+      <!-- * * * Router Content * * *  -->
+      <div class="col-12 mt-3 p-0 pb-5" [@routeAnimations]="prepareRoute(outlet)">
+        <router-outlet #outlet="outlet" ></router-outlet>
+      </div>
+    </div>
   </div>
   
   <!-- * * * Footer * * * -->

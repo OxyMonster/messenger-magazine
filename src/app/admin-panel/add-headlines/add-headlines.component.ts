@@ -12,6 +12,8 @@ export class AddHeadlinesComponent implements OnInit {
   headlinesForm: FormGroup; 
   fileToUpload: File = null;
 
+  isFormSubmitted: boolean = false; 
+
 
   constructor(
     private fb: FormBuilder,
@@ -51,13 +53,21 @@ export class AddHeadlinesComponent implements OnInit {
     this.adminService
         .addHeadlines(fd)
         .subscribe(data => {
+
           console.log(data);
+          this.isFormSubmitted = true; 
+          this.headlinesForm.reset();
           
         }, err => {
           console.log(err);
+          
         }); 
     
     
-  }
+  }; 
+
+  submitFormAgain() {
+    return this.isFormSubmitted = false; 
+  }; 
 
 }
