@@ -14,8 +14,8 @@ import { NewsComponent } from './news/news.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AdvertisementComponent } from './advertisement/advertisement.component';
 import { ContactComponent } from './contact/contact.component';
-import { MainNewsComponent } from './home/main-news/main-news.component';
-import { PopularNewsComponent } from './home/popular-news/popular-news.component';
+// import { MainNewsComponent } from './home/main-news/main-news.component';
+// import { PopularNewsComponent } from './home/popular-news/popular-news.component';
 import { AdsComponent } from './home/ads/ads.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -36,8 +36,8 @@ import { AdminPanelModule } from './admin-panel/admin-panel.module';
     AboutUsComponent, 
     AdvertisementComponent,
     ContactComponent,
-    MainNewsComponent,
-    PopularNewsComponent,
+    // MainNewsComponent,
+    // PopularNewsComponent,
     AdsComponent,
     FooterComponent,
     HeadlinesComponent,

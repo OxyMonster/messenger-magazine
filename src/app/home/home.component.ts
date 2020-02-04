@@ -8,8 +8,9 @@ import { HomeService } from './home.service';
 })
 export class HomeComponent implements OnInit {
 
-  allNews: [] = []; 
-  allHeadlines: [] = []; 
+  newsLength: number = 0; 
+  headlines: number = 0; 
+
 
   constructor(
     private homeService: HomeService
@@ -17,26 +18,17 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
-    this.getAllNews(); 
     // this.getAllHeadlines(); 
  
   }
 
 
-
-  getAllNews() {
-    return this.homeService
-               .getNews()
-               .subscribe(data => {
-                 
-                 this.allNews = data['newsData'];
-                 console.log(this.allNews);
-
-               }, err => {
-                 console.log(err);
-                 
-               })
-  }; 
+  getNewsLength(e) {
+    this.newsLength = e.length; 
+    console.log(e);
+    
+  }
+ 
 
 
   // getAllHeadlines() {
@@ -53,12 +45,6 @@ export class HomeComponent implements OnInit {
   //              })
   // }; 
 
-
-
-  ngOnDestroy() {
-    // this.getAllNews().unsubscribe(); 
-    // this.getAllHeadlines().unsubscribe(); 
-  }
 
 
 }
