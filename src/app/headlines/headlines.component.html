@@ -1,25 +1,30 @@
 <!-- <div class="row"> -->
-    <div class="headlines" *ngIf="allHeadlines.length > 0">
-        <div class="headlines__content col-md-12">
-            <div class="popular row p-3 mb-5" >
-                <div class="mt-3"*ngFor="let item of allHeadlines">
-                    <div class="popular__title col-12">
-                        <h4> {{ item.title }} </h4>
-                        <span> {{ item.date }} </span>
-                    </div>
-                    <div class="popular__img col-12 mt-3 d-flex justify-content-center">
-                        <div class="popular__img__content">
-                            <img [src]="'http://localhost:3000/' + item.file.path" alt="">
+    <ng-container *ngIf="allHeadlines.length > 0" >
+        <div [ngClass]="{'headlines p-3': router.url === '/headlines'}">
+            <div class="col-12 headlines-title mt-3">
+                <h4>Headlines</h4>
+            </div>
+            <div class="headlines__content col-md-12">
+                <div class="popular row p-3 mb-5" >
+                    <div class="mt-3"*ngFor="let item of allHeadlines">
+                        <div class="popular__title col-12">
+                            <span> {{ item.date }} </span>
                         </div>
-                    </div>
-                    <div class="popular__description mt-4 col-12">
-                        <h4>{{ item.title }}</h4>
-                        <span> {{ item.description }} </span>
+                        <div class="popular__img col-12 mt-3 d-flex justify-content-center">
+                            <div [ngClass]="{'popular__img__content': router.url === '/headlines', 
+                                             'content-on-main' :   router.url !== '/headlines'}">
+                                <img [src]="'http://localhost:3000/' + item.file.path" alt="">
+                            </div>
+                        </div>
+                        <div class="popular__description mt-4 col-12">
+                            <h4>{{ item.title }}</h4>
+                            <span> {{ item.description }} </span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </ng-container>
 
     
 <!-- </div> -->

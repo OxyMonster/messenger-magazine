@@ -1,8 +1,9 @@
 <div class="news row">
-    <div class="news__content col-md-12" *ngIf="allNews.length > 0 ">
+    <div class="col-md-12" *ngIf="allNews.length > 0 " [ngClass]="{'news__content': router.url === '/news'}">
         <div class="main p-2 row" >
-            <div class="col-12" *ngFor="let item of allNews">
-                <div class="main__title col-12">
+            <div class="col-12" *ngFor="let item of allNews; first as isFirst" 
+                                [ngClass]="{'mt-3': isFirst && router.url === '/news', 'mt-5': !isFirst && router.url === '/news'}">
+                <div class="main__title col-12" >
                     <h4> {{ item.title }} </h4>
                 </div>
                 <div class="main__social mt-2 col-12 d-flex justify-content-between">
@@ -11,21 +12,26 @@
                     </div>
                     <div class="col-md-3  d-flex justify-content-between">
                         <i class="fab fa-twitter"></i>
-                        <i class="fab fa-linkedin-in"></i>
+                        <i class="fab fa-linkedin-in"></i>  
                         <i class="fab fa-facebook-f"></i>
                         <i class="fab fa-instagram"></i>
                     </div>   
                 </div>
-                <div class="main__image mt-3 d-flex justify-content-center">
-                    <div class="main__image__content">
-                        <img [src]="'http://localhost:3000/' + item.file.path" alt="">
+                <div [ngClass]="{'row': router.url === '/news'}">
+                    <div class="main__image mt-3 d-flex justify-content-center" 
+                         [ngClass]="{'col-lg-6 main__image mt-3 d-flex justify-content-center': router.url === '/news'}">
+                        <div class="main__image__content">
+                            <img [src]="'http://localhost:3000/' + item.file.path"
+                                [ngClass]="{'border-radius': router.url === '/news'}">
+                        </div>
                     </div>
-                </div>
+                
+                    <div class="main__description mt-4"
+                         [ngClass]="{'col-lg-6 main__description': router.url === '/news'}">
+                        <p> {{item.description }} </p>
+                    </div>
             
-                <div class="main__description mt-4">
-                    <p> {{item.description }} </p>
                 </div>
-        
             </div>
         </div>
     </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { HomeService } from '../home/home.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-news',
@@ -13,7 +14,8 @@ export class NewsComponent implements OnInit {
   allNews: [] = []; 
 
   constructor(
-    private homeService: HomeService
+    private homeService: HomeService,
+    private router: Router
   ) { }
 
   ngOnInit() {

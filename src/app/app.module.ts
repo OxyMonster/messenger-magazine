@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeadlinesComponent } from './headlines/headlines.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { AdminPanelModule } from './admin-panel/admin-panel.module';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
  
 
 @NgModule({
@@ -51,7 +52,7 @@ import { AdminPanelModule } from './admin-panel/admin-panel.module';
     FormsModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
