@@ -33,17 +33,19 @@
             font-family: 'Lincoln';
             font-size: 5.5rem;
 
-            // @media (max-width: 585px ) {
-            //     font-size: 5rem;
-            // }
-            // @media (max-width: 3205px ) {
-            //     font-size: 3.3rem;
-            // }
-        }
+            @media (max-width: 585px ) {
+                font-size: 4rem;
+            }
+
+        }  
         .red {
             color: $red;
             font-size: 5.5rem;
-          
+
+            @media (max-width: 585px ) {
+                font-size: 4rem;
+            }
+         
 
         }
     }
