@@ -17,8 +17,21 @@
                             </div>
                         </div>
                         <div class="popular__description mt-4 col-12">
-                            <h4>{{ item.title }}</h4>
-                            <span> {{ item.description }} </span>
+                            <h4 (click)="routeToHeadlineDetails(item._id)" *ngIf="router.url === '/home'">{{ item.title }}</h4>
+                            <h4 (click)="routeToHeadlineDetails(item._id)" 
+                                style="font-size: 1.4rem;" 
+                                *ngIf="router.url !== '/home'"
+                                 >
+                                 {{ item.title }}
+                            </h4>
+                            <div class="">
+                                <p *ngIf="router.url === '/home'"> {{item.description | slice:0:120  }} </p>
+                                <p *ngIf="router.url === '/home'"  
+                                    style = 'cursor: pointer; color: #de1e26;' 
+                                    (click)="routeToHeadlineDetails(item._id)"> See more 
+                                </p>
+                            </div>
+                            <p *ngIf="router.url !== '/home'"> {{ item.description  }} </p>
                         </div>
                     </div>
                 </div>

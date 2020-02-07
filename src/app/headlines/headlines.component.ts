@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HomeService } from '../home/home.service';
 import { Router } from '@angular/router';
 
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './headlines.component.html',
   styleUrls: ['./headlines.component.scss']
 })
-export class HeadlinesComponent implements OnInit {
+export class HeadlinesComponent implements OnInit, OnDestroy {
 
   allHeadlines :[] = []; 
   isHeadlinesPage: boolean = false; 
@@ -15,7 +15,7 @@ export class HeadlinesComponent implements OnInit {
 
 
   constructor(
-    private router: Router,
+    public router: Router,
     private homeService: HomeService
   ) { }
 
@@ -41,9 +41,16 @@ export class HeadlinesComponent implements OnInit {
   }; 
 
 
+  routeToHeadlineDetails(headlineID: string) {
+    console.log(headlineID); 
+    this.router.navigate([`/headlines/${headlineID}`]); 
+    
+  }
+
+
   ngOnDestroy(): void {
     
-    // this.getAllHeadlines().unsubscribe(); 
+    this.getAllHeadlines().unsubscribe(); 
     
   }
 

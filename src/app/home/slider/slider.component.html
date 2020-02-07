@@ -2,11 +2,11 @@
     <ngb-carousel #carousel interval="1000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
         <ng-template ngbSlide *ngFor="let img of images; index as i">
           <div class="carousel-caption">
-            <h3>News {{i + 1}} title</h3>
+            <h3> {{ img.title }} </h3>
           </div>
           <a  target="_blank" rel="nofollow noopener noreferrer">
             <div class="picsum-img-wrapper">
-              <img [src]="'http://localhost:3000/' + img" alt="My image {{i + 1}} description">
+              <img [src]="'http://localhost:3000/' + img.file.path" alt="My image {{i + 1}} description">
             </div>
           </a>
         </ng-template>

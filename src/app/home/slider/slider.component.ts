@@ -11,6 +11,8 @@ export class SliderComponent implements OnInit {
 
 
   allHeadlineImages: any[] = []; 
+  allHeadlineTitles: [] = []; 
+
 
   constructor(
     private homeService: HomeService
@@ -54,11 +56,12 @@ export class SliderComponent implements OnInit {
                .getAllHeadlines()
                .subscribe(data => {
                 this.allHeadlineImages = data['headlinesData'].map(item => {
-                   return item.file
+                   return item
                  }); 
 
-                //  console.log(this.allHeadlineImages);
-                 this.images = this.allHeadlineImages.map( item => { return item.path } )
+                 this.images = this.allHeadlineImages.map( item => { return item } ) ;
+                 console.log(this.images);
+                 
                  
                }, err => {
                  console.log(err);

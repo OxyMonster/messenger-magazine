@@ -22,6 +22,21 @@ getAllHeadlines() {
   
   return this.http.get(url); 
 
-}
+}; 
+
+getHeadlineById(headlineID: string) {
+  const url = `http://localhost:3000/headlines/${headlineID}`; 
+
+  return this.http.get(url); 
+}; 
+
+
+getNewsById(newsID: string) {
+  const url = `http://localhost:3000/news/${newsID}`; 
+
+  return this.http.get(url); 
+}; 
+
+
 
 }

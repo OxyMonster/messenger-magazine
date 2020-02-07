@@ -52,6 +52,21 @@ router.get('/headlines', (req, res) => {
                 }); 
 });      
 
+router.get('/headlines/:id', (req, res) => {
+
+    console.log(req.params);
+    
+    headlinesModel.findById(req.params.id)
+                  .then(data => {
+                      res.status(200).json(data); 
+                      console.log(data);
+                      
+                  })
+                  .catch(err => {
+                      res.status(400).json(data); 
+                  })
+});
+
 router.delete('/headlines/:id', (req, res) => {
     console.log(req.params.id);
     const id = req.params.id; 

@@ -1,0 +1,35 @@
+<div class="news w-100" *ngIf="newsData.file">
+  <div class="col-md-12" class ="news__content">
+      <div class="main row" >
+          <div class="col-12" class ="mt-4 p-3 w-100">
+              <div class="main__title col-12" >
+                  <h4 style="cursor: unset;">  {{ newsData.title }} </h4>
+              </div>
+              <div class="main__social mt-2 col-12 d-flex justify-content-between">
+                  <div class="col-md-9 p-0">
+                      <span> {{ newsData.date }}  </span>
+                  </div>
+                  <div class="col-md-3  d-flex justify-content-between">
+                      <i class="fab fa-twitter"></i>
+                      <i class="fab fa-linkedin-in"></i>  
+                      <i class="fab fa-facebook-f"></i>
+                      <i class="fab fa-instagram"></i>
+                  </div>   
+              </div>
+              <div class="row" >
+                  <div class="main__image mt-3 d-flex justify-content-center" 
+                       class ="col-lg-6 main__image mt-3 d-flex justify-content-center ">
+                      <div class="main__image__content">
+                          <img [src]="'http://localhost:3000/' + newsData.file.path" style="border-radius: .5rem;">
+                      </div>
+                  </div>   
+              
+                  <div class="main__description col-lg-6 mt-4">
+                      <p> {{ newsData.description }}  </p>
+                  </div>
+          
+              </div>
+          </div>
+      </div>
+  </div>
+</div>   

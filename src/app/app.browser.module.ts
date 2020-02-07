@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,38 +23,21 @@ import { HeadlinesComponent } from './headlines/headlines.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { AdminPanelModule } from './admin-panel/admin-panel.module';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { HeadlineDetailsComponent } from './headlines/headline-details/headline-details.component';
-import { NewsDetailsComponent } from './news/news-details/news-details.component';
+import { AppModule } from './app.module';
  
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SearchComponent,
-    HeaderComponent,
-    SliderComponent,
-    NavigationComponent,    
-    HomeComponent,
-    NewsComponent,
-    AboutUsComponent, 
-    AdvertisementComponent,
-    ContactComponent,
-    NewsDetailsComponent, 
-    HeadlineDetailsComponent,
-    AdsComponent,
-    FooterComponent,
-    HeadlinesComponent,
-    AdminPanelComponent,
-  ],
   imports: [
     AdminPanelModule,
-    BrowserModule,
+    
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppModule,
+    BrowserTransferStateModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppBrowserModule { }

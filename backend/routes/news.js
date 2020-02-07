@@ -30,14 +30,14 @@ router.post('/news', upload.single('file'), (req, res) => {
         
    
     news.save()
-             .then(data => {
-                 console.log(data);
-                 res.status(200).json(data); 
+        .then(data => {
+            console.log(data);
+            res.status(200).json(data); 
                  
              })
-             .catch(err => {
-                 console.log(err);
-                 res.status(400).json(err); 
+        .catch(err => {
+             console.log(err);
+             res.status(400).json(err); 
                  
              });
 
@@ -54,6 +54,22 @@ router.get('/news', (req, res) => {
                 res.status(404).json(err); 
             }); 
 }); 
+
+router.get('/news/:id', (req, res) => {
+    newsModel.findById(req.params.id)
+             .then(data => {
+
+                 res.status(200).json(data); 
+                 console.log(data);
+                 
+             })
+             .catch(err => {
+
+                 console.log(err);
+                 res.status(400).json(err); 
+                 
+             })
+})
 
 router.delete('/news/:id', (req, res) => {
     console.log(req.params.id);

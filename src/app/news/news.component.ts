@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, OnDestroy } from '@angular/core';
 import { HomeService } from '../home/home.service';
 import { Router } from '@angular/router';
 
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './news.component.html',
   styleUrls: ['./news.component.scss']
 })
-export class NewsComponent implements OnInit {
+export class NewsComponent implements OnInit, OnDestroy {
 
  
   @Output() result = new EventEmitter<any>();
@@ -15,7 +15,7 @@ export class NewsComponent implements OnInit {
 
   constructor(
     private homeService: HomeService,
-    private router: Router
+    public router: Router
   ) { }
 
   ngOnInit() {
@@ -37,6 +37,10 @@ export class NewsComponent implements OnInit {
                })
   }; 
 
+  routeToNewsDetails(newsID: string) {
+    this.router.navigate([`/news/${newsID}`]); 
+  }
+
   getNews(e)   {
     console.log(e);
     
@@ -45,6 +49,6 @@ export class NewsComponent implements OnInit {
 
   ngOnDestroy(): void {
     
-    // this.getAllNews().unsubscribe(); 
+    this.getAllNews().unsubscribe(); 
   }
 }

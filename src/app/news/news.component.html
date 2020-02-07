@@ -4,7 +4,7 @@
             <div class="col-12" *ngFor="let item of allNews; first as isFirst" 
                                 [ngClass]="{'mt-3': isFirst && router.url === '/news', 'mt-5': !isFirst && router.url === '/news'}">
                 <div class="main__title col-12" >
-                    <h4> {{ item.title }} </h4>
+                    <h4 (click)="routeToNewsDetails(item._id)"> {{ item.title }} </h4>
                 </div>
                 <div class="main__social mt-2 col-12 d-flex justify-content-between">
                     <div class="col-md-9 p-0">
@@ -28,7 +28,15 @@
                 
                     <div class="main__description mt-4"
                          [ngClass]="{'col-lg-6 main__description': router.url === '/news'}">
-                        <p> {{item.description }} </p>
+                         <div class="">
+                            <p *ngIf="router.url === '/home'"> {{item.description | slice:0:150  }} </p>
+                            <p *ngIf="router.url === '/home'"  
+                                style = 'cursor: pointer; color: #de1e26;' 
+                                (click)="routeToNewsDetails(item._id)"> See more 
+                            </p>
+                        </div>
+                        <p *ngIf="router.url !== '/home'"> {{item.description   }} </p>
+
                     </div>
             
                 </div>
