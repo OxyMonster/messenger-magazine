@@ -27,16 +27,11 @@ app.use(headlinesRoute);
 const mongoDB = require('./server'); 
 
 
+app.use(express.static('client/dist/browser')); 
+app.get('*',  (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'dist', 'browser', 'index.html')); 
+}); 
 
-  
-
-if ( process.env.NODE_ENV === 'production' ) {
-
-    app.use(express.static('client/dist/browser')); 
-    app.get('*',  (req, res) => {
-        res.sendFile(path.join(__dirname, 'client', 'dist', 'browser', 'index.html')); 
-    }); 
-}; 
 
 
 // * * * Server * * *
