@@ -5,22 +5,19 @@ const path = require('path');
 const cors = require('cors');
 const bodyParser = require('body-parser');  
 
-console.log("=============================================================================================   1");
+const port  = process.env.PORT || 8080; 
+
 
 
 app.use(cors()); 
 app.use(express.json()); 
 app.use(bodyParser());
 
-console.log("=============================================================================================   2");
 
 // * * * Routes * * *
 const uploadRoutes = require('./routes/file-uploads');
 const newsRoute = require('./routes/news');
 const headlinesRoute = require('./routes/headlines');
-
-console.log("=============================================================================================   3");
-
 
 
 
@@ -37,15 +34,9 @@ app.get( '*',  (req, res) => {
 // * * * Connect to mongoDB * * * 
 const mongoDB = require('./server'); 
 
-console.log("=============================================================================================   4");
-
-
-
 
 
 // * * * Server * * *
-const port  = process.env.PORT || 8080
-
 app.listen( port , () => {
 
     console.log(`Listening to port: ${port}`);

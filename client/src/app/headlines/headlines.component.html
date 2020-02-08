@@ -10,7 +10,7 @@
                         <div class="popular__title col-12">
                             <span> {{ item.date }} </span>
                         </div>
-                        <div class="popular__img col-12 mt-3 d-flex justify-content-center">
+                        <div class="popular__img col-12 mt-3 d-flex justify-content-center" >
                             <div [ngClass]="{'popular__img__content': router.url === '/headlines', 
                                              'content-on-main' :   router.url !== '/headlines'}">
                                 <img [src]="item.file.path" alt="">
