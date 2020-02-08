@@ -13,7 +13,7 @@
                         <div class="popular__img col-12 mt-3 d-flex justify-content-center">
                             <div [ngClass]="{'popular__img__content': router.url === '/headlines', 
                                              'content-on-main' :   router.url !== '/headlines'}">
-                                <img [src]="'http://localhost:3000/' + item.file.path" alt="">
+                                <img [src]="item.file.path" alt="">
                             </div>
                         </div>
                         <div class="popular__description mt-4 col-12">
