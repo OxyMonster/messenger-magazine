@@ -27,16 +27,18 @@ app.use(headlinesRoute);
 const mongoDB = require('./server'); 
 
 
-app.use(express.static('client/dist/browser')); 
-app.get('*',  (req, res) => {
+app.use( express.static('client/dist/browser') ); 
+app.get( '*',  (req, res) => {
     res.sendFile(path.join(__dirname, 'client', 'dist', 'browser', 'index.html')); 
 }); 
 
 
 
 // * * * Server * * *
-app.listen( process.env.PORT || 8080 , () => {
-    console.log("listening to port: 3000");
-        
+const port  = process.env.PORT || 8080
+
+app.listen( port , () => {
+
+    console.log(`Listening to port: ${port}`);
     
 });
