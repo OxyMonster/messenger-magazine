@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from 'src/app/home/home.service';
 import { ActivatedRoute } from '@angular/router';
+import { NewsService } from 'src/app/services/news.service';
 
 @Component({
   selector: 'app-news-details',
@@ -13,7 +14,7 @@ export class NewsDetailsComponent implements OnInit {
   newsData: any = {}; 
 
   constructor(
-    private newsService: HomeService, 
+    private newsService: NewsService, 
     private router: ActivatedRoute
   ) { }
 

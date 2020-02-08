@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { AdminPanelService } from '../admin-panel.service';
+import { NewsService } from 'src/app/services/news.service';
 
 @Component({
   selector: 'app-add-news',
@@ -16,7 +16,7 @@ export class AddNewsComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder, 
-    private adminService: AdminPanelService
+    private newsService: NewsService
 
   ) {
     this.newsForm = this.fb.group({ 
@@ -58,7 +58,7 @@ export class AddNewsComponent implements OnInit {
 
 
     
-    this.adminService
+    this.newsService
         .addNews(fd) 
         .subscribe(data => {
           

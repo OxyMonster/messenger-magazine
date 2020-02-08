@@ -1,0 +1,35 @@
+@import 'src/assets/variables'; 
+
+.not-found {
+    &__img {
+        &__content {
+            width: 25rem;
+            height: 19rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    &__text {
+        
+        text-align: center;
+        font-family: 'Lincoln';
+        h4 {
+
+            font-size: 4rem;
+        }
+            
+    }
+
+    &__buttons {
+        button {
+            a {
+                text-decoration: none !important;
+                color: #555 !important;
+            }
+        }
+    }
+}

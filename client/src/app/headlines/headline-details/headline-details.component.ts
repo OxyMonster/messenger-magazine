@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from 'src/app/home/home.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { HeadlinesService } from 'src/app/services/headlines.service';
 
 @Component({
   selector: 'app-headline-details',
@@ -13,7 +14,7 @@ export class HeadlineDetailsComponent implements OnInit {
   headlineData: any = {}; 
 
   constructor(
-    private homeService: HomeService,
+    private headlinesService: HeadlinesService,
     private router: ActivatedRoute
   ) { }
 
@@ -28,7 +29,7 @@ export class HeadlineDetailsComponent implements OnInit {
 
 
   getHeadlineByID() {
-    this.homeService
+    this.headlinesService
         .getHeadlineById(this.headlineID)
         .subscribe(data => {
 

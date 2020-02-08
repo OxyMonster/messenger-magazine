@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { AdminPanelService } from '../admin-panel.service';
+import { NewsService } from 'src/app/services/news.service';
 
 @Component({
   selector: 'app-all-news',
@@ -11,7 +11,7 @@ export class AllNewsComponent implements OnInit, OnDestroy {
   allNews: any[] = []; 
 
   constructor(
-    private adminService: AdminPanelService
+    private newsService: NewsService
   ) { }
 
   ngOnInit() {
@@ -21,7 +21,7 @@ export class AllNewsComponent implements OnInit, OnDestroy {
 
 
   getAllNews() {
-    return this.adminService
+    return this.newsService
                .getNews()
                .subscribe(data => {
                 
@@ -45,7 +45,7 @@ export class AllNewsComponent implements OnInit, OnDestroy {
   }; 
 
   removeNews(index: number, newsID: string) {
-    return this.adminService
+    return this.newsService
                .deleteNews(newsID)
                .subscribe(data => {
                  

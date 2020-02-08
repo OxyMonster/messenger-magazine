@@ -1,6 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HomeService } from '../home/home.service';
 import { Router } from '@angular/router';
+import { HeadlinesService } from '../services/headlines.service';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-headlines',
@@ -11,12 +14,15 @@ export class HeadlinesComponent implements OnInit, OnDestroy {
 
   allHeadlines :[] = []; 
   isHeadlinesPage: boolean = false; 
+
+  protected ngUnsubscribe: Subject<void> = new Subject<void>();
+
   
 
 
   constructor(
     public router: Router,
-    private homeService: HomeService
+    private headlinesService: HeadlinesService
   ) { }
 
   ngOnInit() {
@@ -27,8 +33,9 @@ export class HeadlinesComponent implements OnInit, OnDestroy {
   }
 
   getAllHeadlines() {
-    return this.homeService
+    return this.headlinesService
                .getAllHeadlines()
+               .pipe( takeUntil (this.ngUnsubscribe) )
                .subscribe(data => {
             
                  this.allHeadlines = data['headlinesData'].reverse(); 
@@ -50,7 +57,8 @@ export class HeadlinesComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     
-    this.getAllHeadlines().unsubscribe(); 
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
     
   }
 

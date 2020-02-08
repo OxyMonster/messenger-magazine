@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { AdminPanelService } from '../admin-panel.service';
+import { HeadlinesService } from 'src/app/services/headlines.service';
 
 @Component({
   selector: 'app-add-headlines',
@@ -17,7 +17,7 @@ export class AddHeadlinesComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private adminService: AdminPanelService
+    private headlineService: HeadlinesService
 
   ) {
     this.headlinesForm = this.fb.group({
@@ -50,7 +50,7 @@ export class AddHeadlinesComponent implements OnInit {
 
 
 
-    this.adminService
+    this.headlineService
         .addHeadlines(fd)
         .subscribe(data => {
 

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
 import { HomeService } from '../home.service';
+import { HeadlinesService } from 'src/app/services/headlines.service';
 
 @Component({
   selector: 'app-slider',
@@ -15,7 +16,7 @@ export class SliderComponent implements OnInit {
 
 
   constructor(
-    private homeService: HomeService
+    private headlinesService: HeadlinesService
   ) { }
 
   ngOnInit() {
@@ -52,7 +53,7 @@ export class SliderComponent implements OnInit {
 
 
   getHeadlines() {
-    return this.homeService
+    return this.headlinesService
                .getAllHeadlines()
                .subscribe(data => {
                 this.allHeadlineImages = data['headlinesData'].map(item => {

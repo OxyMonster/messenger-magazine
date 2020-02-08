@@ -21,14 +21,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeadlinesComponent } from './headlines/headlines.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { AdminPanelModule } from './admin-panel/admin-panel.module';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { HeadlineDetailsComponent } from './headlines/headline-details/headline-details.component';
 import { NewsDetailsComponent } from './news/news-details/news-details.component';
+import { NewsService } from './services/news.service';
+import { HeadlinesService } from './services/headlines.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { environment } from '../environments/environment';
-import { FirebaseService } from './services/firebase.service';
+
  
 
 @NgModule({
@@ -49,6 +48,7 @@ import { FirebaseService } from './services/firebase.service';
     FooterComponent,
     HeadlinesComponent,
     AdminPanelComponent,
+    PageNotFoundComponent
   ],
   imports: [
     AdminPanelModule,
@@ -57,12 +57,12 @@ import { FirebaseService } from './services/firebase.service';
     NgbModule,
     FormsModule,
     BrowserAnimationsModule,
-    AngularFireModule.initializeApp(environment.firebase), 
-    AngularFirestoreModule
+   
   ],
   providers: [
-    { provide: LocationStrategy, useClass: HashLocationStrategy }, 
-    FirebaseService
+    NewsService,
+    HeadlinesService
+    // { provide: LocationStrategy, useClass: HashLocationStrategy }, 
   ],
   bootstrap: [AppComponent]
 })

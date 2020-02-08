@@ -37,7 +37,7 @@ import { AppModule } from './app.module';
     AppModule,
     BrowserTransferStateModule
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  // providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppBrowserModule { }

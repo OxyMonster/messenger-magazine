@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { AdminPanelService } from '../admin-panel.service';
+import { HeadlinesService } from 'src/app/services/headlines.service';
 
 @Component({
   selector: 'app-all-headlines',
@@ -11,7 +11,7 @@ export class AllHeadlinesComponent implements OnInit, OnDestroy {
   allHeadlines: any[] = []; 
   
   constructor(
-    private adminService: AdminPanelService
+    private headlineService: HeadlinesService
   ) { }
 
   ngOnInit() {
@@ -20,8 +20,8 @@ export class AllHeadlinesComponent implements OnInit, OnDestroy {
   }
 
   getAllHeadlines() {
-    return this.adminService    
-               .getHeadlines()
+    return this.headlineService    
+               .getAllHeadlines()
                .subscribe(data => {
                  
                 data['headlinesData'].map(item => item.isActive = false); 
@@ -42,7 +42,7 @@ export class AllHeadlinesComponent implements OnInit, OnDestroy {
   }; 
 
   deleteHeadlines(index: number, id: string) {
-    return this.adminService
+    return this.headlineService
                .deleteHeadlines(id)
                .subscribe(data => {  
 
