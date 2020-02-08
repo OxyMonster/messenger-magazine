@@ -12,27 +12,27 @@ constructor(
 
 
 getNews() {
-  const url = 'http://localhost:3000/news'; 
+  const url = 'news'; 
 
   return this.http.get(url); 
 }; 
 
 getAllHeadlines() {
-  const url = 'http://localhost:3000/headlines';
+  const url = 'headlines';
   
   return this.http.get(url); 
 
 }; 
 
 getHeadlineById(headlineID: string) {
-  const url = `http://localhost:3000/headlines/${headlineID}`; 
+  const url = `headlines/${headlineID}`; 
 
   return this.http.get(url); 
 }; 
 
 
 getNewsById(newsID: string) {
-  const url = `http://localhost:3000/news/${newsID}`; 
+  const url = `news/${newsID}`; 
 
   return this.http.get(url); 
 }; 

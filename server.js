@@ -1,6 +1,6 @@
 const mongoose= require('mongoose'); 
 
-const dbURI = 'mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false';
+const dbURI = 'mongodb+srv://Admin:753951@themessenger-vgbkp.mongodb.net/test?retryWrites=true&w=majority';
 mongoose.connect( dbURI, { useNewUrlParser: true,  useUnifiedTopology: true  });
 
 mongoose.connection.on('connected', () => {

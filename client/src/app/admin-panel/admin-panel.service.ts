@@ -11,40 +11,40 @@ export class AdminPanelService {
   ) { }
 
   addHeadlines(headlinesForm) {
-    const url = 'http://localhost:3000/headlines'; 
+    const url = 'headlines'; 
 
    return  this.http.post(url, headlinesForm)
             
   }; 
 
   addNews(newsForm) {
-    const url = 'http://localhost:3000/news'; 
+    const url = 'news'; 
 
     return this.http.post(url, newsForm); 
             
   }; 
 
   deleteNews(newsID: string) {
-    const url = `http://localhost:3000/news/${newsID}`; 
+    const url = `news/${newsID}`; 
 
     return this.http.delete(url); 
   };
 
   deleteHeadlines(headlinesId: string) {
-    const url = `http://localhost:3000/headlines/${headlinesId}`; 
+    const url = `headlines/${headlinesId}`; 
 
     return this.http.delete(url); 
   }; 
 
   getNews() {
-    const url = 'http://localhost:3000/news'
+    const url = 'news'
 
     return this.http.get(url); 
 
   }
 
   getHeadlines() {
-    const url = 'http://localhost:3000/headlines'; 
+    const url = 'headlines'; 
 
     return this.http.get(url); 
 

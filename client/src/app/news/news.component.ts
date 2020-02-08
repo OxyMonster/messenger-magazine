@@ -17,7 +17,7 @@ export class NewsComponent implements OnInit, OnDestroy {
   constructor(
     private homeService: HomeService,
     public router: Router,
-    private fireBaseSerive: FirebaseService
+    // private fireBaseSerive: FirebaseService
   ) { }
 
   ngOnInit() {
@@ -25,25 +25,25 @@ export class NewsComponent implements OnInit, OnDestroy {
   }
 
   getAllNews() {
-    // return this.homeService
-    //            .getNews()
-    //            .subscribe(data => {
-                 
-    //              this.allNews = data['newsData'].reverse();
-    //              console.log(this.allNews);
-    //              this.result.emit(this.allNews.length); 
-
-    //            }, err => {
-    //              console.log(err);
-                 
-    //            })
-    return this.fireBaseSerive
-               .getAllNews()
+    return this.homeService
+               .getNews()
                .subscribe(data => {
                  
-                 console.log(data);
+                 this.allNews = data['newsData'].reverse();
+                 console.log(this.allNews);
+                 this.result.emit(this.allNews.length); 
+
+               }, err => {
+                 console.log(err);
                  
-               }, err => console.log(err)); 
+               })
+  //   return this.fireBaseSerive
+  //              .getAllNews()
+  //              .subscribe(data => {
+                 
+  //                console.log(data);
+                 
+  //              }, err => console.log(err)); 
   }; 
 
   routeToNewsDetails(newsID: string) {

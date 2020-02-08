@@ -28,16 +28,18 @@ app.use(uploadRoutes);
 app.use(newsRoute); 
 app.use(headlinesRoute); 
 
+app.use( express.static('client/dist/browser') ); 
+app.get( '*',  (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'dist', 'browser', 'index.html')); 
+}); 
+
 
 // * * * Connect to mongoDB * * * 
 const mongoDB = require('./server'); 
 
 console.log("=============================================================================================   4");
 
-app.use( express.static('client/dist/browser') ); 
-app.get( '*',  (req, res) => {
-    res.sendFile(path.join(__dirname, 'client', 'dist', 'browser', 'index.html')); 
-}); 
+
 
 
 
