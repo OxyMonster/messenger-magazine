@@ -36,14 +36,27 @@
             @media (max-width: 585px ) {
                 font-size: 4rem;
             }
+            @media (max-width: 320px ) {
+                font-size: 3.4rem;
+            }
+            @media (max-width: 360px ) {
+                font-size: 3.4rem;
+            }
 
         }  
+        
         .red {
             color: $red;
             font-size: 5.5rem;
 
             @media (max-width: 585px ) {
                 font-size: 4rem;
+            }
+            @media (max-width: 320px ) {
+                font-size: 3.4rem;
+            }
+            @media (max-width: 360px ) {
+                font-size: 3.4rem;
             }
          
 

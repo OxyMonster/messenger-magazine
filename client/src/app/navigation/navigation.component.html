@@ -1,20 +1,65 @@
-<div class="navigation pt-2 pb-2 row">
-    <div class="col-md-2">
+<div class="main-navigation pt-2 pb-2 row">
+    <div class="main-navigation__item col-md-2">
         <a [routerLink]="[ '/home' ]" routerLinkActive="active">HOME</a>
     </div>
-    <div class="col-md-2">
+    <div class="main-navigation__item col-md-2">
         <a [routerLink]="[ '/news' ]" routerLinkActive="active" >NEWS</a>
     </div>
-    <div class="col-md-2">
+    <div class="main-navigation__item col-md-2">
         <a [routerLink]="[ '/headlines' ]" routerLinkActive="active">HEADLINES</a>
     </div>
-    <div class="col-md-2">
+    <div class="main-navigation__item col-md-2">
         <a [routerLink]="[ '/about-us' ]" routerLinkActive="active">ABOUT-US</a>
     </div>
-    <div class="col-md-2">
+    <div class="main-navigation__item col-md-2">
         <a [routerLink]="[ '/advertisement' ]" routerLinkActive="active" >ADVERTISEMENT</a>
     </div>
-    <div class="col-md-2">
+    <div class="main-navigation__item col-md-2">
         <a [routerLink]="[ '/contact' ]" routerLinkActive="active" >CONTACT</a>
+    </div>  
+    
+<div class="nav" >
+    <nav role="navigation" style = " 
+                                    position: absolute;
+                                    top: -37px;" >
+        <div id="menuToggle">
+      
+          <input type="checkbox" />
+          
+       
+          <span></span>
+          <span></span>
+          <span></span>
+          
+
+          <ul id="menu" style="text-align: center;" >
+            <a [routerLink]="[ '/home' ]">
+                <li>HOME</li>
+            </a>
+            <a [routerLink]="[ '/news' ]">
+                <li>NEWS</li>
+            </a>
+            <a [routerLink]="[ '/headlines' ]">
+                <li>HEADLINES</li>
+            </a>
+            <a [routerLink]="[ '/about-us' ]">
+                <li>ABOUT-US</li>
+            </a>
+            <a [routerLink]="[ '/advertisement' ]">
+                <li>SUBSCRIBE</li>
+            </a>
+            <a [routerLink]="[ '/contact' ]" >
+                <li>CONTACT</li>
+            </a>
+            
+          </ul>
+        </div>
+      </nav>
+        
     </div>
+
 </div>
+
+
+
+
