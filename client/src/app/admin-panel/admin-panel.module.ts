@@ -10,16 +10,20 @@ import { AdminPanelComponent } from './admin-panel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminNavigationComponent } from './admin-navigation/admin-navigation.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AuthGuard } from './auth.guard';
 
   
 const routes: Routes = [
+     { path: 'admin-login', component: AdminLoginComponent,  },  
 
-     { path: 'admin', component: AdminPanelComponent, children: [
-     { path: 'add-news', component: AddNewsComponent },
-     { path: 'add-headlines', component: AddHeadlinesComponent },
-     { path: 'all-news', component: AllNewsComponent },
-     { path: 'all-headlines', component: AllHeadlinesComponent },
-   ] }
+     { path: 'admin', component: AdminPanelComponent, 
+       children: [
+        { path: 'add-news', component: AddNewsComponent, },
+        { path: 'add-headlines', component: AddHeadlinesComponent,  },
+        { path: 'all-news', component: AllNewsComponent, },
+        { path: 'all-headlines', component: AllHeadlinesComponent, },
+      ] }
 ]
 
 const COMPONENTS = [
@@ -30,6 +34,8 @@ const COMPONENTS = [
     AllNewsComponent, 
     AllHeadlinesComponent, 
     AdminNavigationComponent,
+    AdminPanelComponent, 
+    AdminLoginComponent
 ]
 
 
@@ -38,11 +44,14 @@ const COMPONENTS = [
     COMPONENTS
   ,
   imports: [
-    RouterModule.forChild(routes),
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forChild(routes)
+  ], 
+  providers: [
+    AuthGuard
   ], 
   exports: [
     COMPONENTS,

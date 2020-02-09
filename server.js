@@ -1,6 +1,7 @@
 const mongoose= require('mongoose'); 
 
-const dbURI = 'mongodb+srv://Admin:753951@themessenger-vgbkp.mongodb.net/test?retryWrites=true&w=majority';
+
+const dbURI = process.env.MONGO_DB_URL;
 mongoose.connect( dbURI, { useNewUrlParser: true,  useUnifiedTopology: true  });
 
 mongoose.connection.on('connected', () => {

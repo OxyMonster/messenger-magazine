@@ -26,6 +26,7 @@ import { NewsDetailsComponent } from './news/news-details/news-details.component
 import { NewsService } from './services/news.service';
 import { HeadlinesService } from './services/headlines.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthGuard } from './admin-panel/auth.guard';
 
 
  
@@ -47,7 +48,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AdsComponent,
     FooterComponent,
     HeadlinesComponent,
-    AdminPanelComponent,
+    // AdminPanelComponent,
     PageNotFoundComponent
   ],
   imports: [
@@ -61,7 +62,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   ],
   providers: [
     NewsService,
-    HeadlinesService
+    HeadlinesService,
+    // AuthGuard
     // { provide: LocationStrategy, useClass: HashLocationStrategy }, 
   ],
   bootstrap: [AppComponent]

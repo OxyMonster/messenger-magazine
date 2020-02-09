@@ -1,0 +1,8 @@
+
+<div class="authorize" *ngIf="!isAdmin; else showAdminContent">
+    <form [formGroup]="adminForm" (ngSubmit) = 'submitForm()'>
+        <input type="text" placeholder="Username" formControlName="userName">
+        <input type="text" placeholder="Password" formControlName="password">
+        <button type="submit">Login</button>
+    </form>
+</div>

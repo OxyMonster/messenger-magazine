@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { AdminService } from '../services/admin.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-panel',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminPanelComponent implements OnInit {
 
-  constructor() { }
+
+  isAdmin: boolean = false; 
+
+  constructor(
+
+  ) {
+
+  
+   }
 
   ngOnInit() {
+    console.log(localStorage.key);
+    
   }
 
 }
