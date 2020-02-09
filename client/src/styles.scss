@@ -23,6 +23,10 @@ body,html {
     background: linear-gradient(to right, #485563, #29323c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     width: 100%;
     height: 5rem; 
+
+    @media (max-width: 499px) {
+        display: none;
+    }
 }
 
 .image {
@@ -40,6 +44,7 @@ body,html {
     color: white;
     letter-spacing: .3rem;
     font-size: .875rem;
+    white-space: nowrap;
 }
 
 

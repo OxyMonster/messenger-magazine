@@ -12,7 +12,7 @@
 </ng-container>
 
 <ng-template #showApp>
-  <div class="container pb-5" *ngIf="!isAdminActive" style="min-height: 100%;">
+  <div class="container pb-5" *ngIf="!isAdminActive" style="min-height: 100vh;">
     <div class="row">
       <!-- * * * Search * *  -->
       <div class="col-md-12 mt-3">
@@ -26,9 +26,9 @@
       <div class="col-md-12">
         <app-navigation></app-navigation>
       </div>
-    
+     
       <!-- * * * Router Content * * *  -->
-      <div class="col-12 mt-3 p-0 pb-5" [@routeAnimations]="prepareRoute(outlet)">
+      <div class="main-content col-12 mt-3 p-0 pb-5" [@routeAnimations]="prepareRoute(outlet)">
         <router-outlet #outlet="outlet" ></router-outlet>
       </div>
     </div>

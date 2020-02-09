@@ -13,12 +13,10 @@ export class HomeComponent implements OnInit {
 
 
   constructor(
-    private homeService: HomeService
+   
   ) { }
 
   ngOnInit() {
-
-    // this.getAllHeadlines(); 
  
   }
 
@@ -31,19 +29,6 @@ export class HomeComponent implements OnInit {
  
 
 
-  // getAllHeadlines() {
-  //   return this.homeService
-  //              .getAllHeadlines()
-  //              .subscribe(data => {
-            
-  //                this.allHeadlines = data['headlinesData']; 
-  //                console.log(this.allHeadlines);
-                 
-  //              }, err => {
-  //                console.log(err);
-                 
-  //              })
-  // }; 
 
 
 

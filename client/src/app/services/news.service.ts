@@ -12,18 +12,23 @@ constructor(
 
 
 getNews() {
+
   const url = 'news'; 
 
   return this.http.get(url); 
 }; 
 
+
 getNewsById(newsID: string) {
+
   const url = `news/${newsID}`; 
 
   return this.http.get(url); 
 }; 
 
+
 deleteNews(newsID: string) {
+
   const url = `news/${newsID}`; 
 
   return this.http.delete(url); 
@@ -31,6 +36,7 @@ deleteNews(newsID: string) {
 
 
 addNews(newsForm) {
+  
   const url = 'news'; 
 
   return this.http.post(url, newsForm); 
