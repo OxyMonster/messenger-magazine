@@ -12,7 +12,7 @@
 </ng-container>
 
 <ng-template #showApp>
-  <div class="container" *ngIf="!isAdminActive">
+  <div class="container pb-5" *ngIf="!isAdminActive">
     <div class="row">
       <!-- * * * Search * *  -->
       <div class="col-md-12 mt-3">
@@ -33,9 +33,10 @@
       </div>
     </div>
   </div>
-  
-  <!-- * * * Footer * * * -->
-  <!-- <div class="footer col-12" style="background-color: black;">
-    <app-footer></app-footer>
-  </div> -->
 </ng-template>
+
+
+ <!-- * * * Footer * * * -->
+ <div class="footer w-100" >
+  <app-footer></app-footer>
+</div>

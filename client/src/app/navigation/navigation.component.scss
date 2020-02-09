@@ -2,6 +2,7 @@
 
 .main-navigation {
     border-bottom: 2px solid $grey;
+    z-index: 22;
     &__item {
         a {
             font-weight: bold;
@@ -49,6 +50,7 @@
   display: none;
   text-decoration: none;
   color: #232323;
+  z-index: 9;
   transition: color 0.3s ease;
   @media (max-width: 991px ) {
     display: block;
