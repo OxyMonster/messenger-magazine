@@ -6,9 +6,9 @@ const fs = require('fs');
 
 router.get('/uploads/:id', (req, res) => {
     
-    console.log("=))");
+    console.log("=)) ==========================");
     
-           const path = '../backend/uploads/' + req.params.id; 
+           const path = 'client/uploads/' + req.params.id; 
            const stat = fs.statSync(path); 
            const fileSize = stat.size;  
            const head = {
