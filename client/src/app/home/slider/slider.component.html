@@ -6,8 +6,8 @@
           </div>
           <a  target="_blank" rel="nofollow noopener noreferrer">
             <div class="picsum-img-wrapper">
-              <!-- <img *ngIf="img.file.path" [src]="img.file.path" alt="My image {{i + 1}} description"> -->
-              <img src="assets/image/placeHolder.png" alt="My image {{i + 1}} description">
+              <img *ngIf="img.file.path" [src]="img.file.path" alt="My image {{i + 1}} description">
+              <!-- <img src="assets/image/placeHolder.png" alt="My image {{i + 1}} description"> -->
             </div>
           </a>
         </ng-template>
