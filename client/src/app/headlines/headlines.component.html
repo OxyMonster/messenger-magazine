@@ -35,6 +35,9 @@
                             <p *ngIf="router.url !== '/home'"> {{ item.description  }} </p>
                         </div>
                     </div>
+                    <div class="headlines__content__button col-12 d-flex justify-content-center" *ngIf="isShowAllHeadlinesActive">
+                        <button class="large button" (click)="navigateToHeadlines()">Show all headlines</button>
+                    </div>
                 </div>
             </div>
         </div>

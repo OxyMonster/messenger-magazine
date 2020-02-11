@@ -16,7 +16,9 @@ export class NewsComponent implements OnInit, OnDestroy {
 
  
   @Output() result = new EventEmitter<any>();
-  allNews: [] = []; 
+  allNews: any[] = []; 
+  isShowAllNewsActive: boolean = false; 
+
 
   constructor(
     private newsService : NewsService,
@@ -33,10 +35,30 @@ export class NewsComponent implements OnInit, OnDestroy {
                .getNews()
                .pipe( takeUntil(this.ngUnsubscribe) )
                .subscribe(data => {
+                 if ( this.router.url !== '/home' ) {
+                   
+                   this.allNews = data['newsData'].reverse();
+                   console.log(this.allNews);
+                   this.result.emit(this.allNews.length); 
+                   this.isShowAllNewsActive = false; 
                  
-                 this.allNews = data['newsData'].reverse();
-                 console.log(this.allNews);
-                 this.result.emit(this.allNews.length); 
+                  } else {
+                    let newsData  = data['newsData'].reverse()
+                    
+                    if ( newsData.length >= 7 ) {
+                      
+                      this.allNews = [ newsData[0], newsData[1], newsData[2], newsData[3], newsData[4], newsData[5],  ];
+                      this.isShowAllNewsActive = true;  
+                    } else {
+
+                      this.allNews = newsData; 
+                    
+                    }
+        
+                    console.log(this.allNews);
+                    this.result.emit(this.allNews.length); 
+                 
+                  }
 
                }, err => {
                  console.log(err);
@@ -47,6 +69,10 @@ export class NewsComponent implements OnInit, OnDestroy {
 
   routeToNewsDetails(newsID: string) {
     this.router.navigate([`/news/${newsID}`]); 
+  }
+
+  navigateRouteToNews() {
+    return this.router.navigate(['/news']);  
   }
 
 

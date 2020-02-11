@@ -45,6 +45,9 @@
             
                 </div>
             </div>
+            <div class="main__buttons col-12 d-flex justify-content-center" *ngIf="isShowAllNewsActive">
+                <button class="large button" (click)="navigateRouteToNews()">Show all news</button>
+            </div>
         </div>
     </div>
     <ng-template #showLoad>

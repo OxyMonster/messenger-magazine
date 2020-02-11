@@ -24,6 +24,7 @@ export class SliderComponent implements OnInit {
   }
 
   images: any[] = [];
+  imagesTodisplay: any[] = []; 
 
   paused = false;
   unpauseOnArrow = false;
@@ -61,7 +62,7 @@ export class SliderComponent implements OnInit {
                  }); 
 
                  this.images = this.allHeadlineImages.map( item => { return item } ) ;
-                 console.log(this.images);
+                 this.imagesTodisplay = [ this.images[0], this.images[1], this.images[2], this.images[3] ]
                  
                  
                }, err => {

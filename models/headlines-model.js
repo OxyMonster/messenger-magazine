@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const headlinesSchema = new mongoose.Schema({
     title: String, 
     description: String,
-    date: String,
+    date: Date,
     file: Object
 }); 
 

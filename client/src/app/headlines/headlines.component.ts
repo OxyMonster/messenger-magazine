@@ -12,8 +12,9 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class HeadlinesComponent implements OnInit, OnDestroy {
 
-  allHeadlines :[] = []; 
+  allHeadlines : any[] = []; 
   isHeadlinesPage: boolean = false; 
+  isShowAllHeadlinesActive: boolean = false; 
 
   protected ngUnsubscribe: Subject<void> = new Subject<void>();
 
@@ -37,9 +38,40 @@ export class HeadlinesComponent implements OnInit, OnDestroy {
                .getAllHeadlines()
                .pipe( takeUntil (this.ngUnsubscribe) )
                .subscribe(data => {
-            
-                 this.allHeadlines = data['headlinesData'].reverse(); 
-                 console.log(this.allHeadlines);
+
+                if ( this.router.url !== '/home' ) {
+                   
+                  this.allHeadlines = data['headlinesData'].reverse();
+                  console.log(this.allHeadlines);
+                  this.isShowAllHeadlinesActive = false; 
+                
+                 } else {
+                   let newsData  = data['headlinesData'].reverse()
+                   
+                   if ( newsData.length >= 8 ) {
+                     
+                     this.allHeadlines = [ newsData[0], 
+                                           newsData[1], 
+                                           newsData[2], 
+                                           newsData[3], 
+                                           newsData[4], 
+                                           newsData[5],  
+                                           newsData[6],  
+                                           newsData[7],  
+                      
+                                          ];
+                     this.isShowAllHeadlinesActive = true;  
+                   } else {
+
+                     this.allHeadlines = newsData; 
+                   
+                   }
+       
+                   console.log(this.allHeadlines);
+                   
+                
+                 }
+
                  
                }, err => {
                  console.log(err);
@@ -52,6 +84,10 @@ export class HeadlinesComponent implements OnInit, OnDestroy {
     console.log(headlineID); 
     this.router.navigate([`/headlines/${headlineID}`]); 
     
+  }
+
+  navigateToHeadlines() {
+    return this.router.navigate(['/headlines']); 
   }
 
 
