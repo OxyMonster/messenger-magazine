@@ -61,6 +61,21 @@ router.post('/politics', upload.single('file'), (req, res) => {
             
 }); 
 
+router.delete('/politics/:id', (req, res) => {
+    console.log(req.params.id);
+    const id = req.params.id; 
+
+    politicsModel.findByIdAndRemove(id)
+             .then(data => {
+                 console.log(data);
+                 res.status(200).json(data)
+             }, err => {
+                 console.log(err);
+                 res.status(400).json(err); 
+             }); 
+    
+}); 
+
 
 router.get('/politics', (req, res) => {
 

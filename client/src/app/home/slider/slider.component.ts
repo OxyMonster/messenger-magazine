@@ -3,6 +3,8 @@ import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/n
 import { HomeService } from '../home.service';
 import { HeadlinesService } from 'src/app/services/headlines.service';
 import { GlobalService } from 'src/app/services/global.service';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-slider',
@@ -27,6 +29,9 @@ export class SliderComponent implements OnInit, OnDestroy {
   EURO: number = 0; 
 
   math = Math; 
+
+  protected ngUnsubscribe: Subject<void> = new Subject<void>();
+
 
   constructor(
     private headlinesService: HeadlinesService,
@@ -75,16 +80,13 @@ export class SliderComponent implements OnInit, OnDestroy {
   getHeadlines() {
     return this.headlinesService
                .getAllHeadlines()
+               .pipe( takeUntil(this.ngUnsubscribe) )  
                .subscribe(data => {
                 this.allHeadlineImages = data['headlinesData'].map(item => {
                    return item
                  }); 
 
-                 this.images = this.allHeadlineImages.map( item => { return item } ) ;
-                //  if(this.images.length <= 4) {
-                //    this.imagesTodisplay = [ this.images[0], this.images[1], this.images[2], this.images[3] ].reverse(); 
-
-                //  }; 
+                 this.images = this.allHeadlineImages.map( item => { return item } ).reverse(); ;
                  
                  
                }, err => {

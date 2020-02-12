@@ -19,12 +19,26 @@ export class AdminService {
 
   };
 
+
+ removeCulture(cultureId: string) {
+
+  const url = `culture/${cultureId}`; 
+
+  return this.http.delete(url); 
+};
+
+
   getCulture() { 
     
   const url = 'culture'; 
 
   return  this.http.get(url); 
-  }
+
+  }; 
+
+
+
+
 
   addPolitics(politicsForm) {
 
@@ -33,6 +47,14 @@ export class AdminService {
   return  this.http.post(url, politicsForm)
 
   };
+
+
+ removePolitics(politicsId: string) {
+
+  const url = `politics/${politicsId}`; 
+
+  return this.http.delete(url); 
+};
 
   getAllPolitics() {
     const url = 'politics'; 
@@ -48,6 +70,15 @@ export class AdminService {
   return  this.http.post(url, economyForm)
 
   };
+
+  removeEconomy(economyId: string) {
+
+    const url = `economy/${economyId}`; 
+  
+    return this.http.delete(url); 
+  };
+
+
   getAllEconomy() {
 
 

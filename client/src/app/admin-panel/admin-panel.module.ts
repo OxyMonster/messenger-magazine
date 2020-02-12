@@ -17,6 +17,10 @@ import { PoliticsComponent } from '../politics/politics.component';
 import { AddPoliticsComponent } from './add-politics/add-politics.component';
 import { AddCultureComponent } from './add-culture/add-culture.component';
 import { AddEconomyComponent } from './add-economy/add-economy.component';
+import { RemoveCultureComponent } from './all-news/remove-culture/remove-culture.component';
+import { RemoveEconomyComponent } from './all-news/remove-economy/remove-economy.component';
+import { RemovePoliticsComponent } from './all-news/remove-politics/remove-politics.component';
+import { RemoveNewsComponent } from './all-news/remove-news/remove-news.component';
 
   
 const routes: Routes = [
@@ -31,11 +35,19 @@ const routes: Routes = [
         { path: 'add-politics', component: AddPoliticsComponent,  },
         { path: 'all-news', component: AllNewsComponent, },
         { path: 'all-headlines', component: AllHeadlinesComponent, },
+        { path: 'remove-culture', component: RemoveCultureComponent, },
+        { path: 'remove-economy', component: RemoveEconomyComponent, },
+        { path: 'remove-politics', component: RemovePoliticsComponent, },
+        { path: 'remove-news', component: RemoveNewsComponent, },
       ] }
 ]
 
 const COMPONENTS = [
-  AddNewsComponent, 
+    AddNewsComponent, 
+    RemoveCultureComponent,
+    RemoveEconomyComponent,
+    RemovePoliticsComponent,
+    RemoveNewsComponent,
     AddHeadlinesComponent, 
     AllNewsComponent, 
     AllHeadlinesComponent, 

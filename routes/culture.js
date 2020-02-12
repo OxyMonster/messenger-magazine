@@ -62,6 +62,22 @@ router.post('/culture', upload.single('file'), (req, res) => {
 }); 
 
 
+router.delete('/culture/:id', (req, res) => {
+    console.log(req.params.id);
+    const id = req.params.id; 
+
+    cultureModel.findByIdAndRemove(id)
+             .then(data => {
+                 console.log(data);
+                 res.status(200).json(data)
+             }, err => {
+                 console.log(err);
+                 res.status(400).json(err); 
+             }); 
+    
+}); 
+
+
 router.get('/culture', (req, res) => {
 
     cultureModel.find()
