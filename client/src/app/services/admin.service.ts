@@ -35,7 +35,7 @@ export class AdminService {
   };
 
   getAllPolitics() {
-    const url = 'http://localhost:8080/politics'; 
+    const url = 'politics'; 
 
     return  this.http.get(url)
   }
@@ -43,7 +43,7 @@ export class AdminService {
   addEconomy(economyForm) {
 
 
-  const url = 'http://localhost:8080/economy'; 
+  const url = 'economy'; 
 
   return  this.http.post(url, economyForm)
 
@@ -51,7 +51,7 @@ export class AdminService {
   getAllEconomy() {
 
 
-  const url = 'http://localhost:8080/economy'; 
+  const url = 'economy'; 
 
   return  this.http.get(url)
 

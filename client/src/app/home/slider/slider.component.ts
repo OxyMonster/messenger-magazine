@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
 import { HomeService } from '../home.service';
 import { HeadlinesService } from 'src/app/services/headlines.service';
-import { WeatherService } from 'src/app/services/weather.service';
 import { GlobalService } from 'src/app/services/global.service';
 
 @Component({
@@ -31,11 +30,10 @@ export class SliderComponent implements OnInit, OnDestroy {
 
   constructor(
     private headlinesService: HeadlinesService,
-    private weatherService: WeatherService,
     private globalSerice: GlobalService
   ) { }
 
-  ngOnInit() {
+  ngOnInit() {  
    
     this.getWeather();  
     this.getCurrencyRate();
