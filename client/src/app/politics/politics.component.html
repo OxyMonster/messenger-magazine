@@ -17,17 +17,19 @@
                     </div>   
                 </div>
                 <div>
-                    <div class="main__image mt-3 d-flex justify-content-center" >
-                        <div class="main__image__content">
-                            <img *ngIf="item.file.path"
-                                 [src]="item.file.path">
-                           
-                        
+                    <div class="row align-items-center">
+                        <div class="main__image mt-3 d-flex justify-content-center col-lg-6" >
+                            <div class="main__image__content">
+                                <img *ngIf="item.file.path"
+                                     [src]="item.file.path">
+                               
+                            
+                            </div>
                         </div>
-                    </div>
-                
-                    <div class="main__description mt-4 col-lg-6 main__description">
-                        <p> {{item.description   }} </p>
+                    
+                        <div class="main__description mt-4 col-lg-6 main__description">
+                            <p> {{item.description   }} </p>
+                        </div>
 
                     </div>
             

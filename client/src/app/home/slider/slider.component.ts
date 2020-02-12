@@ -39,6 +39,7 @@ export class SliderComponent implements OnInit, OnDestroy {
    
     this.getWeather();  
     this.getCurrencyRate();
+    this.getHeadlines(); 
 
 
   }
@@ -82,7 +83,10 @@ export class SliderComponent implements OnInit, OnDestroy {
                  }); 
 
                  this.images = this.allHeadlineImages.map( item => { return item } ) ;
-                 this.imagesTodisplay = [ this.images[0], this.images[1], this.images[2], this.images[3] ]
+                //  if(this.images.length <= 4) {
+                //    this.imagesTodisplay = [ this.images[0], this.images[1], this.images[2], this.images[3] ].reverse(); 
+
+                //  }; 
                  
                  
                }, err => {

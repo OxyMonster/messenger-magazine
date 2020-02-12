@@ -1,13 +1,13 @@
 <div class="news row">
-    <div class="col-md-12" *ngIf="allCulutre.length > 0 " >
+    <div class="col-md-12" *ngIf=" allEconomy.length > 0" >
         <div class="main p-2 row" >
-            <div class="col-12" *ngFor="let item of allCulutre; first as isFirst">
+            <div class="col-12" *ngFor="let item of allEconomy; first as isFirst">
                 <div class="main__title col-12" >
-                    <h4 > {{ item.title }} </h4>
+                    <h4 > {{ item.title }} </h4>  
                 </div>
                 <div class="main__social mt-2 col-12 d-flex justify-content-between">
                     <div class="col-md-9 p-0">
-                        <span> {{ item.date }} </span>
+                        <span> {{ item.date | date }} </span>
                     </div>
                     <div class="col-md-3  d-flex justify-content-between">
                         <i class="fab fa-twitter"></i>
@@ -17,23 +17,24 @@
                     </div>   
                 </div>
                 <div>
-                    <div class="main__image mt-3 d-flex justify-content-center" >
-                        <div class="main__image__content">
-                            <img *ngIf="item.file.path"
-                                 [src]="item.file.path">
-                           
-                        
+                    <div class="row align-items-center">
+                        <div class="main__image mt-3 d-flex justify-content-center col-lg-6" >
+                            <div class="main__image__content">
+                                <img *ngIf="item.file.path"
+                                     [src]="item.file.path">
+                               
+                            
+                            </div>
                         </div>
-                    </div>
-                
-                    <div class="main__description mt-4 col-lg-6 main__description">
-                        <p> {{item.description   }} </p>
+                    
+                        <div class="main__description mt-4 col-lg-6 main__description">
+                            <p> {{item.description   }} </p>
+                        </div>
 
                     </div>
             
                 </div>
             </div>
-          
         </div>
-    </div>  
+    </div>
 </div>   

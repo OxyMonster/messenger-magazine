@@ -61,3 +61,7 @@ h3 {
         }
     }
 }
+
+::ng-deep .carousel-inner {
+    border-radius: .5rem;
+}

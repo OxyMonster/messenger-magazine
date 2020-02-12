@@ -30,6 +30,7 @@ import { AuthGuard } from './admin-panel/auth.guard';
 import { EconomyComponent } from './economy/economy.component';
 import { CultureComponent } from './culture/culture.component';
 import { PoliticsComponent } from './politics/politics.component';
+import { WeatherWidgetMainComponent } from './home/slider/weather/weather.component';
 
 
  
@@ -54,7 +55,8 @@ import { PoliticsComponent } from './politics/politics.component';
     EconomyComponent,
     CultureComponent,
     PoliticsComponent, 
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    WeatherWidgetMainComponent
   ],
   imports: [
     AdminPanelModule,

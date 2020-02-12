@@ -27,7 +27,7 @@ export class NewsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
-    // this.getAllNews(); 
+    this.getAllNews(); 
   }
 
   getAllNews() {
