@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const economySchema = new mongoose.Schema({
     title: String, 
     description: String,
-    date: Date,
+    date: String,
     file: Object
 }); 
 
