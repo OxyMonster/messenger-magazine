@@ -23,6 +23,9 @@ app.use(bodyParser.json())
 const uploadRoutes = require('./routes/file-uploads');
 const newsRoute = require('./routes/news');
 const headlinesRoute = require('./routes/headlines');
+const cultureRoute = require('./routes/culture'); 
+const politicsRoute = require('./routes/politics');
+const economyRoute = require('./routes/economy');  
 const adminRoute = require('./routes/admin'); 
 
 
@@ -30,6 +33,9 @@ const adminRoute = require('./routes/admin');
 app.use(uploadRoutes);
 app.use(newsRoute); 
 app.use(headlinesRoute); 
+app.use(cultureRoute);
+app.use(politicsRoute);
+app.use(economyRoute);
 app.use(adminRoute); 
 
 

@@ -20,14 +20,11 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot)
     : Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
      
-      if ( !this.adminService.isLoggedIn() ) {
-        console.log("routeeeeeeee");
-        
-        this.router.navigateByUrl('/admin-login');
-        this.adminService.removeToken(); 
+     
+      
         return false; 
         
-      } 
+    
         return true;
   }
   

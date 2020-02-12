@@ -1,21 +1,21 @@
 <div class="main-navigation pt-2 pb-2 row">
     <div class="main-navigation__item col-md-2">
-        <a [routerLink]="[ '/home' ]" routerLinkActive="active">HOME</a>
+        <a [routerLink]="[ '/home' ]" routerLinkActive="active">Home</a>
     </div>
     <div class="main-navigation__item col-md-2">
-        <a [routerLink]="[ '/news' ]" routerLinkActive="active" >NEWS</a>
+        <a [routerLink]="[ '/news' ]" routerLinkActive="active" >News</a>
     </div>
     <div class="main-navigation__item col-md-2">
-        <a [routerLink]="[ '/headlines' ]" routerLinkActive="active">HEADLINES</a>
+        <a [routerLink]="[ '/politics' ]" routerLinkActive="active">Politics</a>
     </div>
     <div class="main-navigation__item col-md-2">
-        <a [routerLink]="[ '/about-us' ]" routerLinkActive="active">ABOUT-US</a>
+        <a [routerLink]="[ '/culutre-lifystyle' ]" routerLinkActive="active">Culture & Lifestyle</a>
+    </div>
+    <div class="main-navigation__item col-md-2" style="text-align: center;">
+        <a [routerLink]="[ '/economy' ]" routerLinkActive="active" >Economy</a>
     </div>
     <div class="main-navigation__item col-md-2">
-        <a [routerLink]="[ '/advertisement' ]" routerLinkActive="active" >ADVERTISEMENT</a>
-    </div>
-    <div class="main-navigation__item col-md-2">
-        <a [routerLink]="[ '/contact' ]" routerLinkActive="active" >CONTACT</a>
+        <a [routerLink]="[ '/contact' ]" routerLinkActive="active" >Contact</a>
     </div>  
     
 <div class="nav" style="z-index: 69;">
@@ -41,7 +41,13 @@
                 <li>NEWS</li>
             </a>
             <a [routerLink]="[ '/headlines' ]">
-                <li>HEADLINES</li>
+                <li>POLITICS</li>
+            </a>
+            <a [routerLink]="[ '/headlines' ]">
+                <li>Culture & Lifestyle</li>
+            </a>
+            <a [routerLink]="[ '/headlines' ]">    
+                <li>ECONOMY</li>
             </a>
             <a [routerLink]="[ '/about-us' ]">
                 <li>ABOUT-US</li>

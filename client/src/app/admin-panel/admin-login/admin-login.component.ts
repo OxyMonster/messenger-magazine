@@ -31,32 +31,32 @@ export class AdminLoginComponent implements OnInit {
   }
 
 
-  submitForm() {
+  // submitForm() {
 
-    console.log(this.adminForm.value.userName);
+  //   console.log(this.adminForm.value.userName);
     
 
-    if( this.adminForm.value.userName.length > 0 && this.adminForm.value.password.length > 0 ) 
+  //   if( this.adminForm.value.userName.length > 0 && this.adminForm.value.password.length > 0 ) 
 
-    this.adminService
-        .loginAdmin(this.adminForm.value)
-        .subscribe( data => {
-          console.log(data);
+  //   this.adminService
+  //       .loginAdmin(this.adminForm.value)
+  //       .subscribe( data => {
+  //         console.log(data);
           
-          if ( data['accessToken'] ) {
-            this.adminService.setToken(data); 
-            this.isAdmin = true; 
-            this.router.navigate(['/admin/add-news'])
+  //         if ( data['accessToken'] ) {
+  //           this.adminService.setToken(data); 
+  //           this.isAdmin = true; 
+  //           this.router.navigate(['/admin/add-news'])
 
-          } else {
+  //         } else {
             
-          }
+  //         }
 
           
           
-        }, err => this.isAdmin = false ); 
+  //       }, err => this.isAdmin = false ); 
 
-  } 
+  // } 
 
 
 }

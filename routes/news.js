@@ -18,31 +18,31 @@ let storage = multer.diskStorage({
 let upload  = multer({storage: storage}); 
 
 
-router.post('/news', upload.single('file'), (req, res) => {
+// router.post('/news', upload.single('file'), (req, res) => {
 
-    const news = new newsModel({
-        title: req.body.title,
-        description: req.body.description,
-        date: req.body.date,
-        file: req.file
-    }); 
-    console.log(req.file);
+//     const news = new newsModel({
+//         title: req.body.title,
+//         description: req.body.description,
+//         date: req.body.date,
+//         file: req.file
+//     }); 
+//     console.log(req.file);
         
    
-    news.save()
-        .then(data => {
-            console.log(data);
-            res.status(200).json(data); 
+//     news.save()
+//         .then(data => {
+//             console.log(data);
+//             res.status(200).json(data); 
                  
-             })
-        .catch(err => {
-             console.log(err);
-             res.status(400).json(err); 
+//              })
+//         .catch(err => {
+//              console.log(err);
+//              res.status(400).json(err); 
                  
-             });
+//              });
 
 
-}); 
+// }); 
 
 router.get('/news', (req, res) => {
     

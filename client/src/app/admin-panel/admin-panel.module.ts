@@ -12,6 +12,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AdminNavigationComponent } from './admin-navigation/admin-navigation.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AuthGuard } from './auth.guard';
+import { CultureComponent } from '../culture/culture.component';
+import { PoliticsComponent } from '../politics/politics.component';
+import { AddPoliticsComponent } from './add-politics/add-politics.component';
+import { AddCultureComponent } from './add-culture/add-culture.component';
+import { AddEconomyComponent } from './add-economy/add-economy.component';
 
   
 const routes: Routes = [
@@ -21,6 +26,9 @@ const routes: Routes = [
        children: [
         { path: 'add-news', component: AddNewsComponent, },
         { path: 'add-headlines', component: AddHeadlinesComponent,  },
+        { path: 'add-culture', component: AddCultureComponent,  },
+        { path: 'add-economy', component: AddEconomyComponent,  },
+        { path: 'add-politics', component: AddPoliticsComponent,  },
         { path: 'all-news', component: AllNewsComponent, },
         { path: 'all-headlines', component: AllHeadlinesComponent, },
       ] }
@@ -35,7 +43,10 @@ const COMPONENTS = [
     AllHeadlinesComponent, 
     AdminNavigationComponent,
     AdminPanelComponent, 
-    AdminLoginComponent
+    AdminLoginComponent,
+    AddPoliticsComponent,
+    AddCultureComponent,
+    AddEconomyComponent
 ]
 
 

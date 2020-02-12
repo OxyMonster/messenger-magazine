@@ -27,6 +27,9 @@ import { NewsService } from './services/news.service';
 import { HeadlinesService } from './services/headlines.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGuard } from './admin-panel/auth.guard';
+import { EconomyComponent } from './economy/economy.component';
+import { CultureComponent } from './culture/culture.component';
+import { PoliticsComponent } from './politics/politics.component';
 
 
  
@@ -48,7 +51,9 @@ import { AuthGuard } from './admin-panel/auth.guard';
     AdsComponent,
     FooterComponent,
     HeadlinesComponent,
-    // AdminPanelComponent,
+    EconomyComponent,
+    CultureComponent,
+    PoliticsComponent, 
     PageNotFoundComponent
   ],
   imports: [

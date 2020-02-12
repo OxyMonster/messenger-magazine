@@ -13,7 +13,7 @@ constructor(
 
 getAllHeadlines() {
 
-  const url = 'headlines';
+  const url = 'http://localhost:8080/headlines';
   
   return this.http.get(url); 
 

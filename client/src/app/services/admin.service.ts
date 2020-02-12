@@ -11,47 +11,51 @@ export class AdminService {
   ) { }
 
 
-  loginAdmin(adminForm) {
-    const url = 'http://localhost:8080/admin'; 
+  addCulture(cultureForm) {
 
-    return this.http.post(url, adminForm ); 
+  const url = 'culture'; 
 
-  }; 
-  
-  setToken(token: any) {
+  return  this.http.post(url, cultureForm)
 
-    localStorage.setItem('token', token); 
-  
-  }; 
+  };
 
-  removeToken() {
-    localStorage.removeItem('token'); 
-  }; 
-
-  getAdminPayload() {
+  getCulture() { 
     
-    let token = localStorage.getItem('token'); 
-    if ( token ) {
-      
-      // let adminPayload = atob(token.split('.')[1]);
-      // return JSON.parse(adminPayload); 
+  const url = 'culture'; 
 
-    } else  { 
-      return null
-    }
-
-  }; 
-
-
-  isLoggedIn() {
-    let adminPayload = this.getAdminPayload(); 
-
-    if ( adminPayload ) {
-
-      return adminPayload.exp > Date.now() / 1000; 
-    }
+  return  this.http.get(url); 
   }
 
+  addPolitics(politicsForm) {
+
+  const url = 'politics'; 
+
+  return  this.http.post(url, politicsForm)
+
+  };
+
+  getAllPolitics() {
+    const url = 'http://localhost:8080/politics'; 
+
+    return  this.http.get(url)
+  }
+
+  addEconomy(economyForm) {
+
+
+  const url = 'http://localhost:8080/economy'; 
+
+  return  this.http.post(url, economyForm)
+
+  };
+  getAllEconomy() {
+
+
+  const url = 'http://localhost:8080/economy'; 
+
+  return  this.http.get(url)
+
+  };
 
 
 }
