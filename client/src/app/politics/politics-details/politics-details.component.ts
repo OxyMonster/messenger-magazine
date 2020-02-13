@@ -35,6 +35,8 @@ export class PoliticsDetailsComponent implements OnInit {
                .pipe( takeUntil(this.ngUnsubscribe) )
                .subscribe( data => {
                  this.politics = [data]; 
+                 console.log(this.politics); 
+                 
                }, err => console.log(err) )
 
 
