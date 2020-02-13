@@ -34,6 +34,7 @@ import { WeatherWidgetMainComponent } from './home/slider/weather/weather.compon
 import { EconomyDetailsComponent } from './economy/economy-details/economy-details.component';
 import { PoliticsDetailsComponent } from './politics/politics-details/politics-details.component';
 import { CultureDetailsComponent } from './culture/culture-details/culture-details.component';
+import { CurrencyComponent } from './home/slider/currency/currency.component';
 
 
  
@@ -62,7 +63,8 @@ import { CultureDetailsComponent } from './culture/culture-details/culture-detai
     WeatherWidgetMainComponent,
     EconomyDetailsComponent,
     PoliticsDetailsComponent,
-    CultureDetailsComponent
+    CultureDetailsComponent,
+    CurrencyComponent
   ],
   imports: [
     AdminPanelModule,

@@ -23,13 +23,6 @@ export class SliderComponent implements OnInit, OnDestroy {
 
   // * * Currency  * * 
 
-  USD: number = 0; 
-  GBP: number = 0; 
-  RUB: number = 0;
-  EURO: number = 0; 
-
-  math = Math; 
-
   protected ngUnsubscribe: Subject<void> = new Subject<void>();
 
 
@@ -39,9 +32,7 @@ export class SliderComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {  
-   
-    this.getWeather();  
-    this.getCurrencyRate();
+    
     this.getHeadlines(); 
 
 
@@ -97,32 +88,10 @@ export class SliderComponent implements OnInit, OnDestroy {
 
 
 
-  getWeather() {
-      this.globalSerice.getWeather();
-    
-      
-  }; 
-
-
-  getCurrencyRate() {
-    return this.globalSerice
-               .getCurrency()
-               .subscribe(data => {
-  
-                 this.USD = data['usd']['inverseRate']; 
-                 this.GBP = data['gbp']['inverseRate']; 
-                 this.EURO = data['eur']['inverseRate'];
-                 this.RUB = data['rub']['inverseRate']; 
-                 
-               }, err => console.log(err)); 
-  }
-
-
  
 
 ngOnDestroy(): void {
 
-  this.getCurrencyRate().unsubscribe(); 
   this.getHeadlines().unsubscribe(); 
 }
   

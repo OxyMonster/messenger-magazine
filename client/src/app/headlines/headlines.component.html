@@ -1,12 +1,12 @@
 <!-- <div class="row"> -->
-    <ng-container *ngIf="allHeadlines.length > 0" >
+    <ng-container  >
         <div [ngClass]="{'headlines p-3': router.url === '/headlines'}">
             <div class="col-12 headlines-title mt-3">
                 <h4>Headlines</h4>
             </div>
             <div class="headlines__content col-md-12">
                 <div class="popular row p-3 mb-5" >
-                    <div class="mt-3"*ngFor="let item of allHeadlines">
+                    <div class="mt-3 col-12"*ngFor="let item of allHeadlines">
                         <div class="popular__title col-12">
                             <span> {{ item.date }} </span>
                         </div>

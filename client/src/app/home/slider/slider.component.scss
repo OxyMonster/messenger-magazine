@@ -6,63 +6,31 @@ img {
    
 }
 
-h3 {
-    font-size: 2rem;
-   
-}
-
-.slider {
-
-    &__weather {
-        background-color: #e8e8e8;
-        border: 2px solid transparent;
-        border-radius: .5rem;
-
-        &__title {
-
-            h1 {
-                font-size: 1.6rem;
-                font-family: "Lora", serif;
-                text-align: center;
-            }
-        }
-    }
-
-
-    &__valute {
-        background-color: #e8e8e8;
-        border: 2px solid transparent;
-        border-radius: .5rem;
-
-        &__title {
-            h1 {
-                font-size: 1.6rem;
-                font-family: "Lora", serif;
-                text-align: center;
-            }
-        }
-
-        p {
-            // font-weight: bold;
-            font-family: "Lora", serif;
-
-        }
-
-        &__item {
-            &__image {
-                width: 2rem;
-                height: 1rem;
-
-                img {
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-        }
-    }
-}
 
 ::ng-deep .carousel-inner {
     border-radius: .5rem;
     height: 100%;
+}
+
+::ng-deep.carousel-item {
+    display: block !important;
+    z-index: 1;
+    position: absolute;
+    transition: opacity 1.5s easy-in-out, visibility 1s;
+    opacity: 0;
+    visibility: hidden;
+}
+::ng-deep.carousel-item.active {
+    position: relative;
+    transition: opacity 1.5s easy-in-out, visibility 1s;
+    visibility: visible;
+    opacity: 1;
+}
+
+.slider {
+    &__weather {
+        background-color: #e8e8e8;
+        border: 2px solid transparent;
+        border-radius: .5rem;
+    }
 }

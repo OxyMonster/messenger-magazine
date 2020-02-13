@@ -4,7 +4,12 @@
             <input type="text" class="input-group-text" placeholder="title" formControlName="title">
         </div>
         <div class="col-12 mt-3">
-            <input type="text" class="input-group-text" placeholder="description" formControlName="description">
+            <textarea formControlName="description" 
+                        class="input-group-text" 
+                        placeholder="description" 
+                        cols="100" 
+                        rows="10">
+            </textarea>
         </div>
         <div class="col-12 mt-3">  
             <input type="text" class="input-group-text" placeholder="date" formControlName="date">

@@ -1,16 +1,9 @@
 
   <div class="slider d-flex row justify-content-between mb-3">
-    <!-- * ** Weather * * * * -->
-    <div class="slider__weather col-md-3 p-0 mb-3">
-      <div class="slider__weather__title mt-3 mb-4">
-        <h1>Weather</h1>
-        <app-weather></app-weather>
-      </div>
 
-    </div>
     <!-- * * *Images slider * * * *  -->
-    <div class="slider__slider col-md-6 mb-3 d-flex align-items-center">
-      <ngb-carousel #carousel interval="1000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
+    <div class="slider__slider col-md-9 mb-3 d-flex align-items-center">
+      <ngb-carousel #carousel interval="2500" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
           <ng-template ngbSlide *ngFor="let img of images; index as i">
             <div class="carousel-caption">
               <h3> {{ img.title }} </h3>
@@ -25,39 +18,12 @@
   </div>
   <!-- End  -->
   <!-- * * * *Valute * ** *  -->
-  <div class="slider__valute col-md-3 p-0 mb-3" >
-    <div class="slider__valute__title mt-3 mb-4">
-      <h1>Currency</h1>
-    </div>
-    <div class="slider__valute__item col-12 d-flex justify-content-around">
-      <div class="slider__valute__item__image">
-        <img src="assets/image/usa.svg" alt="">
-      </div>
-      <p>USD: </p>
-      <p> {{ USD + ' GEL' }} </p>
-    </div>
-    <div class="slider__valute__item col-12 d-flex justify-content-around">
-      <div class="slider__valute__item__image">
-        <img src="assets/image/euro.svg" alt="">
-      </div>
-      <p>EUR: </p>
-      <p> {{ EURO + ' GEL' }} </p>
-    </div>
-    <div class="slider__valute__item col-12 d-flex justify-content-around">
-      <div class="slider__valute__item__image">
-        <img src="assets/image/uk.svg" alt="">
-      </div>
-      <p>GBP: </p>
-      <p> {{ GBP + ' GEL' }} </p>
-    </div>
-    <div class="slider__valute__item col-12 d-flex justify-content-around">
-      <div class="slider__valute__item__image">
-        <img src="assets/image/rus.svg" alt="">
-      </div>
-      <p>RUB: </p>
-      <p> {{ RUB + ' GEL' }} </p>
+  <div class="slider__weather col-md-3 p-0 mb-3">
+    <div class="mt-4">
+      <app-weather></app-weather>
     </div>
   </div>
+  
 
   </div>
 

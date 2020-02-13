@@ -1,18 +1,22 @@
 <div class="home w-100">
-    <app-slider class="w-100"></app-slider>
-    
-    <div class="home__content mt-5 d-flex justify-content-between row">
+    <div class="home__content  d-flex justify-content-between row">
         <div class="home__content__headline col-md-3">
             <app-headlines></app-headlines>
         </div>
-        <div class="home__content__main col-md-9 row  d-flex">
-            <div class="col" >   
-                <app-news></app-news>
-            </div>
-            <div class="col-md-3" >
-                <app-ads></app-ads>
+        <div class="col-md-9">
+            <app-slider></app-slider>
+
+            <div class="home__content__main mt-5 pl-3 row">
+                <div class="col-lg-9" >   
+                    <app-news></app-news>
+                </div>
+                <div class="col-lg-3" >
+                    <app-ads></app-ads>
+                </div>
             </div>
         </div>
+        
+       
 
     </div>   
 
