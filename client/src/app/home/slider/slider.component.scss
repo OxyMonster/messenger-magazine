@@ -20,6 +20,7 @@ img {
     opacity: 0;
     visibility: hidden;
 }
+
 ::ng-deep.carousel-item.active {
     position: relative;
     transition: opacity 1.5s easy-in-out, visibility 1s;
