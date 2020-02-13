@@ -1,10 +1,10 @@
 <ng-container *ngIf="isAdminActive; else showApp">
-  <div class="container-fluid h-100">
-    <div class="row h-100">
+  <div class="container-fluid h-100" style="min-height: 100vh;">
+    <div class="row h-100" style="min-height: 100vh;">
       <div class="admin-navingation col-lg-3">
         <app-admin-navigation></app-admin-navigation>
     </div>
-    <div class="admin-content col-lg-9 mt-5 h-100">
+    <div class="admin-content pb-5 col-lg-9 mt-5 h-100" >
         <app-admin-panel ></app-admin-panel>
     </div>
     </div>
