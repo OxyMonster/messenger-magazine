@@ -1,4 +1,4 @@
-<div class="news row">
+<div class="news row" *ngIf="cultures.length > 0">
     <div class="col-md-12"  >
         <div class="main p-2 row" >
             <div class="col-12" *ngFor="let item of cultures; first as isFirst">
