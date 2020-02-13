@@ -86,7 +86,24 @@ router.get('/economy', (req, res) => {
                   .catch(err => {
                     res.status(404).json(err); 
                 }); 
-});      
+});    
+
+
+router.get('/economy/:id', (req, res) => {
+    economyModel.findById(req.params.id)
+                .then(data => {
+    
+                 res.status(200).json(data); 
+                 console.log(data);
+                 
+             })
+             .catch(err => {
+
+                 console.log(err);
+                 res.status(400).json(err); 
+                 
+             })
+})
 
 
   

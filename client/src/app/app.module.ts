@@ -31,6 +31,9 @@ import { EconomyComponent } from './economy/economy.component';
 import { CultureComponent } from './culture/culture.component';
 import { PoliticsComponent } from './politics/politics.component';
 import { WeatherWidgetMainComponent } from './home/slider/weather/weather.component';
+import { EconomyDetailsComponent } from './economy/economy-details/economy-details.component';
+import { PoliticsDetailsComponent } from './politics/politics-details/politics-details.component';
+import { CultureDetailsComponent } from './culture/culture-details/culture-details.component';
 
 
  
@@ -56,7 +59,10 @@ import { WeatherWidgetMainComponent } from './home/slider/weather/weather.compon
     CultureComponent,
     PoliticsComponent, 
     PageNotFoundComponent,
-    WeatherWidgetMainComponent
+    WeatherWidgetMainComponent,
+    EconomyDetailsComponent,
+    PoliticsDetailsComponent,
+    CultureDetailsComponent
   ],
   imports: [
     AdminPanelModule,

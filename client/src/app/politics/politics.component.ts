@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { takeUntil } from 'rxjs/operators';
 import { AdminService } from '../services/admin.service';
 import { Subject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-politics',
@@ -17,7 +18,8 @@ export class PoliticsComponent implements OnInit {
 
 
   constructor(
-    private adminService: AdminService
+    private adminService: AdminService,
+    private router : Router
   ) { }
 
   ngOnInit() {
@@ -30,9 +32,18 @@ export class PoliticsComponent implements OnInit {
         .pipe( takeUntil(this.ngUnsubscribe) )
         .subscribe(data => {
           console.log(data);
-          this.allPoltics = data['politicsData']; 
+          this.allPoltics = data['politicsData'].reverse(); 
           
         }, err => console.log(err)); 
   }; 
+
+
+  routeToPolitics(id: string) {  
+    console.log('In route');
+    this.router.navigate([`/politics/${id}`]); 
+
+    
+  }
+
 
 }

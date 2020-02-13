@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../services/admin.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-culture',
@@ -16,7 +17,8 @@ export class CultureComponent implements OnInit {
 
 
   constructor(
-    private adminService: AdminService
+    private adminService: AdminService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -29,9 +31,19 @@ export class CultureComponent implements OnInit {
         .pipe( takeUntil(this.ngUnsubscribe) )
         .subscribe(data => {
           console.log(data);
-          this.allCulutre = data['cultureData']; 
+          this.allCulutre = data['cultureData'].reverse(); 
           
         }, err => console.log(err)); 
+  }; 
+
+
+  routeToCulture(id: string) {  
+    console.log('In route');
+    this.router.navigate([`/culutre-lifystyle/${id}`]); 
+
+    
   }
+
+
 
 }

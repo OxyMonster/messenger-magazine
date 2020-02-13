@@ -58,8 +58,8 @@ export class AdminService {
 
   getAllPolitics() {
     const url = 'politics'; 
-
-    return  this.http.get(url)
+    
+    return  this.http.get(url)    
   }
 
   addEconomy(economyForm) {
@@ -79,7 +79,7 @@ export class AdminService {
   };
 
 
-  getAllEconomy() {
+  getAllEconomy() {   
 
 
   const url = 'economy'; 

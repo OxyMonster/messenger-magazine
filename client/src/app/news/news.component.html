@@ -14,7 +14,7 @@
                         <i class="fab fa-twitter"></i>
                         <i class="fab fa-linkedin-in"></i>  
                         <i class="fab fa-facebook-f"></i>
-                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-instagram"></i>   
                     </div>   
                 </div>
                 <div [ngClass]="{'row align-items-center': router.url === '/news'}">
@@ -38,7 +38,7 @@
                                 (click)="routeToNewsDetails(item._id)"> See more 
                             </p>
                         </div>
-                        <p *ngIf="router.url !== '/home'"> {{item.description   }} </p>
+                        <p *ngIf="router.url === '/news'"> {{ item.description | slice:0:1000   }} </p>
 
                     </div>
             

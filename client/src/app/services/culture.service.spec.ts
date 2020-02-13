@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { GlobalService } from './global.service';
+import { CultureService } from './culture.service';
 
-describe('GlobalService', () => {
+describe('CultureService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: GlobalService = TestBed.get(GlobalService);
+    const service: CultureService = TestBed.get(CultureService);
     expect(service).toBeTruthy();
   });
 });

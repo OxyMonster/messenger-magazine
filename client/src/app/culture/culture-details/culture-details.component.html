@@ -1,9 +1,9 @@
-<div class="news row" *ngIf=" allEconomy.length > 0">
+<div class="news row" *ngIf=" cultures.length > 0">
     <div class="col-md-12"  >
         <div class="main p-2 row" >
-            <div class="col-12 mt-3" *ngFor="let item of allEconomy; first as isFirst" [ngClass]="{'mt-3': isFirst, 'mt-5': !isFirst}">
+            <div class="col-12" *ngFor="let item of cultures; first as isFirst">
                 <div class="main__title col-12" >
-                    <h4 (click)="routeToEconomyDetails(item._id)"> {{ item.title }} </h4>  
+                    <h4 style="cursor: auto;"> {{ item.title }} </h4>  
                 </div>
                 <div class="main__social mt-2 col-12 d-flex justify-content-between">
                     <div class="col-md-9 p-0">
@@ -28,7 +28,7 @@
                         </div>
                     
                         <div class="main__description mt-4 col-lg-6 main__description">
-                            <p> {{item.description  | slice:0:1000 }} </p>
+                            <p> {{item.description  }} </p>
                         </div>
 
                     </div>
