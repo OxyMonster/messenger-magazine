@@ -12,7 +12,7 @@ export class EconomyService {
 
 
   getEconomyById(id: string) {
-    const url = `economy/${id}`; 
+    const url = `economy/${id}`;    
     return this.http.get(url); 
   }
 }
