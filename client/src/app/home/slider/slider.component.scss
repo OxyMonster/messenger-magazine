@@ -10,22 +10,63 @@ img {
 ::ng-deep .carousel-inner {
     border-radius: .5rem;
     height: 100%;
+    width: 100%;
+    outline: none;
 }
 
-::ng-deep.carousel-item {
-    display: block !important;
-    z-index: 1;
-    position: absolute;
-    transition: opacity 1.5s easy-in-out, visibility 1s;
+
+//  animation 11 
+::ng-deep {
+  .carousel-item {
+    transition: opacity 1s ease!important;
+    position: absolute!important;
+    display: block!important;
     opacity: 0;
-    visibility: hidden;
+ }
+
+ .carousel-item.active {
+    position: relative!important;
+    opacity: 1;
+  }
+}; 
+
+
+ngb-carousel {
+  width: inherit;
+  height: inherit;
 }
 
-::ng-deep.carousel-item.active {
-    position: relative;
-    transition: opacity 1.5s easy-in-out, visibility 1s;
-    visibility: visible;
-    opacity: 1;
+
+.carousel-inner {
+  overflow: visible;
+}
+
+.carousel-item {
+  display: flex !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.2s ease-in-out, visibility 1.2s;
+  z-index: -1;
+  position: absolute;
+}
+
+.carousel-item.active{
+  opacity: 1;
+  visibility: visible;
+  z-index: 10;
+}
+
+.carousel-control-prev {
+   z-index: 20;
+}
+
+
+.carousel-control-next {
+   z-index: 20;
+}
+
+.carousel-indicators{
+  z-index: 20;
 }
 
 .slider {

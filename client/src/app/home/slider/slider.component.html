@@ -3,7 +3,7 @@
 
     <!-- * * *Images slider * * * *  -->
     <div class="slider__slider col-md-9 mb-3 d-flex align-items-center">
-      <ngb-carousel #carousel interval="2500" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
+      <ngb-carousel #carousel interval="3000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
           <ng-template ngbSlide *ngFor="let img of images; index as i">
             <div class="carousel-caption">
               <h3> {{ img.title }} </h3>
