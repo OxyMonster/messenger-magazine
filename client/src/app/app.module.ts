@@ -35,6 +35,7 @@ import { EconomyDetailsComponent } from './economy/economy-details/economy-detai
 import { PoliticsDetailsComponent } from './politics/politics-details/politics-details.component';
 import { CultureDetailsComponent } from './culture/culture-details/culture-details.component';
 import { CurrencyComponent } from './home/slider/currency/currency.component';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 
  
@@ -79,7 +80,7 @@ import { CurrencyComponent } from './home/slider/currency/currency.component';
     NewsService,
     HeadlinesService,
     // AuthGuard
-    // { provide: LocationStrategy, useClass: HashLocationStrategy }, 
+    { provide: LocationStrategy, useClass: HashLocationStrategy }, 
   ],
   bootstrap: [AppComponent]
 })
