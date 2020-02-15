@@ -2,7 +2,7 @@
   <div class="slider d-flex row justify-content-between mb-3">
 
     <!-- * * *Images slider * * * *  -->
-    <div class="slider__slider col-md-9 mb-3 d-flex align-items-center">
+    <div class="slider__slider col-lg-10 mb-3 d-flex align-items-center">
       <ngb-carousel #carousel interval="3000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
           <ng-template ngbSlide *ngFor="let img of images; index as i">
             <div class="carousel-caption">
@@ -18,7 +18,7 @@
   </div>
   <!-- End  -->
   <!-- * * * *Valute * ** *  -->
-  <div class="slider__weather col-md-3 p-0 mb-3">
+  <div class="slider__weather col-lg-2 p-0 mb-3">
     <div class="mt-4">
       <app-weather></app-weather>
     </div>
