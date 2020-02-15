@@ -42,9 +42,15 @@
                 object-fit: cover;
             }
         }
-    }
+    }   
 
     &__description {
+
+        -moz-hyphens:auto;
+        -ms-hyphens:auto;
+        -webkit-hyphens:auto;
+        hyphens:auto;
+        word-wrap:break-word;
 
         h4  {
             font-size: 1rem;
