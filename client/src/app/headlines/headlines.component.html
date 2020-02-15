@@ -25,7 +25,7 @@
                                  >
                                  {{ item.title }}
                             </h4>
-                            <div class="col-12">
+                            <div class="">
                                 <p *ngIf="router.url === '/home'"> {{item.description | slice:0:120  }} </p>
                                 <p *ngIf="router.url === '/home'"  
                                     style = 'cursor: pointer; color: #de1e26;' 
