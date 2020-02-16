@@ -21,35 +21,53 @@
 <div class="nav" style="z-index: 69;">
     <nav role="navigation" style = " 
                                     position: absolute;
-                                    top: -37px;" >
+                                    top: -2.5rem;
+                                    left: 7rem;" >
         <div id="menuToggle">
       
-          <input type="checkbox" />
+          <!-- <input type="checkbox"  /> -->
           
        
-          <span></span>
-          <span></span>
-          <span></span>
+          <i class="fas fa-bars" (click)="toggleMenu('open')" 
+                                *ngIf="!isMenuActive" 
+                                style="font-size: 2rem; cursor: pointer;"></i>
+         
+          <!-- <span></span> -->
           
 
-          <ul id="menu" style="text-align: center;" >
-            
-            <a [routerLink]="[ '/home' ]">
+          <ul id="menu" style="text-align: center;" *ngIf="isMenuActive" >
+             <a>
+                 <li>
+                    <i class="fas fa-times" (click)="toggleMenu('close')" 
+                    *ngIf="isMenuActive" 
+                    style="font-size: 2rem; cursor: pointer;"></i>
+                 </li>
+             </a>
+        
+
+            <a [routerLink]="[ '/home' ]" 
+                (click)="toggleMenu('close')"
+                >
                 <li>HOME</li>
             </a>
-            <a [routerLink]="[ '/news' ]">
+            <a [routerLink]="[ '/news' ]" 
+                (click)="toggleMenu('close')">
                 <li>NEWS</li>
             </a>
-            <a [routerLink]="[ '/politics' ]">
+            <a [routerLink]="[ '/politics' ]" 
+                (click)="toggleMenu('close')">
                 <li>POLITICS</li>
             </a>
-            <a [routerLink]="[ '/culutre-lifystyle' ]">
+            <a [routerLink]="[ '/culutre-lifystyle' ]" 
+                (click)="toggleMenu('close')">
                 <li>CULTURE</li>
             </a>
-            <a [routerLink]="[ '/economy' ]">    
+            <a [routerLink]="[ '/economy' ]" 
+                (click)="toggleMenu('close')">    
                 <li>ECONOMY</li>
             </a>
-            <a [routerLink]="[ '/contact' ]" >
+            <a [routerLink]="[ '/contact' ]" 
+                (click)="toggleMenu('close')" >
                 <li>CONTACT</li>
             </a>
             

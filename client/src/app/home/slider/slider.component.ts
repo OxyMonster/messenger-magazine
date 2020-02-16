@@ -5,6 +5,7 @@ import { HeadlinesService } from 'src/app/services/headlines.service';
 import { GlobalService } from 'src/app/services/global.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-slider',
@@ -28,7 +29,8 @@ export class SliderComponent implements OnInit, OnDestroy {
 
   constructor(
     private headlinesService: HeadlinesService,
-    private globalSerice: GlobalService
+    private globalSerice: GlobalService,
+    private router : Router
   ) { }
 
   ngOnInit() {  
@@ -85,6 +87,11 @@ export class SliderComponent implements OnInit, OnDestroy {
                  
                })
   }; 
+
+
+  routerToHeadlinesDetails(id: string) {    
+    return this.router.navigate([`/headlines/${id}`])
+  }
 
 
 

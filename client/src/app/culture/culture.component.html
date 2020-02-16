@@ -9,16 +9,18 @@
                     <div class="col-md-9 p-0">
                         <span> {{ item.date  }} </span>
                     </div>
-                    <div class="col-md-3  d-flex justify-content-between">
-                        <i class="fab fa-twitter"></i>
-                        <i class="fab fa-linkedin-in"></i>  
-                        <i class="fab fa-facebook-f"></i>
-                        <i class="fab fa-instagram"></i>
+                    <div class="col-md-3  d-flex justify-content-end pr-0">
+                        <!-- <i class="fab fa-twitter"></i> -->
+                        <!-- <i class="fab fa-linkedin-in"></i>   -->
+                        <fb-like [url]="'http://167.172.172.153:8080/culutre-lifystyle/' + item._id" ></fb-like>
+                        <!-- <i class="fab fa-instagram"></i> -->
                     </div>   
                 </div>
                 <div>
                     <div class="row align-items-center">
-                        <div class="main__image mt-3 d-flex justify-content-center col-lg-6" >
+                        <div class="main__image mt-3 d-flex justify-content-center col-lg-6" 
+                            (click)="routeToCulture(item._id)"
+                            style="cursor: pointer;">
                             <div class="main__image__content">
                                 <img *ngIf="item.file.path"
                                      [src]="item.file.path">
@@ -27,7 +29,9 @@
                             </div>
                         </div>
                     
-                        <div class="main__description mt-4 col-lg-6 main__description">
+                        <div class="main__description mt-4 col-lg-6 main__description"
+                            (click)="routeToCulture(item._id)"
+                            style="cursor: pointer;">
                             <p> {{item.description | slice:0:1000   }} </p>
                         </div>
 

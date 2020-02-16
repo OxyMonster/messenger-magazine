@@ -21,6 +21,8 @@ import { RemoveCultureComponent } from './all-news/remove-culture/remove-culture
 import { RemoveEconomyComponent } from './all-news/remove-economy/remove-economy.component';
 import { RemovePoliticsComponent } from './all-news/remove-politics/remove-politics.component';
 import { RemoveNewsComponent } from './all-news/remove-news/remove-news.component';
+import { AddAdsComponent } from './add-ads/add-ads.component';
+import { AllAdsComponent } from './all-ads/all-ads.component';
 
   
 const routes: Routes = [
@@ -39,6 +41,8 @@ const routes: Routes = [
         { path: 'remove-economy', component: RemoveEconomyComponent, },
         { path: 'remove-politics', component: RemovePoliticsComponent, },
         { path: 'remove-news', component: RemoveNewsComponent, },
+        { path: 'add-ads', component: AddAdsComponent, },
+        { path: 'all-ads', component: AllAdsComponent, },
       ] }
 ]
 
@@ -58,7 +62,9 @@ const COMPONENTS = [
     AdminLoginComponent,
     AddPoliticsComponent,
     AddCultureComponent,
-    AddEconomyComponent
+    AddEconomyComponent,
+    AddAdsComponent,
+    AllAdsComponent,
 ]
 
 

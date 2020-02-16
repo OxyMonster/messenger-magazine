@@ -36,7 +36,8 @@ import { PoliticsDetailsComponent } from './politics/politics-details/politics-d
 import { CultureDetailsComponent } from './culture/culture-details/culture-details.component';
 import { CurrencyComponent } from './home/slider/currency/currency.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-
+import { CommerialComponent } from './home/commerial/commerial.component';
+import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
 
  
 
@@ -65,7 +66,8 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     EconomyDetailsComponent,
     PoliticsDetailsComponent,
     CultureDetailsComponent,
-    CurrencyComponent
+    CurrencyComponent,
+    CommerialComponent
   ],
   imports: [
     AdminPanelModule,
@@ -74,6 +76,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     NgbModule,
     FormsModule,
     BrowserAnimationsModule,
+    JwSocialButtonsModule
    
   ],
   providers: [

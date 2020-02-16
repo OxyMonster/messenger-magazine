@@ -15,6 +15,7 @@ import { EconomyComponent } from './economy/economy.component';
 import { PoliticsDetailsComponent } from './politics/politics-details/politics-details.component';
 import { EconomyDetailsComponent } from './economy/economy-details/economy-details.component';
 import { CultureDetailsComponent } from './culture/culture-details/culture-details.component';
+import { AdsComponent } from './home/ads/ads.component';
 
 
 const routes: Routes = [
@@ -33,8 +34,9 @@ const routes: Routes = [
   { path: 'about-us', component: AboutUsComponent, data: { animation: '12' }  },
   { path: 'advertisement', component: AdvertisementComponent, data: { animation: '13' } },
   { path: 'contact', component: ContactComponent, data: { animation: '14' } },
+  { path: 'ads', component: AdsComponent, data: { animation: '15' } },
   { path: '**', redirectTo: '/404' }, 
-  { path: '404',  component: PageNotFoundComponent, data: { animation: '8' } }
+  { path: '404',  component: PageNotFoundComponent, data: { animation: '16' } }
 
 ];
 

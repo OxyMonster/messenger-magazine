@@ -2,27 +2,32 @@
   <div class="slider d-flex row justify-content-between mb-3">
 
     <!-- * * *Images slider * * * *  -->
-    <div class="slider__slider col-lg-10 mb-3 d-flex align-items-center">
+    <div class="slider__slider col-lg-12 mb-3 d-flex align-items-center">
       <ngb-carousel #carousel interval="3000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
           <ng-template ngbSlide *ngFor="let img of images; index as i">
             <div class="carousel-caption">
-              <h3> {{ img.title }} </h3>
+              <h3 (click)="routerToHeadlinesDetails(img._id)" style="cursor: pointer;"> {{ img.title }} </h3>
             </div>
-            <a  target="_blank" rel="nofollow noopener noreferrer">
+            <a  target="_blank" rel="nofollow noopener noreferrer" 
+                                style="cursor: pointer;">
               <div class="picsum-img-wrapper">
-                <img *ngIf="img.file.path" [src]="img.file.path" alt="My image {{i + 1}} description">
+                <img *ngIf="img.file.path" 
+                      [src]="img.file.path" 
+                      alt="My image {{i + 1}} description"
+                      
+                      >
               </div>
             </a>
           </ng-template>
         </ngb-carousel>
   </div>
   <!-- End  -->
-  <!-- * * * *Valute * ** *  -->
-  <div class="slider__weather col-lg-2 p-0 mb-3">
+  <!-- * * * *Weather * ** *  -->
+  <!-- <div class="slider__weather col-lg-2 p-0 mb-3">
     <div class="mt-4">
       <app-weather></app-weather>
     </div>
-  </div>
+  </div> -->
   
 
   </div>

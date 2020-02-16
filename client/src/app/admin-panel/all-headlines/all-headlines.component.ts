@@ -9,7 +9,11 @@ import { HeadlinesService } from 'src/app/services/headlines.service';
 export class AllHeadlinesComponent implements OnInit, OnDestroy {
 
   allHeadlines: any[] = []; 
-  
+  allFilteredHeadlines: any = []; 
+  isFiltered: boolean = false;
+  keyWord 
+
+
   constructor(
     private headlineService: HeadlinesService
   ) { }
@@ -27,6 +31,8 @@ export class AllHeadlinesComponent implements OnInit, OnDestroy {
                 data['headlinesData'].map(item => item.isActive = false); 
 
                  this.allHeadlines = data['headlinesData'];
+                 console.log(this.allHeadlines);
+                 
                  
                }, err => {
                  console.log(err);
@@ -53,6 +59,14 @@ export class AllHeadlinesComponent implements OnInit, OnDestroy {
                  console.log(err);
   
                })
+  }; 
+
+
+  filterHeadlines(keyword: string) {
+   
+    console.log(keyword);
+    
+
   }
 
 

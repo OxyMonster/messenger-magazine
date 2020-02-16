@@ -18,16 +18,25 @@ export class NewsComponent implements OnInit, OnDestroy {
   @Output() result = new EventEmitter<any>();
   allNews: any[] = []; 
   isShowAllNewsActive: boolean = false; 
+  fullURL: string; 
 
 
   constructor(
     private newsService : NewsService,
     public router: Router,
-  ) { }
+  ) {
+    this.getFullURL();
+
+   }
 
   ngOnInit() {
 
     this.getAllNews(); 
+   
+  }
+
+  getFullURL() {
+    return this.fullURL = document.URL
   }
 
   getAllNews() {

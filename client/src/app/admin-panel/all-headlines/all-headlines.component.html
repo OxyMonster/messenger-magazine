@@ -1,11 +1,34 @@
-<div class="row" *ngFor="let item of allHeadlines; let i = index">
-    <div class="main__title col-12 d-flex justify-content-center mt-3" style="background-color: cadetblue;">
-        <h4 (click)="toggleHeadlines(i)"> {{ item.title }} </h4>
+<ng-container *ngIf="!isFiltered; else showFiltered">
+        <div class="search col-12 d-flex">
+            <input type="text" class="form-control" placeholder="Search" [(ngModel)]="keyWord">
+            <button class="btn btn-dark ml-4" (click)="filterHeadlines(keyWord)">Search</button>
+        </div>
+
+    <div class="row" *ngFor="let item of allHeadlines; let i = index" >
+        <div class="main__title col-12 d-flex justify-content-center mt-3" style="background-color: cadetblue;">
+            <h4 (click)="toggleHeadlines(i)"> {{ item.title }} </h4>
+        </div>
+        <div class="main__details col-12 mt-3" *ngIf="item.isActive">
+            <p> {{ "ID: " + item._id }} </p>
+            <p> {{ "Title: " + item.title }} </p>
+            <p> {{ "Description: " + item.description }} </p>
+            <button class="btn btn-danger" (click)="deleteHeadlines( i, item._id )">Remove</button>
+        </div>
     </div>
-    <div class="main__details col-12 mt-3" *ngIf="item.isActive">
-        <p> {{ "ID: " + item._id }} </p>
-        <p> {{ "Title: " + item.title }} </p>
-        <p> {{ "Description: " + item.description }} </p>
-        <button class="btn btn-danger" (click)="deleteHeadlines( i, item._id )">Remove</button>
+
+
+</ng-container>
+
+<ng-template #showFiltered>
+    <div class="row" *ngFor="let item of allFilteredHeadlines; let i = index">
+        <div class="main__title col-12 d-flex justify-content-center mt-3" >
+            <h4 (click)="toggleHeadlines(i)"> {{ item.title }} </h4>
+        </div>
+        <div class="main__details col-12 mt-3" *ngIf="item.isActive">
+            <p> {{ "ID: " + item._id }} </p>
+            <p> {{ "Title: " + item.title }} </p>
+            <p> {{ "Description: " + item.description }} </p>
+            <button class="btn btn-danger" (click)="deleteHeadlines( i, item._id )">Remove</button>
+        </div>
     </div>
-</div>
+</ng-template>

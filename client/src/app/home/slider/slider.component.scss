@@ -1,8 +1,10 @@
 img {
     width: 100%;
-    height: 15rem;
+    height: 17rem;
     border: 1px solid transparent;
+    // object-fit: cover;
     border: .5rem;
+    cursor: pointer;
    
 }
 
@@ -18,7 +20,7 @@ img {
 //  animation 11 
 ::ng-deep {
   .carousel-item {
-    transition: opacity 1s ease!important;
+    transition: opacity 3s ease!important;   
     position: absolute!important;
     display: block!important;
     opacity: 0;

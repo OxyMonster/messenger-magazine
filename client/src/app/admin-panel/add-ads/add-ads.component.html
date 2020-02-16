@@ -1,5 +1,5 @@
 <div class="add-news" *ngIf="!isFormSubmited; else showFormSubmitted">
-    <form action="" [formGroup]="cultureFrom"  (ngSubmit)="onSubmit()">
+    <form action="" [formGroup]="adsFrom"  (ngSubmit)="onSubmit()">
         <div class="col-12 mt-3">
             <input type="text" class="input-group-text" placeholder="title" formControlName="title">
         </div>
@@ -12,16 +12,13 @@
                      style="text-align: start;">
             </textarea>
         </div>
-        <div class="col-12 mt-3">  
-            <input type="text" class="input-group-text" placeholder="date" formControlName="dd/mm/yy">
-        </div>
         <div class="col-12 mt-3">
             <input type="file" 
                    (change) = 'onFileUpload($event.target.files)'
                    style="outline: none;">
         </div>  
         <div class="col-12 button-submit mt-4">
-            <button type="submit" class="btn btn-dark btn-lg">Add Culture & Lifestyle</button>
+            <button type="submit" class="btn btn-dark btn-lg">Add ADS</button>
         </div>
     </form>
 </div>
@@ -29,6 +26,6 @@
 <ng-template #showFormSubmitted>
     <div class="submit-again">
         <h1>Form Submitted</h1>
-        <button (click)="submitFormAgain()" class="btn btn-primary">Add another Culture & Lifestyle</button>
+        <button (click)="submitFormAgain()" class="btn btn-primary">Add another ADS</button>
     </div>
 </ng-template>

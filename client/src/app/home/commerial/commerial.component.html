@@ -1,0 +1,16 @@
+<div class="ads row p-0 mt-4" *ngFor="let item of allAds">
+    <!-- <div class="ads__img col-12 p-0">
+        <div class="ads__img__content">
+            <img src="assets/image/adv.svg" alt="">
+        </div>
+    </div> -->
+    <div class="ads mt-3 p-3">
+        <h4>Commercials</h4>
+        <div class="ads__box">
+            <div class="ads__box__image">
+                <img [src]="item.file.path" alt="my-image">
+            </div>
+
+        </div>
+    </div>
+</div>

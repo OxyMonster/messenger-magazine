@@ -1,10 +1,10 @@
-<div class="headlines p-3'" *ngIf="headlineData.file">
-            <div class="col-12 headlines-title mt-3">
+<div class="headlines row p-3'" *ngIf="headlineData.file">
+            <div class="col-12 headlines-title mt-3" style="word-wrap: break-word;">
                 <h4>{{ headlineData.title }}</h4>
             </div>
             <div class="headlines__content col-md-12">
-                <div class="popular row p-3 mb-5" >
-                    <div class="mt-3">
+                <div class="popular  p-3 mb-5" >
+                    <!-- <div class="mt-3"> -->
                         <div class="popular__title col-12">
                             <span> {{ headlineData.date }} </span>
                         </div>
@@ -17,7 +17,7 @@
                             <h4 style="cursor: unset;"> {{ headlineData.title }}  </h4>
                             <span> {{ headlineData.description }} </span>
                         </div>
-                    </div>
+                    <!-- </div> -->
                 </div>
           </div>
     </div>

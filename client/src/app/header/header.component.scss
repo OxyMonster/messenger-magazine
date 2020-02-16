@@ -5,6 +5,10 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        @media(max-width:992px) {
+            display: none;
+        }
         p {
             font-weight: bolder;
             color: $dark-grey;

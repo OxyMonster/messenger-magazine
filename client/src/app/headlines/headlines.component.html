@@ -6,18 +6,21 @@
             </div>
             <div class="headlines__content col-md-12">
                 <div class="popular row p-3 mb-5" >
-                    <div class="mt-3 col-12"*ngFor="let item of allHeadlines">
+                    <div class="mt-3 col-12 p-0"*ngFor="let item of allHeadlines">
                         <div class="popular__title col-12">
                             <span> {{ item.date }} </span>
                         </div>
                         <div class="popular__img col-12 mt-3 d-flex justify-content-center" >
                             <div [ngClass]="{'popular__img__content': router.url === '/headlines', 
                                              'content-on-main' :   router.url !== '/headlines'}">
-                                <img *ngIf="item.file.path" [src]="item.file.path" alt="img">
+                                <img *ngIf="item.file.path" 
+                                        [src]="item.file.path" alt="img" 
+                                        (click)="routeToHeadlineDetails(item._id)"
+                                        style="cursor: pointer;">
 
                             </div>
                         </div>
-                        <div class="popular__description mt-4 col-12">
+                        <div class="popular__description mt-4 col-12 p-0">
                             <h4 (click)="routeToHeadlineDetails(item._id)" *ngIf="router.url === '/home'">{{ item.title }}</h4>
                             <h4 (click)="routeToHeadlineDetails(item._id)" 
                                 style="font-size: 1.4rem;" 
@@ -26,13 +29,17 @@
                                  {{ item.title }}
                             </h4>
                             <div class="">
-                                <p *ngIf="router.url === '/home'"> {{item.description | slice:0:120  }} </p>
+                                <p *ngIf="router.url === '/home'"
+                                    (click)="routeToHeadlineDetails(item._id)"
+                                    style="cursor: pointer;"> {{item.description | slice:0:120  }} </p>
                                 <p *ngIf="router.url === '/home'"  
                                     style = 'cursor: pointer; color: #de1e26;' 
                                     (click)="routeToHeadlineDetails(item._id)"> See more 
                                 </p>
                             </div>
-                            <p *ngIf="router.url !== '/home'"> {{ item.description  }} </p>
+                            <p *ngIf="router.url !== '/home'"
+                                (click)="routeToHeadlineDetails(item._id)"
+                                style="cursor: pointer;"> {{ item.description  }} </p>
                         </div>
                     </div>
                     <div class="headlines__content__button col-12 d-flex justify-content-center" *ngIf="isShowAllHeadlinesActive">
