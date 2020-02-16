@@ -72,7 +72,8 @@
   padding: 30px;
   padding-top: 25px;
   
-  background: #ededed;
+  // background: #ededed;
+  background: black;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
@@ -94,7 +95,10 @@
   padding: 20px 0;
   font-size: 19px;
   text-align: right;
- font-weight: bold;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  overflow-y: auto;
 
   @media (max-width: 991px ) {
     display: block;
@@ -123,8 +127,18 @@
 .active {
     border-bottom: 2px solid $black !important;
 }
+
+.active-for-mobile {
+  border: 2px solid white;
+}
  
 a {
   z-index: 23;
 }
 
+#burger {
+  display: none;
+  @media (max-width: 992px) {
+      display: block;
+  }
+}

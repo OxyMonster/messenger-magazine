@@ -19,19 +19,21 @@
     </div>  
     
 <div class="nav" style="z-index: 69;">
+    <i class=" ml-3 fas fa-bars" id="burger" (click)="toggleMenu('open')" 
+    *ngIf="!isMenuActive" 
+    style="font-size: 2rem; cursor: pointer; "></i>
+
     <nav role="navigation" style = " 
-                                    position: absolute;
-                                    top: -2.5rem;
-                                    left: 7rem;" >
+                                    position: fixed;
+                                    top: 1.5rem;
+                                    left: 50%;"
+                                     >
         <div id="menuToggle">
       
           <!-- <input type="checkbox"  /> -->
           
        
-          <i class="fas fa-bars" (click)="toggleMenu('open')" 
-                                *ngIf="!isMenuActive" 
-                                style="font-size: 2rem; cursor: pointer;"></i>
-         
+       
           <!-- <span></span> -->
           
 
@@ -46,27 +48,33 @@
         
 
             <a [routerLink]="[ '/home' ]" 
+                routerLinkActive = 'active-for-mobile '
                 (click)="toggleMenu('close')"
                 >
                 <li>HOME</li>
             </a>
             <a [routerLink]="[ '/news' ]" 
+                routerLinkActive = 'active-for-mobile '
                 (click)="toggleMenu('close')">
                 <li>NEWS</li>
             </a>
             <a [routerLink]="[ '/politics' ]" 
+                routerLinkActive = 'active-for-mobile '
                 (click)="toggleMenu('close')">
                 <li>POLITICS</li>
             </a>
             <a [routerLink]="[ '/culutre-lifystyle' ]" 
+                routerLinkActive = 'active-for-mobile '
                 (click)="toggleMenu('close')">
                 <li>CULTURE</li>
             </a>
             <a [routerLink]="[ '/economy' ]" 
+                routerLinkActive = 'active-for-mobile '
                 (click)="toggleMenu('close')">    
                 <li>ECONOMY</li>
             </a>
             <a [routerLink]="[ '/contact' ]" 
+                routerLinkActive = 'active-for-mobile '
                 (click)="toggleMenu('close')" >
                 <li>CONTACT</li>
             </a>
