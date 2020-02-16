@@ -22,6 +22,7 @@
                             <div class="main__image__content" 
                                 (click)="routeToEconomyDetails(item._id)" style="cursor: pointer;">
                                 <img *ngIf="item.file.path"
+                                    appLazyLoad
                                      [src]="item.file.path">
                                
                             

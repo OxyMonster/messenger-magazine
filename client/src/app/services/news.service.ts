@@ -13,7 +13,7 @@ constructor(
 
 getNews() {
 
-  const url = 'news'; 
+  const url = 'http://localhost:8086/news'; 
 
   return this.http.get(url); 
 }; 

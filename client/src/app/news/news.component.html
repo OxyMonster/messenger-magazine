@@ -24,6 +24,7 @@
                          (click)="routeToNewsDetails(item._id)" style="cursor: pointer;">
                         <div class="main__image__content">
                             <img *ngIf="item.file.path"
+                                 appLazyLoad
                                  [src]="item.file.path"
                                  [ngClass]="{'border-radius': router.url === '/news'}">
                            

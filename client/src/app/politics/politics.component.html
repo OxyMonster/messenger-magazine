@@ -23,6 +23,7 @@
                             style="cursor: pointer;">
                             <div class="main__image__content">
                                 <img *ngIf="item.file.path"
+                                    appLazyLoad
                                      [src]="item.file.path">
                                
                             
