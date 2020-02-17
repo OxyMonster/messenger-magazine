@@ -63,3 +63,13 @@
     border-radius: .5rem;
 }
 
+
+#social {
+    display: block;
+    @media (max-width: 992px) {
+       
+      
+        display: none;
+    }
+}
+
