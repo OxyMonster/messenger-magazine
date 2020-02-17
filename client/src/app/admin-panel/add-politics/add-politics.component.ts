@@ -13,7 +13,8 @@ export class AddPoliticsComponent implements OnInit {
   politicsForm: FormGroup; 
   fileToUpload: File; 
   isFormSubmited: boolean = false; 
-
+  isImgValid: boolean = false; 
+  showErr: boolean = false; 
 
   constructor(
     private fb: FormBuilder, 
@@ -42,6 +43,16 @@ export class AddPoliticsComponent implements OnInit {
 
     this.politicsForm.value.file = formData; 
     
+    if( this.fileToUpload.type === 'image/png' || this.fileToUpload.type === 'image/jpeg' ) {
+
+      this.isImgValid = true; 
+      console.log("VALID");
+      this.showErr = false; 
+    } else {
+      this.isImgValid = false;
+      this.showErr = true; 
+       
+    }
   
     
   };
@@ -57,20 +68,22 @@ export class AddPoliticsComponent implements OnInit {
     fd.append('date', this.politicsForm.get('date').value); 
 
 
+    if ( this.isImgValid ) {
 
+      this.adminService
+          .addPolitics(fd) 
+          .subscribe(data => {
+            
+            console.log(data);
+            this.isFormSubmited = true; 
+            this.politicsForm.reset(); 
+            
+          }, err => {
+            console.log(err);
+          }); 
+          
+    }
     
-    this.adminService
-        .addPolitics(fd) 
-        .subscribe(data => {
-          
-          console.log(data);
-          this.isFormSubmited = true; 
-          this.politicsForm.reset(); 
-          
-        }, err => {
-          console.log(err);
-        }); 
-        
     
   }; 
 
