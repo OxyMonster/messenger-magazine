@@ -12,7 +12,8 @@ export class AddCultureComponent implements OnInit {
   cultureFrom: FormGroup; 
   fileToUpload: File; 
   isFormSubmited: boolean = false; 
-
+  isImgValid: boolean = false; 
+  showErr: boolean = false; 
 
   constructor(
     private fb: FormBuilder, 
@@ -40,7 +41,17 @@ export class AddCultureComponent implements OnInit {
     formData.append('file', this.fileToUpload); 
 
     this.cultureFrom.value.file = formData; 
-    
+
+     if( this.fileToUpload.type === 'image/png' || this.fileToUpload.type === 'image/jpeg' ) {
+
+      this.isImgValid = true; 
+      console.log("VALID");
+      this.showErr = false; 
+    } else {
+      this.isImgValid = false;
+      this.showErr = true; 
+       
+    }
   
     
   };
@@ -56,19 +67,21 @@ export class AddCultureComponent implements OnInit {
     fd.append('date', this.cultureFrom.get('date').value); 
 
 
+    if ( this.isImgValid ) {
 
+      this.adminService
+          .addCulture(fd) 
+          .subscribe(data => {
+            
+            console.log(data);
+            this.isFormSubmited = true; 
+            this.cultureFrom.reset(); 
+            
+          }, err => {
+            console.log(err);
+          }); 
+    }
     
-    this.adminService
-        .addCulture(fd) 
-        .subscribe(data => {
-          
-          console.log(data);
-          this.isFormSubmited = true; 
-          this.cultureFrom.reset(); 
-          
-        }, err => {
-          console.log(err);
-        }); 
         
     
   }; 

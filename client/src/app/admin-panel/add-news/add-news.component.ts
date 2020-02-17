@@ -12,6 +12,7 @@ export class AddNewsComponent implements OnInit {
   newsForm: FormGroup; 
   fileToUpload: File; 
   isFormSubmited: boolean = false; 
+  isImgValid: boolean = false; 
 
 
   constructor(
@@ -38,8 +39,15 @@ export class AddNewsComponent implements OnInit {
     
     const formData = new FormData(); 
     formData.append('file', this.fileToUpload); 
-
+``
     this.newsForm.value.file = formData; 
+
+    if( this.fileToUpload.type.includes('file/png') || this.fileToUpload.type.includes('file/jpeg') ) {
+
+      this.isImgValid = true; 
+    } else {
+      this.isImgValid = false; 
+    }
     
   
     
@@ -56,19 +64,21 @@ export class AddNewsComponent implements OnInit {
     fd.append('date', this.newsForm.get('date').value); 
 
 
+    if( this.isImgValid ) {
 
+      this.newsService
+          .addNews(fd) 
+          .subscribe(data => {
+            
+            console.log(data);
+            this.isFormSubmited = true; 
+            this.newsForm.reset(); 
+            
+          }, err => {
+            console.log(err);
+          }); 
+    }
     
-    this.newsService
-        .addNews(fd) 
-        .subscribe(data => {
-          
-          console.log(data);
-          this.isFormSubmited = true; 
-          this.newsForm.reset(); 
-          
-        }, err => {
-          console.log(err);
-        }); 
         
     
   }; 

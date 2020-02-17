@@ -12,7 +12,8 @@ export class AddEconomyComponent implements OnInit {
   economyFrom: FormGroup; 
   fileToUpload: File; 
   isFormSubmited: boolean = false; 
-
+  isImgValid: boolean = false; 
+  showErr: boolean = false; 
 
   constructor(
     private fb: FormBuilder, 
@@ -41,6 +42,16 @@ export class AddEconomyComponent implements OnInit {
 
     this.economyFrom.value.file = formData; 
     
+    if( this.fileToUpload.type === 'image/png' || this.fileToUpload.type === 'image/jpeg' ) {
+
+      this.isImgValid = true; 
+      console.log("VALID");
+      this.showErr = false; 
+    } else {
+      this.isImgValid = false;
+      this.showErr = true; 
+       
+    }
   
     
   };
@@ -56,19 +67,21 @@ export class AddEconomyComponent implements OnInit {
     fd.append('date', this.economyFrom.get('date').value); 
 
 
-
+    if ( this.isImgValid ) {
+      
+      this.adminService
+          .addEconomy(fd) 
+          .subscribe(data => {
+            
+            console.log(data);
+            this.isFormSubmited = true; 
+            this.economyFrom.reset(); 
+            
+          }, err => {
+            console.log(err);
+          }); 
+    }
     
-    this.adminService
-        .addEconomy(fd) 
-        .subscribe(data => {
-          
-          console.log(data);
-          this.isFormSubmited = true; 
-          this.economyFrom.reset(); 
-          
-        }, err => {
-          console.log(err);
-        }); 
         
     
   }; 

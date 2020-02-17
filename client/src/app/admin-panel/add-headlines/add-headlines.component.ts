@@ -13,7 +13,8 @@ export class AddHeadlinesComponent implements OnInit {
   fileToUpload: File = null;
 
   isFormSubmitted: boolean = false; 
-
+  isImgValid: boolean = false; 
+  showErr: boolean = false; 
 
   constructor(
     private fb: FormBuilder,
@@ -34,6 +35,17 @@ export class AddHeadlinesComponent implements OnInit {
   onFileUpload(files: File) {
     this.fileToUpload = files[0]; 
     console.log(this.fileToUpload);
+
+    if( this.fileToUpload.type === 'image/png' || this.fileToUpload.type === 'image/jpeg' ) {
+
+      this.isImgValid = true; 
+      console.log("VALID");
+      this.showErr = false; 
+    } else {
+      this.isImgValid = false;
+      this.showErr = true; 
+       
+    }
     
     
   }
@@ -49,19 +61,24 @@ export class AddHeadlinesComponent implements OnInit {
 
 
 
+    if( this.isImgValid ) {
+      
+      this.headlineService
+          .addHeadlines(fd)
+          .subscribe(data => {
 
-    this.headlineService
-        .addHeadlines(fd)
-        .subscribe(data => {
-
-          console.log(data);
-          this.isFormSubmitted = true; 
-          this.headlinesForm.reset();
-          
-        }, err => {
-          console.log(err);
-          
-        }); 
+            console.log(data);
+            this.isFormSubmitted = true; 
+            this.headlinesForm.reset();
+            
+          }, err => {
+            console.log(err);
+            
+          }); 
+    } else {
+      console.log("invalid form");
+      
+    }
     
     
   }; 

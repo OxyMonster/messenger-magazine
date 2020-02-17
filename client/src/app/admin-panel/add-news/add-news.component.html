@@ -15,10 +15,11 @@
         <div class="col-12 mt-3">  
             <input type="text" class="input-group-text" placeholder="date" formControlName="date">
         </div>
-        <div class="col-12 mt-3">
+        <div class="col-12 mt-3 d-flex">
             <input type="file" 
                    (change) = 'onFileUpload($event.target.files)'
                    style="outline: none;">
+                   <span *ngIf="isImgValid">Please upload only .png or .jpeg format images</span>
         </div>  
         <div class="col-12 button-submit mt-4">
             <button type="submit" class="btn btn-dark btn-lg">Add news</button>

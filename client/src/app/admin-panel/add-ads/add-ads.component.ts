@@ -13,7 +13,8 @@ export class AddAdsComponent implements OnInit {
   adsFrom: FormGroup
   fileToUpload: File; 
   isFormSubmited: boolean = false; 
-
+  isImgValid: boolean = false; 
+  showErr: boolean = false; 
 
 
   constructor(
@@ -41,6 +42,16 @@ export class AddAdsComponent implements OnInit {
 
     this.adsFrom.value.file = formData; 
     
+    if( this.fileToUpload.type === 'image/png' || this.fileToUpload.type === 'image/jpeg' ) {
+
+      this.isImgValid = true; 
+      console.log("VALID");
+      this.showErr = false; 
+    } else {
+      this.isImgValid = false;
+      this.showErr = true; 
+       
+    }
   
     
   };
@@ -53,18 +64,20 @@ export class AddAdsComponent implements OnInit {
     fd.append('linkPath', this.fileToUpload); 
     fd.append('description', this.adsFrom.get('description').value);
 
-    
-    this.adsService
-        .addAds(fd) 
-        .subscribe(data => {
-          
-          console.log(data);
-          this.isFormSubmited = true; 
-          this.adsFrom.reset(); 
-          
-        }, err => {
-          console.log(err);
-        }); 
+    if ( this.isImgValid ) {
+      this.adsService
+          .addAds(fd) 
+          .subscribe(data => {
+            
+            console.log(data);
+            this.isFormSubmited = true; 
+            this.adsFrom.reset(); 
+            
+          }, err => {
+            console.log(err);
+          }); 
+      
+    } 
         
     
   }; 
