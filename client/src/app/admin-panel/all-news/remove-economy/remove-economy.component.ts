@@ -11,6 +11,9 @@ import { takeUntil } from 'rxjs/operators';
 export class RemoveEconomyComponent implements OnInit {
 
   allEconomy: any[] = []; 
+  allFilteredEconomy: any[] = []; 
+  isFilterActive: boolean = false; 
+  searcKey: any; 
 
   protected ngUnsubscribe: Subject<void> = new Subject<void>();
 
@@ -59,6 +62,25 @@ export class RemoveEconomyComponent implements OnInit {
   
                })
   }
+
+
+  filterEconomy(keyword: string) {
+
+    this.allFilteredEconomy = this.allEconomy.filter( item =>  {
+ 
+       if ( item.title.trim().toLocaleLowerCase() === keyword.trim().toLocaleLowerCase() ) {
+           
+           this.isFilterActive = true;
+           return item; 
+           
+         }; 
+    }); 
+   }; 
+ 
+ 
+   showAllEconomy() {
+     this.isFilterActive = false
+   }
 
 
   

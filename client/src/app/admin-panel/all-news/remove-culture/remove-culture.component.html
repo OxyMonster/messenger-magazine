@@ -1,14 +1,52 @@
-<h1>REMOVE CULTURE</h1>
-<div class="row news" *ngFor="let item of allCulture; let i = index">
-    <div class="news__title col-12 d-flex justify-content-center mt-3" style="background-color: cadetblue;">
-        <div class="news__title col-12 d-flex justify-content-center">
-            <h4 (click)="toggle(i)"> {{  item.title }} </h4>
+<h1>REMOVE Culture</h1>
+<div class="col-12 row">
+    <div class="col-12 d-flex mt-3">
+        <div class="col-md-8">
+            <input type="text" 
+                    class="form-control" 
+                    placeholder="Search" 
+                    [(ngModel)]="searcKey" 
+                    (keyup.enter) = 'filterCulture($event.target.value)'>
         </div>
+        <div class="col-md-4">
+            <button class="btn btn-dark" (click)="filterCulture(searcKey)">Search</button>
+        </div>
+    </div>  
+    <div class="col-12 mt-3">
+        <button class="btn btn-primary" (click)="showAllCulture()">Show all Culture</button>
     </div>
-    <div class="col-12 news mt-3" *ngIf="item.isActive" >
-        <p> {{ 'ID: ' + item._id }} </p>
-        <p> {{ 'Title: ' + item.title }} </p>
-        <p> {{ 'Description: ' + item.description }} </p>
-        <button class="btn btn-danger" (click)="deleteCulture( i ,item._id )"> Remove </button>
-    </div>
-</div>    
+</div>
+
+<ng-container *ngIf="!isFiltered; else showFilter">
+    <div class="row news" *ngFor="let item of allCulture; let i = index" >
+        <div class="news__title col-12 d-flex justify-content-center mt-3" style="background-color: cadetblue;">
+            <div class="news__title col-12 d-flex justify-content-center">
+                <h4 (click)="toggle(i)"> {{  item.title }} </h4>
+            </div>
+        </div>
+        <div class="col-12 news mt-3" *ngIf="item.isActive" >
+            <p> {{ 'ID: ' + item._id }} </p>
+            <p> {{ 'Title: ' + item.title }} </p>
+            <p> {{ 'Description: ' + item.description }} </p>
+            <button class="btn btn-danger" (click)="deleteCulture( i ,item._id )"> Remove </button>
+        </div>
+    </div>   
+</ng-container>
+
+
+
+<ng-template #showFilter>
+    <div class="row news" *ngFor="let item of allFilteredCulture; let i = index">
+        <div class="news__title col-12 d-flex justify-content-center mt-3" style="background-color: cadetblue;">
+            <div class="news__title col-12 d-flex justify-content-center">
+                <h4 (click)="toggle(i)"> {{  item.title }} </h4>
+            </div>
+        </div>
+        <div class="col-12 news mt-3" *ngIf="item.isActive" >
+            <p> {{ 'ID: ' + item._id }} </p>
+            <p> {{ 'Title: ' + item.title }} </p>
+            <p> {{ 'Description: ' + item.description }} </p>
+            <button class="btn btn-danger" (click)="deleteCulture( i ,item._id )"> Remove </button>
+        </div>
+    </div> 
+</ng-template>

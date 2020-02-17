@@ -13,7 +13,7 @@
               <div class="picsum-img-wrapper">
                 <img *ngIf="img.file.path" 
                       appLazyLoad
-                      [src]="img.file.path" 
+                      [src]="'http://localhost:8086/' + img.file.path" 
                       alt="My image {{i + 1}} description"
                       
                       >

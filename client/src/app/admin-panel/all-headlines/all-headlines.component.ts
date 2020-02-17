@@ -11,7 +11,7 @@ export class AllHeadlinesComponent implements OnInit, OnDestroy {
   allHeadlines: any[] = []; 
   allFilteredHeadlines: any = []; 
   isFiltered: boolean = false;
-  keyWord 
+  keyWord: any; 
 
 
   constructor(
@@ -63,11 +63,23 @@ export class AllHeadlinesComponent implements OnInit, OnDestroy {
 
 
   filterHeadlines(keyword: string) {
-   
-    console.log(keyword);
-    
 
-  }
+    this.allFilteredHeadlines = this.allHeadlines.filter( item =>  {
+ 
+       if ( item.title.trim().toLocaleLowerCase() === keyword.trim().toLocaleLowerCase() ) {
+           
+           this.isFiltered = true;
+           return item; 
+           
+         }; 
+    }); 
+   }; 
+ 
+ 
+   showAllHeadlines() {
+     this.isFiltered = false
+   }
+ 
 
 
   ngOnDestroy() {

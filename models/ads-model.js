@@ -1,8 +1,7 @@
 const mongoose = require('mongoose'); 
 
 const adsSchema = new mongoose.Schema({
-    title: String, 
-    description: String,
+    linkPath: String,
     file: Object
 }); 
 

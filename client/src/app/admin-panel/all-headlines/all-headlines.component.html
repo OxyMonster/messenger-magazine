@@ -1,34 +1,52 @@
-<ng-container *ngIf="!isFiltered; else showFiltered">
-        <div class="search col-12 d-flex">
-            <input type="text" class="form-control" placeholder="Search" [(ngModel)]="keyWord">
-            <button class="btn btn-dark ml-4" (click)="filterHeadlines(keyWord)">Search</button>
+<h1>REMOVE Headlines</h1>
+<div class="col-12 row">
+    <div class="col-12 d-flex mt-3">
+        <div class="col-md-8">
+            <input type="text" 
+                    class="form-control" 
+                    placeholder="Search" 
+                    [(ngModel)]="keyWord" 
+                    (keyup.enter) = 'filterHeadlines($event.target.value)'>
         </div>
-
-    <div class="row" *ngFor="let item of allHeadlines; let i = index" >
-        <div class="main__title col-12 d-flex justify-content-center mt-3" style="background-color: cadetblue;">
-            <h4 (click)="toggleHeadlines(i)"> {{ item.title }} </h4>
-        </div>
-        <div class="main__details col-12 mt-3" *ngIf="item.isActive">
-            <p> {{ "ID: " + item._id }} </p>
-            <p> {{ "Title: " + item.title }} </p>
-            <p> {{ "Description: " + item.description }} </p>
-            <button class="btn btn-danger" (click)="deleteHeadlines( i, item._id )">Remove</button>
+        <div class="col-md-4">
+            <button class="btn btn-dark" (click)="filterHeadlines(keyWord)">Search</button>
         </div>
     </div>
+    <div class="col-12 mt-3">
+        <button class="btn btn-primary" (click)="showAllHeadlines()">Show all Headlines</button>
+    </div>
+</div>
 
-
+<ng-container *ngIf="!isFiltered; else showFilter">
+    <div class="row news" *ngFor="let item of allHeadlines; let i = index" >
+        <div class="news__title col-12 d-flex justify-content-center mt-3" style="background-color: cadetblue;">
+            <div class="news__title col-12 d-flex justify-content-center">
+                <h4 (click)="toggleHeadlines(i)"> {{  item.title }} </h4>
+            </div>
+        </div>
+        <div class="col-12 news mt-3" *ngIf="item.isActive" >
+            <p> {{ 'ID: ' + item._id }} </p>
+            <p> {{ 'Title: ' + item.title }} </p>
+            <p> {{ 'Description: ' + item.description }} </p>
+            <button class="btn btn-danger" (click)="deleteHeadlines( i ,item._id )"> Remove </button>
+        </div>
+    </div>    
 </ng-container>
 
-<ng-template #showFiltered>
-    <div class="row" *ngFor="let item of allFilteredHeadlines; let i = index">
-        <div class="main__title col-12 d-flex justify-content-center mt-3" >
-            <h4 (click)="toggleHeadlines(i)"> {{ item.title }} </h4>
+
+
+<ng-template #showFilter>
+    <div class="row news" *ngFor="let item of allFilteredHeadlines; let i = index">
+        <div class="news__title col-12 d-flex justify-content-center mt-3" style="background-color: cadetblue;">
+            <div class="news__title col-12 d-flex justify-content-center">
+                <h4 (click)="toggleHeadlines(i)"> {{  item.title }} </h4>
+            </div>
         </div>
-        <div class="main__details col-12 mt-3" *ngIf="item.isActive">
-            <p> {{ "ID: " + item._id }} </p>
-            <p> {{ "Title: " + item.title }} </p>
-            <p> {{ "Description: " + item.description }} </p>
-            <button class="btn btn-danger" (click)="deleteHeadlines( i, item._id )">Remove</button>
+        <div class="col-12 news mt-3" *ngIf="item.isActive" >
+            <p> {{ 'ID: ' + item._id }} </p>
+            <p> {{ 'Title: ' + item.title }} </p>
+            <p> {{ 'Description: ' + item.description }} </p>
+            <button class="btn btn-danger" (click)="deleteHeadlines( i ,item._id )"> Remove </button>
         </div>
-    </div>
-</ng-template>
+    </div> 
+</ng-template> 

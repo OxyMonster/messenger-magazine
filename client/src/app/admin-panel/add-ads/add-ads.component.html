@@ -1,16 +1,7 @@
 <div class="add-news" *ngIf="!isFormSubmited; else showFormSubmitted">
     <form action="" [formGroup]="adsFrom"  (ngSubmit)="onSubmit()">
         <div class="col-12 mt-3">
-            <input type="text" class="input-group-text" placeholder="title" formControlName="title">
-        </div>
-        <div class="col-12 mt-3">
-            <textarea formControlName="description" 
-                     class="input-group-text" 
-                     placeholder="description" 
-                     cols="50" 
-                     rows="10"
-                     style="text-align: start;">
-            </textarea>
+            <input type="text" class="input-group-text" placeholder="Link" formControlName="linkPath">
         </div>
         <div class="col-12 mt-3">
             <input type="file" 

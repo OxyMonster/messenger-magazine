@@ -1,14 +1,48 @@
 <h1>REMOVE FROM NEWS</h1>
-<div class="row news" *ngFor="let item of allNews; let i = index">
-    <div class="news__title col-12 d-flex justify-content-center mt-3" style="background-color: cadetblue;">
-        <div class="news__title col-12 d-flex justify-content-center">
-            <h4 (click)="toggleNews(i)"> {{  item.title }} </h4>
+<div class="col-12 row">
+    <div class="col-12 d-flex mt-3">
+        <div class="col-md-8">
+            <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searcKey" (keyup.enter) = 'filterNews($event.target.value)'>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-dark" (click)="filterNews(searcKey)">Search</button>
         </div>
     </div>
-    <div class="col-12 news mt-3" *ngIf="item.isActive" >
-        <p> {{ 'ID: ' + item._id }} </p>
-        <p> {{ 'Title: ' + item.title }} </p>
-        <p> {{ 'Description: ' + item.description }} </p>
-        <button class="btn btn-danger" (click)="removeNews( i ,item._id )"> Remove </button>
+    <div class="col-12 mt-3">
+        <button class="btn btn-primary" (click)="showAllNews()">Show all News</button>
     </div>
-</div>    
+</div>
+
+<ng-container *ngIf="!isFilterActive; else showFilter">
+    <div class="row news" *ngFor="let item of allNews; let i = index" >
+        <div class="news__title col-12 d-flex justify-content-center mt-3" style="background-color: cadetblue;">
+            <div class="news__title col-12 d-flex justify-content-center">
+                <h4 (click)="toggleNews(i)"> {{  item.title }} </h4>
+            </div>
+        </div>
+        <div class="col-12 news mt-3" *ngIf="item.isActive" >
+            <p> {{ 'ID: ' + item._id }} </p>
+            <p> {{ 'Title: ' + item.title }} </p>
+            <p> {{ 'Description: ' + item.description }} </p>
+            <button class="btn btn-danger" (click)="removeNews( i ,item._id )"> Remove </button>
+        </div>
+    </div>   
+</ng-container>
+
+
+
+<ng-template #showFilter>
+    <div class="row news" *ngFor="let item of allFilteredNews; let i = index">
+        <div class="news__title col-12 d-flex justify-content-center mt-3" style="background-color: cadetblue;">
+            <div class="news__title col-12 d-flex justify-content-center">
+                <h4 (click)="toggleNews(i)"> {{  item.title }} </h4>
+            </div>
+        </div>
+        <div class="col-12 news mt-3" *ngIf="item.isActive" >
+            <p> {{ 'ID: ' + item._id }} </p>
+            <p> {{ 'Title: ' + item.title }} </p>
+            <p> {{ 'Description: ' + item.description }} </p>
+            <button class="btn btn-danger" (click)="removeNews( i ,item._id )"> Remove </button>
+        </div>
+    </div> 
+</ng-template>

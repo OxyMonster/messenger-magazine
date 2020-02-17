@@ -38,7 +38,6 @@ import { CurrencyComponent } from './home/slider/currency/currency.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { CommerialComponent } from './home/commerial/commerial.component';
 import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
-import { LazyLoadImageModule, scrollPreset } from 'ng-lazyload-image'; // <-- import it
 import { ImageLazyLoadModule } from './image-lazy-load/image-lazy-load.module';
 
  
@@ -78,11 +77,7 @@ import { ImageLazyLoadModule } from './image-lazy-load/image-lazy-load.module';
     NgbModule,
     FormsModule,
     BrowserAnimationsModule,
-    LazyLoadImageModule.forRoot({
-      preset: scrollPreset // <-- tell LazyLoadImage that you want to use scrollPreset
-    }), 
     JwSocialButtonsModule,
-    LazyLoadImageModule,
     ImageLazyLoadModule
     
    

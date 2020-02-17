@@ -11,8 +11,11 @@ import { Subject } from 'rxjs';
 export class RemoveCultureComponent implements OnInit, OnDestroy {
 
   allCulture: any[] = []; 
+  allFilteredCulture: any[] = []; 
+  isFiltered: boolean = false; 
   isActive: boolean = false; 
-
+  searcKey: any; 
+  
   protected ngUnsubscribe: Subject<void> = new Subject<void>();
 
 
@@ -59,7 +62,27 @@ export class RemoveCultureComponent implements OnInit, OnDestroy {
                  console.log(err);
   
                })
-  }
+  };
+
+
+  filterCulture(keyword: string) {
+
+    this.allFilteredCulture = this.allCulture.filter( item =>  {
+ 
+       if ( item.title.trim().toLocaleLowerCase() === keyword.trim().toLocaleLowerCase() ) {
+           
+           this.isFiltered = true;
+           return item; 
+           
+         }; 
+    }); 
+   }; 
+ 
+ 
+   showAllCulture() {
+     this.isFiltered = false
+   }
+
 
 
   

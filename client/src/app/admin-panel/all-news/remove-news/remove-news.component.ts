@@ -11,6 +11,10 @@ import { takeUntil } from 'rxjs/operators';
 export class RemoveNewsComponent implements OnInit {
 
   allNews: any[] = []; 
+  allFilteredNews: any[] = []; 
+  isFilterActive: boolean = false; 
+  searcKey: any; 
+
 
   protected ngUnsubscribe: Subject<void> = new Subject<void>();
 
@@ -63,9 +67,28 @@ export class RemoveNewsComponent implements OnInit {
 
                })
     
+  }; 
+
+  filterNews(keyword: string) {
+
+   this.allFilteredNews = this.allNews.filter( item =>  {
+
+      if ( item.title.trim().toLocaleLowerCase() === keyword.trim().toLocaleLowerCase() ) {
+          
+          this.isFilterActive = true;
+          return item; 
+          
+        }; 
+   }); 
+  }; 
+
+
+  showAllNews() {
+    this.isFilterActive = false
   }
 
 
+ 
   ngOnDestroy(): void {
     
     this.getAllNews().unsubscribe(); 

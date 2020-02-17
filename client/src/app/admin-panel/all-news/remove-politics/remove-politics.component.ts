@@ -11,6 +11,9 @@ import { takeUntil } from 'rxjs/operators';
 export class RemovePoliticsComponent implements OnInit {
 
   allPolitics: any[] = []; 
+  allFilteredPolitics: any[] []; 
+  isFilterActive: boolean = false; 
+  keyWord: any; 
 
   protected ngUnsubscribe: Subject<void> = new Subject<void>();
 
@@ -57,7 +60,29 @@ export class RemovePoliticsComponent implements OnInit {
                  console.log(err);
   
                })
-  }
+  };
+
+
+
+  filterPolitics(keyword: string) {
+
+    this.allFilteredPolitics = this.allPolitics.filter( item =>  {
+ 
+       if ( item.title.trim().toLocaleLowerCase() === keyword.trim().toLocaleLowerCase() ) {
+           
+           this.isFilterActive = true;
+           return item; 
+           
+         }; 
+    }); 
+   }; 
+ 
+ 
+   showAllPolitics() {
+     this.isFilterActive = false
+   }
+ 
+ 
 
 
   

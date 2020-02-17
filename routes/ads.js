@@ -21,10 +21,8 @@ let upload  = multer({storage: storage});
 router.post('/ads', upload.single('file'), (req, res) => {
 
     const ads = new adsModel({
-        title: req.body.title,
-        description: req.body.description,
-        date: req.body.date,
         file: req.file, 
+        linkPath: req.body.linkPath
     }); 
 
     console.log(req.file);
