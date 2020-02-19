@@ -13,7 +13,10 @@ import { fader } from './route-animations';
 })
 export class AppComponent {
   title = 'messenger-magazine-app';
+
   isAdminActive: boolean = false; 
+  isAdmin: boolean = false; 
+
 
   constructor(
 
@@ -32,7 +35,14 @@ export class AppComponent {
       
     });
     
+    
 
+  }
+
+  getAdminStatus(e) {
+
+   this.isAdmin = e; 
+   
   }
 
   prepareRoute(outlet: RouterOutlet) {

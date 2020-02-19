@@ -2,10 +2,12 @@
   <div class="container-fluid" style="min-height: 100vh;">
     <div class="row h-100" style="min-height: 100vh;">
       <div class="admin-navingation col-lg-3">
-        <app-admin-navigation></app-admin-navigation>
+        <app-admin-navigation *ngIf="isAdmin"></app-admin-navigation>
     </div>
     <div class="admin-content pb-5 col-lg-9 mt-5 h-100" >
-        <app-admin-panel ></app-admin-panel>
+        <app-admin-panel *ngIf="isAdmin"></app-admin-panel>
+        <app-admin-login *ngIf="!isAdmin" (result) = 'getAdminStatus($event)'></app-admin-login>
+
     </div>
     </div>
   </div>

@@ -9,23 +9,24 @@ import { AdminService } from '../services/admin.service';
 export class AuthGuard implements CanActivate {
 
   constructor(
-    private adminService: AdminService, 
+    private adminService: AdminService,
     private router: Router
+
   ) {
 
   }
 
   canActivate(
     next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot)
-    : Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-     
-     
+    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+
+      // this.router.navigate['/admin-login']; 
+      // return false
+
       
-        return false; 
-        
-    
-        return true;
+
+    return true;
   }
-  
+
+ 
 }

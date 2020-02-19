@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -87,6 +88,24 @@ export class AdminService {
   return  this.http.get(url)
 
   };
+
+
+  loginAdmin( adminForm: FormGroup ) {
+    const url = 'http://localhost:8086/admin-login'; 
+
+    return this.http.post(url, adminForm); 
+
+  };
+
+  setToken( token: string ) {
+    localStorage.setItem( 'token', token ); 
+  }; 
+
+  getToken() {
+    console.log(localStorage.getItem('token'));
+    
+    return localStorage.getItem('token'); 
+  }
 
 
 }

@@ -1,8 +1,17 @@
 
-<!-- <div class="authorize" *ngIf="!isAdmin; else showAdminContent">
+<div class="authorize" *ngIf="!isAdmin; else showAdminContent">
     <form [formGroup]="adminForm" (ngSubmit) = 'submitForm()'>
-        <input type="text" placeholder="Username" formControlName="userName">
-        <input type="text" placeholder="Password" formControlName="password">
-        <button type="submit">Login</button>
+        <div class="col-md-6">
+            <input type="text" placeholder="Username" class="form-control" formControlName="userName">
+        </div>
+        <div class="col-md-6 mt-3">
+            <input type="text" placeholder="Password" class="form-control" type="password" formControlName="password">
+        </div>
+        <div class="col-md-6 mt-3" *ngIf="showErr">
+            <span style="color: red;"> Wrong Username or Password </span>
+        </div>
+        <div class="col-md-6 mt-3 d-flex justify-content-end">
+            <button class="btn btn-dark lg" type="submit">Login</button>
+        </div>
     </form>
-</div> -->
+</div>

@@ -26,11 +26,11 @@ import { AllAdsComponent } from './all-ads/all-ads.component';
 
   
 const routes: Routes = [
-     { path: 'admin-login', component: AdminLoginComponent,  },  
 
-     { path: 'admin', component: AdminPanelComponent, 
-       children: [
-        { path: 'add-news', component: AddNewsComponent, },
+  { path: 'admin-login', component: AdminLoginComponent,  },
+  { path: 'admin', component: AdminPanelComponent, canActivate:  [ AuthGuard ], 
+  children: [
+        { path: 'add-news', component: AddNewsComponent,  },
         { path: 'add-headlines', component: AddHeadlinesComponent,  },
         { path: 'add-culture', component: AddCultureComponent,  },
         { path: 'add-economy', component: AddEconomyComponent,  },
@@ -43,7 +43,9 @@ const routes: Routes = [
         { path: 'remove-news', component: RemoveNewsComponent, },
         { path: 'add-ads', component: AddAdsComponent, },
         { path: 'all-ads', component: AllAdsComponent, },
-      ] }
+      ]}, 
+     
+    
 ]
 
 const COMPONENTS = [

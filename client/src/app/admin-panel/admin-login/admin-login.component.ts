@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { AdminService } from 'src/app/services/admin.service';
 import { Router } from '@angular/router';
@@ -10,9 +10,12 @@ import { Router } from '@angular/router';
 })
 export class AdminLoginComponent implements OnInit {
 
+  @Output() result : EventEmitter<any> = new EventEmitter
  
   adminForm: FormGroup; 
   isAdmin: boolean = false; 
+  showErr: boolean = false; 
+
 
   constructor(
     private fb: FormBuilder, 
@@ -31,32 +34,41 @@ export class AdminLoginComponent implements OnInit {
   }
 
 
-  // submitForm() {
+  submitForm() {
 
-  //   console.log(this.adminForm.value.userName);
-    
+    console.log(this.adminForm.value.userName);
 
-  //   if( this.adminForm.value.userName.length > 0 && this.adminForm.value.password.length > 0 ) 
 
-  //   this.adminService
-  //       .loginAdmin(this.adminForm.value)
-  //       .subscribe( data => {
-  //         console.log(data);
-          
-  //         if ( data['accessToken'] ) {
-  //           this.adminService.setToken(data); 
-  //           this.isAdmin = true; 
-  //           this.router.navigate(['/admin/add-news'])
+    this.adminService  
+        .loginAdmin(this.adminForm.value)
+        .subscribe( data => {
+          console.log(data);
+          const acessToken = data['acessToken'];  
+          if ( acessToken ) {
+            this.showErr = false;  
+            this.result.emit(true);
+            this.adminService.setToken(acessToken); 
+            this.isAdmin = true; 
+            this.router.navigate(['/admin/add-news'])
 
-  //         } else {
+          } else {
+            this.result.emit(false); 
+            this.isAdmin = false; 
             
-  //         }
+          }
 
           
           
-  //       }, err => this.isAdmin = false ); 
+        }, err => {
+          this.showErr = true;  
+          this.isAdmin = false
+          this.result.emit(false); 
+          console.log("wrong form");
 
-  // } 
+
+        } ); 
+
+  } 
 
 
 }

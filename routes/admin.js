@@ -3,59 +3,59 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');  
 const router = express.Router(); 
 
-const AdminSchema = require('../models/admin-model'); 
+const Admin = require('../models/admin-model'); 
 
 
-router.post('/admin', (req, res) => {
+router.post('/admin-create', async (req, res) => {
 
+  const admin = new Admin({
+    
+    userName: req.body.userName, 
+    password: req.body.password
+
+  }); 
+
+  try {
+
+    const savedUser = await admin.save(); 
+    res.status(200).json('User Created', savedUser); 
+
+
+  } catch (err) {
+
+    res.status(400).json(err); 
+    console.log(err)
+  } 
+
+
+  })
   
+router.post('/admin-login', (req, res) => {
+
+
   const user = {
-    userName: req.body.userName,
+    userName: req.body.userName, 
     password: req.body.password
   }; 
 
   console.log(user);
-    
+  
 
-  if( user.userName === '1'  && user.password === '2' ) {
-    const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET); 
-    res.json({ accessToken }); 
+  if ( user.userName === process.env.ADMIN_USERNAME && user.password === process.env.ADMIN_PASSWORD ) {
+
+    const acessToken = jwt.sign( user, process.env.ACCESS_TOKEN_SECRET ); 
+    res.status(201).json({ acessToken }); 
+
   } else {
-    res.status(403).json('wrong'); 
+    res.status(401).json('wrong'); 
   }
 
-  })
-  
-router.post('/create', (req, res) => {
-
-    console.log(req.body);
-    
-  // const user = new AdminSchema ({
-  //   userName: req.body.userName,
-  //   password: req.body.password
-  // }); 
-
-  // console.log(user);
-  // res.send(user,'sadasdasdsadsa')
-  
-
-  // user.save()
-  //     .then(data => {
-  //       console.log("admin created");
-  //       res.send(data); 
-        
-  //     })
-  //     .catch(err => {
-  //       console.log(err);
-        
-  //     })
-               
 
 
  }); 
 
 
- function authenticateToken(req, res, next ) {
+ function verifyToken(req, res, next ) {
    const authHeader = req.headers['authorization']; 
    const token = authHeader && authHeader.split(' ')[1]; 
 
