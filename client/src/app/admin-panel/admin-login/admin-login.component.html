@@ -1,5 +1,5 @@
 
-<div class="authorize" *ngIf="!isAdmin; else showAdminContent">
+<div class="authorize" *ngIf="!isAdmin">
     <form [formGroup]="adminForm" (ngSubmit) = 'submitForm()'>
         <div class="col-md-6">
             <input type="text" placeholder="Username" class="form-control" formControlName="userName">

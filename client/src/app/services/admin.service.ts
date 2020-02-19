@@ -91,7 +91,7 @@ export class AdminService {
 
 
   loginAdmin( adminForm: FormGroup ) {
-    const url = 'http://localhost:8086/admin-login'; 
+    const url = 'admin-login'; 
 
     return this.http.post(url, adminForm); 
 
@@ -104,7 +104,7 @@ export class AdminService {
   getToken() {
     console.log(localStorage.getItem('token'));
     
-    return localStorage.getItem('token'); 
+    return localStorage.getItem('token');   
   }
 
 
