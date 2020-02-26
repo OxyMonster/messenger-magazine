@@ -27,7 +27,7 @@ const cultureRoute = require('./routes/culture');
 const politicsRoute = require('./routes/politics');
 const economyRoute = require('./routes/economy');  
 const adminRoute = require('./routes/admin'); 
-const ads = require('./routes/ads'); 
+const ads = require('./routes/ads');    
 
 
 
