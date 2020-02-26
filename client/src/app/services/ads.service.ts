@@ -11,19 +11,19 @@ export class AdsService {
   ) { }
    
 
-
+     
   getAllAds() {
 
     return this.http.get('ads')
 
   }; 
-  
+    
 
-addAds(adsForm) {
+  addAds(adsForm) {
+   
+    const url = 'ads'; 
 
-  const url = 'ads'; 
-
-  return  this.http.post(url, adsForm);  
-          
-  }; 
-}
+    return  this.http.post(url, adsForm);  
+            
+    }; 
+  }

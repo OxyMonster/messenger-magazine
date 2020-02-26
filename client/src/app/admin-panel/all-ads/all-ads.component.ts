@@ -32,9 +32,18 @@ export class AllAdsComponent implements OnInit {
                .pipe( takeUntil(this.ngUnsubscribe) )
                .subscribe(data => {
                  this.allAds = data['adsData']; 
-                 console.log(data);
+                 console.log(this.allAds);
                  
                }, err => console.log(err))
+  }; 
+
+
+  toggleAds(index: number) { 
+    
+    const item = this.allAds[index]; 
+    item.isActive === false ? item.isActive = true : item.isActive = false; 
+   
+    
   }; 
 
   
