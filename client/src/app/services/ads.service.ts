@@ -9,7 +9,7 @@ export class AdsService {
   constructor(
     private http: HttpClient
   ) { }
-
+   
 
 
   getAllAds() {
