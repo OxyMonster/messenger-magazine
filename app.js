@@ -13,7 +13,7 @@ const port  = process.env.PORT || 8086;
 
 
 app.use(cors()); 
-app.use(compression()); 
+app.use(compression());     
 app.use(bodyParser.urlencoded()); 
 app.use(bodyParser.json()) 
 
