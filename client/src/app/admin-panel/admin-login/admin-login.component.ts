@@ -49,7 +49,7 @@ export class AdminLoginComponent implements OnInit {
             this.result.emit(true);
             this.adminService.setToken(acessToken); 
             this.isAdmin = true; 
-            this.router.navigate(['/admin/add-news'])
+            this.router.navigate(['/admin/add-headlines'])
 
           } else {
             this.result.emit(false); 
