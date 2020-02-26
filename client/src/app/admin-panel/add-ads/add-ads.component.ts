@@ -24,7 +24,6 @@ export class AddAdsComponent implements OnInit {
     
     this.adsFrom = this.fb.group({
       linkPath: '',
-      // file: null 
     }); 
   }
 
@@ -62,7 +61,7 @@ export class AddAdsComponent implements OnInit {
 
     const fd = new FormData(); 
     fd.append('linkPath', this.adsFrom.get('linkPath').value); 
-    fd.append('file', this.fileToUpload );
+    fd.append('file', this.fileToUpload ); 
     console.log(fd);
     
     if ( this.isImgValid ) {   
