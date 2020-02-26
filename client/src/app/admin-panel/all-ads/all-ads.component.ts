@@ -31,8 +31,8 @@ export class AllAdsComponent implements OnInit {
                .getAllAds()
                .pipe( takeUntil(this.ngUnsubscribe) )
                .subscribe(data => {
+                 this.allAds = data['adsData']; 
                  console.log(data);
-                 this.allAds = data['adsData'].adsData; 
                  
                }, err => console.log(err))
   }; 
