@@ -8,4 +8,4 @@ const adsSchema = new mongoose.Schema({
 const Ads = mongoose.model('Ads',adsSchema ); 
 
 module.exports = Ads; 
- 
+   

@@ -101,7 +101,7 @@ export class AdminService {
     localStorage.setItem( 'token', token ); 
   }; 
 
-  getToken() {
+  getToken() {  
     console.log(localStorage.getItem('token'));
     
     return localStorage.getItem('token');   

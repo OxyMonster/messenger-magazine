@@ -24,7 +24,7 @@ export class AddAdsComponent implements OnInit {
     
     this.adsFrom = this.fb.group({
       linkPath: '',
-      file: null 
+      // file: null 
     }); 
   }
 
@@ -61,14 +61,15 @@ export class AddAdsComponent implements OnInit {
   onSubmit() {
 
     const fd = new FormData(); 
-    fd.append('linkPath', this.fileToUpload); 
-    fd.append('description', this.adsFrom.get('description').value);
-
-    if ( this.isImgValid ) {
-      this.adsService
+    fd.append('linkPath', this.adsFrom.get('linkPath').value); 
+    fd.append('file', this.fileToUpload );
+    console.log(fd);
+    
+    if ( this.isImgValid ) {   
+      this.adsService  
           .addAds(fd) 
           .subscribe(data => {
-            
+                   
             console.log(data);
             this.isFormSubmited = true; 
             this.adsFrom.reset(); 

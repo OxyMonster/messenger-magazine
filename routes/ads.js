@@ -29,14 +29,14 @@ router.post('/ads', upload.single('file'), (req, res) => {
     
 
     ads.save()
-             .then(data => {
-                 console.log(data);
-                 res.status(200).json(data); 
-             })
-             .catch(err => {
-                 res.status(400).json(err); 
-                 console.log(err);
-             }); 
+            .then(data => {
+                console.log(data);
+                res.status(200).json(data); 
+            })
+            .catch(err => {
+                res.status(400).json(err); 
+                console.log(err);
+            }); 
 
             
 }); 

@@ -23,7 +23,7 @@ addAds(adsForm) {
 
   const url = 'ads'; 
 
-  return  this.http.post(url, adsForm)
+  return  this.http.post(url, adsForm);  
           
   }; 
 }

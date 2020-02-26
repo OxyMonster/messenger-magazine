@@ -27,6 +27,7 @@ const cultureRoute = require('./routes/culture');
 const politicsRoute = require('./routes/politics');
 const economyRoute = require('./routes/economy');  
 const adminRoute = require('./routes/admin'); 
+const ads = require('./routes/ads'); 
 
 
 
@@ -37,6 +38,7 @@ app.use(cultureRoute);
 app.use(politicsRoute);
 app.use(economyRoute);
 app.use(adminRoute); 
+app.use(ads); 
 
 
 app.use( express.static('client/dist/browser') ); 
