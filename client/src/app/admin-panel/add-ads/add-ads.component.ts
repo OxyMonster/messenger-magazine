@@ -63,7 +63,7 @@ export class AddAdsComponent implements OnInit {
     fd.append('linkPath', this.adsFrom.get('linkPath').value); 
     fd.append('file', this.fileToUpload ); 
     console.log(fd);
-    
+     
     if ( this.isImgValid ) {   
       this.adsService  
           .addAds(fd) 
