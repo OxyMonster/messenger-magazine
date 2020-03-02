@@ -35,7 +35,7 @@ deleteNews(newsID: string) {
 };
 
 
-addNews(newsForm) {
+addNews(newsForm) { 
   
   const url = 'news'; 
 
