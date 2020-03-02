@@ -54,6 +54,15 @@ export class RemoveNewsComponent implements OnInit {
     
   }; 
 
+  toggleFitered(index: number) {
+    
+    const item = this.allFilteredNews[index]; 
+    item.isActive === false ? item.isActive = true : item.isActive = false; 
+   
+    
+  }; 
+
+
   removeNews(index: number, newsID: string) {
     return this.newsService
                .deleteNews(newsID)

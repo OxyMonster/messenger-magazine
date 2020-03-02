@@ -47,6 +47,15 @@ export class RemovePoliticsComponent implements OnInit {
 
   }; 
 
+  toggleFiltered(index: number) {
+    
+    const item = this.allFilteredPolitics[index]; 
+    item['isActive'] === false ? item['isActive'] = true : item['isActive'] = false; 
+   
+    
+  }; 
+  
+
   deletePolitics(index: number, id: string) {
     return this.adminService
                .removePolitics(id)
