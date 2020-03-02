@@ -1,7 +1,7 @@
 <div class="add-news" *ngIf="!isFormSubmited; else showFormSubmitted">
     <form action="" [formGroup]="adsFrom"  (ngSubmit)="onSubmit()">
         <div class="col-12 mt-3">
-            <input type="text" class="input-group-text" placeholder="Link" formControlName="Compnay Name">
+            <input type="text" class="input-group-text" placeholder="Link" formControlName="linkPath">
         </div>
         <div class="col-12 mt-3 d-flex">
             <input type="file" 
@@ -15,7 +15,7 @@
     </form>
 </div>
 
-<ng-template #showFormSubmitted>
+<ng-template #showFormSubmitted>  
     <div class="submit-again">
         <h1>Form Submitted</h1>
         <button (click)="submitFormAgain()" class="btn btn-primary">Add another ADS</button>
