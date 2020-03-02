@@ -52,7 +52,7 @@ export class AllAdsComponent implements OnInit {
          .removeAds(id)
          .subscribe( data => {
 
-            console.log(data);
+            console.log(data);  
             this.allAds.splice(index, 1); 
 
         }, err => console.log(err)); 
