@@ -47,12 +47,13 @@ export class AllAdsComponent implements OnInit {
   }; 
 
 
-  removeAds ( id: string ) {
+  removeAds ( id: string, index: number ) {
     this.adsService
          .removeAds(id)
          .subscribe( data => {
 
             console.log(data);
+            this.allAds.splice(index, 1); 
 
         }, err => console.log(err)); 
   }
