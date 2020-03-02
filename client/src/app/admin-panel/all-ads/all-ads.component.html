@@ -7,7 +7,7 @@
     </div>
     <div class="col-12 news mt-3" *ngIf="item.isActive" >
         <p> {{ 'ID: ' + item._id }} </p>
-        <p> {{ 'Link - (URL): ' + item.linkPath }} </p>
-        <button class="btn btn-danger"> Remove </button>
+        <p> {{ 'Company Name : ' + item.linkPath }} </p>
+        <button class="btn btn-danger" (click)="removeAds(item._id)"> Remove </button>
     </div>
-</div>   
+</div>  
