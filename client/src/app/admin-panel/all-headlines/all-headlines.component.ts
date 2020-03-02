@@ -47,6 +47,15 @@ export class AllHeadlinesComponent implements OnInit, OnDestroy {
 
   }; 
 
+
+  toggleFiltered(index: number) {
+    
+    const item = this.allFilteredHeadlines[index]; 
+    item['isActive'] === false ? item['isActive'] = true : item['isActive'] = false; 
+   
+    
+  }; 
+
   deleteHeadlines(index: number, id: string) {
     return this.headlineService
                .deleteHeadlines(id)

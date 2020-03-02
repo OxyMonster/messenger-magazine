@@ -50,6 +50,14 @@ export class RemoveCultureComponent implements OnInit, OnDestroy {
 
   }; 
 
+  toggleFiltered(index: number) {
+    
+    const item = this.allFilteredCulture[index]; 
+    item['isActive'] === false ? item['isActive'] = true : item['isActive'] = false; 
+   
+    
+  }; 
+
   deleteCulture(index: number, id: string) {
     return this.adminService
                .removeCulture(id)

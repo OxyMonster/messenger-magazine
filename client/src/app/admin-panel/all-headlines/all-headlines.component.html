@@ -39,7 +39,7 @@
     <div class="row news" *ngFor="let item of allFilteredHeadlines; let i = index">
         <div class="news__title col-12 d-flex justify-content-center mt-3" style="background-color: cadetblue;">
             <div class="news__title col-12 d-flex justify-content-center">
-                <h4 (click)="toggleHeadlines(i)"> {{  item.title }} </h4>
+                <h4 (click)="toggleFiltered(i)"> {{  item.title }} </h4>
             </div>
         </div>
         <div class="col-12 news mt-3" *ngIf="item.isActive" >

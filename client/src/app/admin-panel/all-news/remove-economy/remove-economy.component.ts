@@ -49,6 +49,14 @@ export class RemoveEconomyComponent implements OnInit {
 
   }; 
 
+  toggleFiltered(index: number) {
+    
+    const item = this.allFilteredEconomy[index]; 
+    item['isActive'] === false ? item['isActive'] = true : item['isActive'] = false; 
+   
+    
+  }; 
+
   deleteEconomy(index: number, id: string) {
     return this.adminService
                .removeEconomy(id)
