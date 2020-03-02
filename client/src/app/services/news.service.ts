@@ -24,7 +24,7 @@ getNewsById(newsID: string) {
   const url = `news/${newsID}`; 
 
   return this.http.get(url); 
-}; 
+};  
 
 
 deleteNews(newsID: string) {

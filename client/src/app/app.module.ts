@@ -37,7 +37,7 @@ import { CultureDetailsComponent } from './culture/culture-details/culture-detai
 import { CurrencyComponent } from './home/slider/currency/currency.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { CommerialComponent } from './home/commerial/commerial.component';
-import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
+// import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
 import { ImageLazyLoadModule } from './image-lazy-load/image-lazy-load.module';
 
  
@@ -77,7 +77,7 @@ import { ImageLazyLoadModule } from './image-lazy-load/image-lazy-load.module';
     NgbModule,
     FormsModule,
     BrowserAnimationsModule,
-    JwSocialButtonsModule,
+    // JwSocialButtonsModule,
     ImageLazyLoadModule
     
    
