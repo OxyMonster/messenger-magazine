@@ -26,4 +26,12 @@ export class AdsService {
     return  this.http.post(url, adsForm);  
             
     }; 
-  }
+
+    removeAds ( id: string ) {
+
+      const url = `ads/${id}`; 
+
+      return this.http.delete(url); 
+
+    }
+}

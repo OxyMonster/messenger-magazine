@@ -46,6 +46,17 @@ export class AllAdsComponent implements OnInit {
     
   }; 
 
+
+  removeAds ( id: string ) {
+    this.adsService
+         .removeAds(id)
+         .subscribe( data => {
+
+            console.log(data);
+
+          }, err => console.log(err)); 
+  }
+
   
 
 }

@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss']
 })
-export class SliderComponent implements OnInit, OnDestroy {
+export class SliderComponent implements OnInit {
 
 
   allHeadlineImages: any[] = []; 
@@ -96,11 +96,6 @@ export class SliderComponent implements OnInit, OnDestroy {
 
 
  
-
-ngOnDestroy(): void {
-
-  this.getHeadlines().unsubscribe(); 
-}
   
 
 }
