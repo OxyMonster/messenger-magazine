@@ -36,9 +36,9 @@ import { PoliticsDetailsComponent } from './politics/politics-details/politics-d
 import { CultureDetailsComponent } from './culture/culture-details/culture-details.component';
 import { CurrencyComponent } from './home/slider/currency/currency.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { CommerialComponent } from './home/commerial/commerial.component';
 import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
 import { ImageLazyLoadModule } from './image-lazy-load/image-lazy-load.module';
+import { CommercialComponent } from './home/ads/commercial/commercial.component';
 
  
 
@@ -68,7 +68,7 @@ import { ImageLazyLoadModule } from './image-lazy-load/image-lazy-load.module';
     PoliticsDetailsComponent,
     CultureDetailsComponent,
     CurrencyComponent,
-    CommerialComponent
+    CommercialComponent
   ],
   imports: [
     AdminPanelModule,
