@@ -13,7 +13,12 @@
                       <!-- <i class="fab fa-twitter"></i> -->
                       <!-- <i class="fab fa-linkedin-in"></i>   -->
                       <!-- <i class="fab fa-facebook-f"></i> -->
-                      <fb-like [url]="'http://167.172.172.153:8080/#/news/' + newsData._id" ></fb-like>
+                      <!-- <fb-like [url]="'http://167.172.172.153:8080/#/news/' + newsData._id" ></fb-like> -->
+                      <button class="facebook" ceiboShare  
+                      [facebook] = "{u: 'http://167.172.172.153:8080/#/news/' + newsData._id}">
+                      <img class="img" style="vertical-align:middle" src="https://static.xx.fbcdn.net/rsrc.php/v3/yP/r/jydh1rvUVNm.png" alt="" width="12" height="12">
+                      <span>Share</span> 
+              </button>
                       <!-- <i class="fab fa-instagram"></i> -->
                   </div>   
               </div>

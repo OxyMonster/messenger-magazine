@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeService } from 'src/app/home/home.service';
 import { ActivatedRoute } from '@angular/router';
 import { NewsService } from 'src/app/services/news.service';
 

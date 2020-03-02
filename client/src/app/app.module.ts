@@ -36,9 +36,10 @@ import { PoliticsDetailsComponent } from './politics/politics-details/politics-d
 import { CultureDetailsComponent } from './culture/culture-details/culture-details.component';
 import { CurrencyComponent } from './home/slider/currency/currency.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
+// import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
 import { ImageLazyLoadModule } from './image-lazy-load/image-lazy-load.module';
 import { CommercialComponent } from './home/ads/commercial/commercial.component';
+import { CeiboShare } from 'ng2-social-share';
 
  
 
@@ -68,7 +69,8 @@ import { CommercialComponent } from './home/ads/commercial/commercial.component'
     PoliticsDetailsComponent,
     CultureDetailsComponent,
     CurrencyComponent,
-    CommercialComponent
+    CommercialComponent,
+    CeiboShare
   ],
   imports: [
     AdminPanelModule,
@@ -77,8 +79,9 @@ import { CommercialComponent } from './home/ads/commercial/commercial.component'
     NgbModule,
     FormsModule,
     BrowserAnimationsModule,
-    JwSocialButtonsModule,  
-    ImageLazyLoadModule
+    // JwSocialButtonsModule,  
+    ImageLazyLoadModule, 
+    
     
    
   ],

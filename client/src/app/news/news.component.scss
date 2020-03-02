@@ -63,5 +63,35 @@
     border-radius: .5rem;
 }
 
+.facebook {
+    background: #1877f2;
+    color: white;
+    border-radius: 3px;
+    font-size: 11px;
+    height: 20px;
+    padding: 0 6px;
+    border: none;
+
+    img {
+        vertical-align: middle;
+
+    }
+
+    span {
+        padding-left: 4px;
+        padding-right: 4px;
+        color: white;
+        font-size: 11px;
+        font-weight: bold;
+
+
+    }
+
+    p {
+        font-family: Helvetica, Arial, sans-serif;
+        vertical-align: middle;
+    }
+}
+
 
 
