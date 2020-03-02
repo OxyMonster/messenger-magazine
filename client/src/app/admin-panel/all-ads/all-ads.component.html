@@ -1,11 +1,12 @@
 <h1>REMOVE ADS</h1>
 <div class="row news" *ngFor="let item of allAds; let i = index">
     <div class="news__title col-12 d-flex justify-content-center mt-3" style="background-color: cadetblue;">
-        <div  class="news__title col-12 d-flex justify-content-center">
+        <div (click)="toggleAds(i)"  
+             class="news__title col-12 d-flex justify-content-center">
             <h4 (click)="toggleAds(i)" style="cursor: pointer;"> {{  item.linkPath }} </h4>
         </div>
     </div>
-    <div (click)="toggleAds(i)" class="col-12 news mt-3" *ngIf="item.isActive" >
+    <div  class="col-12 news mt-3" *ngIf="item.isActive" >
         <p> {{ 'ID: ' + item._id }} </p>
         <p> {{ 'Link - (URL): ' + item.linkPath }} </p>
         <button class="btn btn-danger" (click)="removeAds(item._id)"> Remove </button>
