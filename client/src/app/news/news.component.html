@@ -1,5 +1,5 @@
 <div class="news row">
-    <div class="col-md-12" *ngIf="allNews.length > 0 " [ngClass]="{'news__content': router.url === '/news'}">
+    <div class="col-md-12" *ngIf="allNews.length > 0; else showLoad " [ngClass]="{'news__content': router.url === '/news'}">
         <div class="main p-2 row" >
             <div class="col-12" *ngFor="let item of allNews; first as isFirst" 
                                 [ngClass]="{'mt-3': isFirst && router.url === '/news', 'mt-5': !isFirst && router.url === '/news'}">
@@ -60,7 +60,9 @@
         </div>
     </div>
     <ng-template #showLoad>
-        <h1>Loading...</h1>
+        <div class="loading" style="min-height: 200vh;">
+
+        </div>
     </ng-template>
     
 </div>   

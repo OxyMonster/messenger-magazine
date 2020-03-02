@@ -1,4 +1,4 @@
-<div class="news row" *ngIf=" allEconomy.length > 0">
+<div class="news row" *ngIf=" allEconomy.length > 0 else showLoad">
     <div class="col-md-12"  >
         <div class="main p-2 row" >
             <div class="col-12 mt-3" *ngFor="let item of allEconomy; first as isFirst" [ngClass]="{'mt-3': isFirst, 'mt-5': !isFirst}">
@@ -46,3 +46,8 @@
         </div>
     </div>
 </div>   
+
+<ng-template #showLoad>
+    <div class="loading" style="min-height: 200vh;"></div>
+</ng-template>
+
