@@ -13,7 +13,7 @@ constructor(
 
 getNews() {
 
-  const url = 'http://167.172.172.153:8080/news'; 
+  const url = 'news'; 
 
   return this.http.get(url); 
 }; 
