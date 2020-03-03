@@ -69,7 +69,7 @@ import { CeiboShare } from 'ng2-social-share';
     CultureDetailsComponent,
     CurrencyComponent,
     CommercialComponent,
-    // CeiboShare
+    CeiboShare
   ],
   imports: [
     AdminPanelModule,
