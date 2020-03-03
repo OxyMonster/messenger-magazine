@@ -39,9 +39,8 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 // import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
 import { ImageLazyLoadModule } from './image-lazy-load/image-lazy-load.module';
 import { CommercialComponent } from './home/ads/commercial/commercial.component';
-import { CeiboShare } from 'ng2-social-share';
+import { CeiboShare } from 'ng2-social-share'; 
 
- 
 
 @NgModule({
   declarations: [
@@ -88,7 +87,7 @@ import { CeiboShare } from 'ng2-social-share';
   providers: [
     NewsService,
     HeadlinesService,
-    // AuthGuard
+    // AuthGuard 
     { provide: LocationStrategy, useClass: HashLocationStrategy }, 
   ],
   bootstrap: [AppComponent]
